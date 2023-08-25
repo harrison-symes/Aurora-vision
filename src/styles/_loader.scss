@@ -1,0 +1,38 @@
+$primary-color: $green;
+@import "./colours.scss";
+@import "../../node_modules/loaders.css/src/animations/line-scale-random.scss";
+
+@keyframes fadeBackground {
+    0% {
+        background-color: $violet;
+    }
+
+    100% {
+        background-color: $jet;
+    }
+
+    // 100% {
+    //     background-color: $green;
+    //     /* Target background color at the end of animation */
+    // }
+}
+
+.loader__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $violet;
+    background-color: $green;
+
+    animation: fadeBackground 5s ease-in-out infinite alternate;
+
+}
+
+.loader__spinner {
+    transform: scale(2);
+}

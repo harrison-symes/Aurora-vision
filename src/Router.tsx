@@ -5,7 +5,7 @@ import { HistoryRouter } from "redux-first-history/rr6";
 import Layout from "./Layout";
 // import { ROUTES_INTERNAL } from "./constants/router.constants";
 import { history } from "./configureStore";
-import Loader from "./components/Loader";
+import Loading from "./components/Loading";
 
 const Home = React.lazy(() => import("./pages/Home"));
 
@@ -17,8 +17,9 @@ const Router = () => {
           <Route
             index
             element={
-              <React.Suspense fallback={<Loader />}>
+              <React.Suspense fallback={<Loading />}>
                 <Home />
+                <Loading />
               </React.Suspense>
             }
           />
