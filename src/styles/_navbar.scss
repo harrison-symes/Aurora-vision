@@ -5,18 +5,26 @@
         width: 100%;
         height: 60px;
         background-color: $jet;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         z-index: 1000;
         position: fixed;
         top: 0;
         left: 0;
-
-        padding: 0 2rem;
-
+        display: flex;
+        justify-content: center;
+        
         color: $white;
         box-shadow: 0px 3px 1px 1px $violet;
+        
+    }
+    
+    &__inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        max-width: 1600px;
 
         @media only screen and (max-width: 600px) {
             padding: 0 .5rem;
@@ -39,7 +47,11 @@
 
     &__logo {
         max-height: 46px;
+        padding: .25rem 0;
         cursor: pointer;
+        @media only screen and (max-width: 600px) {
+            padding: .25rem;
+        }
     }
 
     &__hamburger {
@@ -58,48 +70,46 @@
 
         @media only screen and (max-width: 600px) {
             margin: 0;
-            // display: none;
             position: fixed;
             height: auto;
             width: calc(100% * 2 / 3);
             background-color: $white;
             font-size: 1.5rem;
             color: $jet;
-            right: 0;
+            left: 100%;
             top: 64px;
-            transform: translateX(100%);
+            transform: translateX(0%);
             border: none;
-            transition: transform 300ms ease-in;
-            display: flex;
+            transition: transform 300ms ease-in-out;
             flex-direction: column;
-            box-shadow: 0px 2px 2px $violet;
             border-bottom-left-radius: .25rem;
+            display: flex;
             
             &.is-active {
-                transform: translateX(0%);
+                box-shadow: 0px 2px 2px $violet;
+                transform: translateX(-100%);
             }
         }
     }
 
     &__item {
         font-size: 1.25rem;
-        padding: 1rem;
+        padding: .5rem 1rem;
         height: 100%;
         cursor: pointer;
         display: flex;
         align-items: flex-end;
         color: $white;
         text-decoration: none;
-        border-bottom: 4px solid $jet;
 
         @media only screen and (max-width: 600px) {
             color: $jet;
-            border-bottom: none;
             width: 100%;
         }
         
         &.is-active {
-            border-color: $violet;
+            background-color: darken($violet, 3%);
+
             @media only screen and (max-width: 600px) {
                 color: $white;
                 background-color: $violet;
@@ -107,7 +117,6 @@
         }
         
         &:hover {
-            border-color: $violet;
             background-color: $violet;
         }
 

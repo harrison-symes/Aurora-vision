@@ -4,17 +4,14 @@ $primary-color: $green;
 
 @keyframes fadeBackground {
     0% {
+        background-color: none;
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
         background-color: $violet;
     }
-
-    100% {
-        background-color: $jet;
-    }
-
-    // 100% {
-    //     background-color: $green;
-    //     /* Target background color at the end of animation */
-    // }
 }
 
 .loader__container {
@@ -26,12 +23,9 @@ $primary-color: $green;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $violet;
-    background-color: $green;
     z-index: 999;
 
-    animation: fadeBackground 5s ease-in-out infinite alternate;
-
+    animation: fadeBackground 3s ease-in-out infinite alternate;
 }
 
 .loader__spinner {
