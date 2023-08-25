@@ -20,10 +20,12 @@ const Button = (props: IButtonProps) => {
     "button--white": props.colour === "white",
   });
 
-  if (props.href) {
-    <Link className={className} to={props.href}>
-      {props.children}
-    </Link>;
+  if (typeof props.href !== "undefined") {
+    return (
+      <Link className={className} to={props.href}>
+        {props.children}
+      </Link>
+    );
   }
 
   return (
