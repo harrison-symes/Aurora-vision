@@ -16,6 +16,11 @@
         padding: 0 2rem;
 
         color: $white;
+        box-shadow: 0px 3px 1px 1px $violet;
+
+        @media only screen and (max-width: 600px) {
+            padding: 0 .5rem;
+        }
     }
 
     &__left {
@@ -37,11 +42,43 @@
         cursor: pointer;
     }
 
+    &__hamburger {
+        color: $white;
+        display: none;
+        @media only screen and (max-width: 600px) {
+            display: block;
+        }
+    }
+
     &__items {
         height: 100%;
         display: flex;
         justify-content: space-evenly;
         align-items: flex-end;
+
+        @media only screen and (max-width: 600px) {
+            margin: 0;
+            // display: none;
+            position: fixed;
+            height: auto;
+            width: calc(100% * 2 / 3);
+            background-color: $white;
+            font-size: 1.5rem;
+            color: $jet;
+            right: 0;
+            top: 64px;
+            transform: translateX(100%);
+            border: none;
+            transition: transform 300ms ease-in;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 2px 2px $violet;
+            border-bottom-left-radius: .25rem;
+            
+            &.is-active {
+                transform: translateX(0%);
+            }
+        }
     }
 
     &__item {
@@ -54,13 +91,25 @@
         color: $white;
         text-decoration: none;
         border-bottom: 4px solid $jet;
+
+        @media only screen and (max-width: 600px) {
+            color: $jet;
+            border-bottom: none;
+            width: 100%;
+        }
         
         &.is-active {
             border-color: $violet;
+            @media only screen and (max-width: 600px) {
+                color: $white;
+                background-color: $violet;
+            }
         }
-
+        
         &:hover {
+            border-color: $violet;
             background-color: $violet;
         }
+
     }
 }

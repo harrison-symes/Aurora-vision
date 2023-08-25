@@ -2,6 +2,7 @@ import * as React from "react"
 import cn from "classnames"
 import NavItem from "./NavItem"
 import { Link } from "react-router-dom"
+import Hamburger from "hamburger-react"
 
 const NavBar = () => {
     const [isActive, setIsActive] = React.useState<boolean>(false)
@@ -13,7 +14,10 @@ const NavBar = () => {
             </Link>
         </div>
         <div className="navbar__right">
-            {/* <div className="navbar__hamburger" onClick={() => setIsActive(state => !state)}>Hamburger</div> */}
+
+            <div className="navbar__hamburger">
+                <Hamburger toggled={isActive} onToggle={() => setIsActive(state => !state)} />
+            </div>
             <div className={cn("navbar__items", {
                 "is-active": isActive
             })}>
