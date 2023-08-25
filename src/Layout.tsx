@@ -12,7 +12,7 @@ const Layout = () => {
   return (
     <div>
       <NavBar />
-      <div className="page-content section">
+      <div className="page-content">
         <Outlet />
       </div>
     </div>
