@@ -1,7 +1,12 @@
-import * as React from "react"
+import * as React from "react";
+import HomeHero from "../components/HomeHero/HomeHero";
 
 const AboutUs = () => {
-    return <div>AboutUs</div>
-}
+  return (
+    <div>
+      <HomeHero />
+    </div>
+  );
+};
 
-export default AboutUs
+export default AboutUs;

@@ -4,6 +4,7 @@
 @import "./loader";
 @import "./navbar";
 @import "./latest-project";
+@import "./home-hero";
 
 * {
     box-sizing: border-box;
@@ -20,4 +21,8 @@ body {
 
 .page-content {
     margin-top: 60px;
+}
+
+h1, p, div {
+    font-family: "Raleway", sans-serif;
 }
