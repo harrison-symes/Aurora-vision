@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer";
 
 const Layout = () => {
   const { pathname } = useLocation();
@@ -15,6 +16,7 @@ const Layout = () => {
       <div className="page-content">
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 };

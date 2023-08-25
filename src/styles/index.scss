@@ -1,10 +1,12 @@
 @import "../../node_modules/normalize.css";
-
+@import "../../node_modules/tachyons-sass";
 @import "./colours.scss";
 @import "./loader";
 @import "./navbar";
 @import "./latest-project";
 @import "./home-hero";
+@import "./button";
+@import "./footer";
 
 * {
     box-sizing: border-box;

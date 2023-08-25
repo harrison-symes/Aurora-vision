@@ -20,7 +20,7 @@ const YoutubePlayer = (props: IYoutubePlayerProps) => {
   const isMobile = windowWidth <= 768;
 
   const width = isMobile ? windowWidth - 48 : containerWidth;
-  const height = (width * 3) / 4;
+  const height = (width * 9) / 16;
 
   if (props.containerRef.current === null || containerWidth === 0) {
     return null;

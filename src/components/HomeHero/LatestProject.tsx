@@ -1,5 +1,7 @@
 import * as React from "react";
 import YoutubePlayer from "../YoutubePlayer";
+import Button from "../Button/Button";
+import { ROUTES_INTERNAL } from "../../constants/router.constants";
 
 const LatestProject = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -25,6 +27,13 @@ const LatestProject = () => {
             blah blah blah blah blah blah blah blah blah blah blah blah blah
             blah blah blah blah blah blah blah blah blah
           </div>
+          <Button
+            href={ROUTES_INTERNAL.OUR_WORK}
+            colour="purple"
+            className="latest-project__button button--large"
+          >
+            See our full portfolio
+          </Button>
         </div>
       </div>
     </div>

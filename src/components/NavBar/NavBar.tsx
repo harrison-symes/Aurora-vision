@@ -3,9 +3,16 @@ import cn from "classnames";
 import NavItem from "./NavItem";
 import { Link } from "react-router-dom";
 import Hamburger from "hamburger-react";
+import { useSelector } from "react-redux";
+import { getPath } from "../../selectors/router.selectors";
 
 const NavBar = () => {
   const [isActive, setIsActive] = React.useState<boolean>(false);
+  const path = useSelector(getPath);
+
+  React.useEffect(() => {
+    setIsActive(false);
+  }, [path]);
 
   return (
     <div className="navbar__container">
