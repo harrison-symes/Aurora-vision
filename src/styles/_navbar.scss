@@ -2,7 +2,7 @@
 
 .navbar {
     &__container {
-        width: 100vw;
+        width: 100%;
         height: 60px;
         background-color: $jet;
         display: flex;
@@ -13,16 +13,54 @@
         top: 0;
         left: 0;
 
-        padding: 4px 16px;
+        padding: 0 2rem;
+
+        color: $white;
     }
 
     &__left {
         justify-self: flex-start;
-        display: block;
-        max-height: 100%;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    
+    &__right {
+        justify-self: flex-end;
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 
     &__logo {
-        max-height: 52px;
+        max-height: 46px;
+        cursor: pointer;
+    }
+
+    &__items {
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+
+    &__item {
+        font-size: 1.25rem;
+        padding: 1rem;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: flex-end;
+        color: $white;
+        text-decoration: none;
+        border-bottom: 4px solid $jet;
+        
+        &.is-active {
+            border-color: $violet;
+        }
+
+        &:hover {
+            background-color: $violet;
+        }
     }
 }
