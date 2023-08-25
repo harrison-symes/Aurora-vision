@@ -1,0 +1,28 @@
+@import "./colours.scss";
+
+.navbar {
+    &__container {
+        width: 100vw;
+        height: 60px;
+        background-color: $jet;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        padding: 4px 16px;
+    }
+
+    &__left {
+        justify-self: flex-start;
+        display: block;
+        max-height: 100%;
+    }
+
+    &__logo {
+        max-height: 52px;
+    }
+}

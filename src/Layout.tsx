@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
 
 const Layout = () => {
   const { pathname } = useLocation();
@@ -10,6 +11,7 @@ const Layout = () => {
 
   return (
     <div>
+      <NavBar />
       <div className="page-content section">
         <Outlet />
       </div>

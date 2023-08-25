@@ -28,6 +28,7 @@ $primary-color: $green;
     align-items: center;
     background-color: $violet;
     background-color: $green;
+    z-index: 999;
 
     animation: fadeBackground 5s ease-in-out infinite alternate;
 
