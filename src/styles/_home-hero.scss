@@ -3,6 +3,9 @@
 .home-hero {
     &__container {
         background-color: $violet;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid $purple;
     }
     
     &__logo {

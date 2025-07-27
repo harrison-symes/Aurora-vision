@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="footer__inner">
         <div className="footer__socials">
           <Link
-            to="https://www.instagram.com/auroravision.studi"
+            to="https://www.instagram.com/auroravision.studio"
             className="flex"
           >
             <InstagramIcon containerProps={{ className: "mr1" }} />

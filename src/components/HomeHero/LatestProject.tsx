@@ -32,7 +32,7 @@ const LatestProject = () => {
             colour="purple"
             className="latest-project__button button--large"
           >
-            See our full portfolio
+            See more of our work
           </Button>
         </div>
       </div>
