@@ -17,18 +17,18 @@ const NavBar = () => {
   return (
     <div className="navbar__container">
       <div className="navbar__inner">
-        <div className="navbar__left">
+        <div className="navbar__top">
           <Link to={"/"}>
             <img src="/images/logo.png" className="navbar__logo" />
           </Link>
         </div>
-        <div className="navbar__right">
-          <div className="navbar__hamburger">
+        <div className="navbar__bottom">
+          {/* <div className="navbar__hamburger">
             <Hamburger
               toggled={isActive}
               onToggle={() => setIsActive((state) => !state)}
             />
-          </div>
+          </div> */}
           <div
             className={cn("navbar__items", {
               "is-active": isActive,

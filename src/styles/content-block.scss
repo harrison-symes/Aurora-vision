@@ -1,0 +1,166 @@
+
+
+.content-block {
+
+    width: 100%;
+    background-color: $white;
+    color: $black;
+    height: 500px;
+    padding: 1rem 0 1rem;
+    
+    @media only screen and (max-width: 768px) {
+        height: auto;
+    }
+    
+    
+    &--grey {
+        background-color: $grey;
+        color: $white;
+    }
+
+    &__container {
+        margin: auto;
+        max-width: 1280px;
+
+        display: grid;
+
+        grid-template-columns: 2fr 2fr;
+        column-gap: .5rem;
+        margin-top: 32px;
+
+        @media only screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            grid-template-columns: 2fr 1fr;
+        }    
+    }
+
+    &__text-container {
+        max-width: 600px;
+        padding: .25rem;
+        width: 100%;
+        font-size: 1.5rem;
+        // align-self: center;
+        padding: .5rem;
+        justify-self: center;
+        
+        @media only screen and (max-width: 768px) {
+            align-self: center;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    &__paragraph {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    &__image {
+        height: 500px;
+        display: block;
+        align-self: center;
+        transform: translateY(-100px);
+        justify-self: end;
+
+        @media only screen and (max-width: 768px) {
+            height: 300px;
+            transform: none;
+            justify-self: center;
+            align-self: center;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            height: 300px;
+            transform: none;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    .directors-image {
+        height: 600px;
+
+        @media only screen and (max-width: 768px) {
+            height: 500px;
+            transform: none;
+            justify-self: center;
+            align-self: center;
+        }
+        
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            height: 300px;
+            transform: none;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+}
+
+.space-ship {
+    animation: spaceship 10s infinite alternate ease-in-out;
+
+    @media only screen and (max-width: 768px) {
+        animation-name: spaceship-mobile;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        animation-name: spaceship-mobile;
+    }
+}
+
+@keyframes spaceship {
+    0% {
+        transform: translate(-10px, -90px);
+    }
+
+    25% {
+        transform: translate(-3px, -100px);
+    }
+
+    50% {
+        transform: translate(0, -80px);
+    }
+
+    75% {
+        transform: translate(3px, -90px);
+    }
+
+    100% {
+        transform: translate(10px, -100px);
+    }
+}
+
+@keyframes spaceship-mobile {
+    0% {
+        transform: translate(-10px, -10px);
+    }
+
+    25% {
+        transform: translate(-3px, 0px);
+    }
+
+    50% {
+        transform: translate(0, -20px);
+    }
+
+    75% {
+        transform: translate(3px, -10px);
+    }
+
+    100% {
+        transform: translate(10px, 0px);
+    }
+}
+
+.image-block {
+    width: 100%;
+}

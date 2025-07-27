@@ -15,7 +15,7 @@ const YoutubePlayer = (props: IYoutubePlayerProps) => {
     if (props.containerRef.current !== null) {
       setContainerWidth(props.containerRef.current.offsetWidth ?? 572);
     }
-  }, [props.containerRef, windowWidth]);
+  }, [props.containerRef.current, windowWidth]);
 
   const isMobile = windowWidth <= 768;
 
