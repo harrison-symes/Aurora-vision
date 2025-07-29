@@ -6,6 +6,14 @@ import YoutubeIcon from "./Icons/Youtube";
 
 const Footer = () => {
   return (
+    <img
+      className="image-block"
+      src="/images/about-us-footer.png"
+      alt="about-us"
+    />
+  );
+
+  return (
     <div className="footer__container">
       <div className="footer__inner">
         <div className="footer__socials">

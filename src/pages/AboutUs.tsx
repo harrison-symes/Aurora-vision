@@ -2,6 +2,7 @@ import * as React from "react";
 import AboutUsHero from "../components/Heros/AboutUsHero";
 import MemberFrame from "../components/MemberFrame/MemberFrame";
 import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithImage";
+import Footer from "../components/Footer";
 
 const AboutUs = () => {
   return (
@@ -46,11 +47,7 @@ const AboutUs = () => {
         variant="white"
         name="HARRISON SYMES"
       />
-      <img
-        className="image-block"
-        src="/images/about-us-footer.png"
-        alt="about-us"
-      />
+      <Footer />
     </div>
   );
 };

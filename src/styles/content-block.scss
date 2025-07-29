@@ -1,7 +1,6 @@
-
+@import "vars";
 
 .content-block {
-
     width: 100%;
     background-color: $white;
     color: $black;
@@ -10,6 +9,7 @@
     
     @media only screen and (max-width: 768px) {
         height: auto;
+        padding: 1rem 1rem 0;
     }
     
     
@@ -30,6 +30,7 @@
 
         @media only screen and (max-width: 768px) {
             grid-template-columns: 1fr;
+            margin-top: 0;
         }
 
         @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -41,22 +42,27 @@
         max-width: 600px;
         padding: .25rem;
         width: 100%;
-        font-size: 1.5rem;
-        // align-self: center;
-        padding: .5rem;
+        font-size: $desktop-paragraph;
+        padding: .5rem 1rem;
         justify-self: center;
         
         @media only screen and (max-width: 768px) {
             align-self: center;
+            font-size: $mobile-paragraph;
+            padding: 0;
         }
     }
 
     &__title {
-        font-size: 3rem;
+        font-size: $desktop-title;
         margin-bottom: 1rem;
         text-align: center;
         font-weight: bold;
         letter-spacing: 1px;
+
+        @media only screen and (max-width: 768px) {
+            font-size: $mobile-title;
+        }
     }
 
     &__paragraph {
@@ -72,13 +78,14 @@
         justify-self: end;
 
         @media only screen and (max-width: 768px) {
-            height: 300px;
+            height: auto;
+            width: 100%;
             transform: none;
             justify-self: center;
             align-self: center;
         }
 
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        @media only screen and (min-width: 769px) and (max-width: 1024px) {
             height: 300px;
             transform: none;
             justify-self: center;
@@ -90,10 +97,11 @@
         height: 600px;
 
         @media only screen and (max-width: 768px) {
-            height: 500px;
+            height: auto;
+            width: 80%;
             transform: none;
             justify-self: center;
-            align-self: center;
+            align-self: flex-end;
         }
         
         @media only screen and (min-width: 768px) and (max-width: 1024px) {

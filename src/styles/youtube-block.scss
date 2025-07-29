@@ -1,3 +1,5 @@
+@import "vars";
+
 .youtube-block {
     background-color: $white;
     width: 100%;
@@ -48,8 +50,12 @@
     }
 
     &__paragraph {
-        font-size: 1.25rem;
+        font-size: $desktop-paragraph;
         margin-top: 1rem;
+
+        @media only screen and (max-width: 768px) {
+            font-size: $mobile-paragraph;;
+        }
     }
 
     &__player {

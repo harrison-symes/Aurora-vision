@@ -1,7 +1,5 @@
 @import "./colours.scss";
-
-
-$navHeight: 140px;
+@import "vars";
 
 .navbar {
     &__container {
@@ -74,7 +72,7 @@ $navHeight: 140px;
 
     &__item {
         white-space: nowrap;
-        font-size: 2rem;
+        font-size: $desktop-paragraph;
         padding: .5rem 1rem;
         line-height: 1.2;
         letter-spacing: 1px;
@@ -87,7 +85,7 @@ $navHeight: 140px;
         border-bottom: 2px solid $black;
 
         @media only screen and (max-width: 768px) {
-            font-size: 1rem;
+            font-size: $mobile-paragraph;
         }
         
         &.is-active {

@@ -12,6 +12,8 @@
 @import "./content-block";
 @import "./immersive-block";
 @import "./youtube-block";
+@import "./meet-our-crew";
+@import "./vars";
 
 
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
@@ -33,7 +35,7 @@ body {
 }
 
 .page-content {
-    margin-top: 140px;
+    margin-top: $navbar-height;
 }
 
 h1, p, div {

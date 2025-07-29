@@ -2,6 +2,8 @@ import * as React from "react";
 import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithImage";
 import ImmersiveBlock from "../components/ImmsersiveBlock/ImmersiveBlock";
 import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
+import MeetOurCrew from "../components/MeetOurCrew/MeetOurCrew";
+import Footer from "../components/Footer";
 
 const Temporal = () => {
   return (
@@ -12,6 +14,7 @@ const Temporal = () => {
           `"TEMPORAL" is a sci-fi short film that follows a spaceman struggling to survive on a distant alien world after an ion storm brings down is survey ship.`,
           "Determined to find his missing co-pilot, he pushes forward—but soon discovers that there’s something deeply unsettling about this planet.",
         ]}
+        videoId="qRlbaTyLC88"
       />
       <TextBlockWithImage
         imageUrl="/images/directors.png"
@@ -43,6 +46,20 @@ const Temporal = () => {
         ]}
         isReverse
       />
+      <MeetOurCrew />
+      <TextBlockWithImage
+        imageUrl="/images/script.png"
+        bgColour="grey"
+        paragraphs={[
+          "TEMPORAL was born from a desire to tell a grounded, cosmic sci-fi story. It grew out of a music video collaboration between Weston and James, which featured a simple, pulpy narrative about a lone astronaut exploring an alien world.",
+          "That project planted the seed for something darker and more meditative - one that would explore themes of isolation, survival, and the unsettling nature of the cosmic unknown.",
+          "Over the year the script developed, it passed through many iterations; at one point Emmons was an AI companion, in another, the entity haunting the story gradually became the astronaut himself across repeating time loops. What stayed consistent was the focus on atmosphere, mystery, and a tactice, analog-futuristic world.",
+          "The final film features a fractured cosmic trap and a deeply human story.",
+        ]}
+        title="THE STORY"
+        imageClass="space-ship"
+      />
+      <Footer />
     </div>
   );
 };

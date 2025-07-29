@@ -1,0 +1,85 @@
+@import "vars";
+
+.meet-our-crew {
+    max-width: 1280px;
+    margin: auto;
+    padding: 1.5rem;
+    margin-bottom: 4rem;
+
+    @media only screen and (max-width: 768px) {
+        padding: 1rem;
+        margin-bottom: 0;
+    }
+
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        max-height: 400px;
+
+        @media only screen and (max-width: 768px) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            max-height: none;
+        }
+        
+        &--reverse {
+            direction: rtl;
+            gap: 0px;
+        }
+    }
+
+    &__image {
+        grid-column-start: 1;
+        grid-column-end: span 5;
+        transform: translateX(-1rem);
+
+        @media only screen and (max-width: 768px) {
+            transform: none;
+            max-width: 80%;
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__image-2 {
+        transform: translate(1rem, -2rem);
+
+        @media only screen and (max-width: 768px) {
+            transform: none;
+        }
+    }
+
+    &__text-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        justify-self: start;
+        grid-column-start: 6;
+        grid-column-end: col9-end;
+
+        column-count: 3;
+    }
+
+    &__title {
+        font-size: $desktop-title;
+        font-weight: bold;
+        letter-spacing: 1px;
+
+        @media only screen and (max-width: 768px) {
+            font-size: $mobile-title;
+        }
+    }
+
+    &__paragraph {
+        margin-top: 1rem;
+        font-size: $desktop-paragraph;
+        text-align: center;
+
+        @media only screen and (max-width: 768px) {
+            font-size: $mobile-paragraph;
+        }
+    }
+
+}
