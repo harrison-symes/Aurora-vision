@@ -28,11 +28,8 @@ const YoutubeBlock = (props: IProps) => {
             heightRatio={props.heightRatio}
           />
         </div>
+        <img src={props.titleImageUrl} className="youtube-block__title-image" />
         <div className="youtube-block__text-container">
-          <img
-            src={props.titleImageUrl}
-            className="youtube-block__title-image"
-          />
           {props.paragraphs.map((p) => (
             <div className="youtube-block__paragraph">{p}</div>
           ))}

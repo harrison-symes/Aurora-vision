@@ -32,7 +32,7 @@ const YoutubePlayer = (props: IYoutubePlayerProps) => {
 
   const isMobile = windowWidth <= 768;
 
-  const width = isMobile ? windowWidth : containerWidth;
+  const width = containerWidth;
   const height = width * (props.heightRatio ?? 3 / 4);
   console.log(height, props.heightRatio);
 

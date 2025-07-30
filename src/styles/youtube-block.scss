@@ -15,8 +15,9 @@
         margin: auto;
 
         display: grid;
-        grid-template-columns: 5fr 3fr;
-        gap: 2rem;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(5 1fr);
+        column-gap: 1rem;
 
         @media only screen and (max-width: 768px) {
             display: flex;
@@ -35,14 +36,41 @@
         color: $white;
     }
 
+    &__player-container {
+        grid-row: 1 / span 5;
+        grid-column: 1 / span 5;
+
+        @media only screen and (max-width: 768px) {
+            order: 2;
+            margin-top: 1rem;
+        }
+    }
+
     &__text-container {
         text-align: center;
         width: 100%;
+
+        grid-row: 3 / span 5;
+        grid-column: 6 / span 9;
+
+        @media only screen and (max-width: 768px) {
+            order: 3;
+        }
     }
 
     &__title-image {
         // width: 100%;
-        max-height: 70px;
+        // height: 100%;
+        width: auto;
+
+        grid-row: 1 / span 2;
+        grid-column: 6 / span 9;
+        justify-self: center;
+        align-self: center;
+
+        @media only screen and (max-width: 768px) {
+            order: 0;
+        }
     }
 
     &__paragraph {
