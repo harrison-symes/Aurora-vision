@@ -79,7 +79,6 @@
         grid-template-columns: 1fr 1fr;
         margin: auto;
         max-width: 1280px;
-        direction: ltr;
         height: 100%;
 
         @media only screen and (max-width: 768px) {
@@ -87,14 +86,7 @@
             flex-direction: column-reverse;
         }
     }
-
-    &--reverse {
-        .immersive-block__container {
-            direction: rtl;
-        }
-    }
     
-
     &__image {
         // height: 60vh;
         max-height: 55vh;
@@ -102,6 +94,9 @@
         width: max-content;
         overflow: hidden;
         align-self: flex-end;
+        justify-self: center;
+        grid-column: 1;
+        grid-row: 1;
 
         @media only screen and (max-width: 768px) {
             margin-top: .5rem;
@@ -116,9 +111,21 @@
         align-self: center;
         justify-self: center;
 
+        grid-column: 2;
+        grid-row: 1;
+
         @media only screen and (max-width: 768px) {
             display: flex;
             flex-direction: column;
+        }
+    }
+
+    &--reverse {
+        .immersive-block__text-container {
+            grid-column: 1;
+        }
+        .immersive-block__image {
+            grid-column: 2;
         }
     }
 

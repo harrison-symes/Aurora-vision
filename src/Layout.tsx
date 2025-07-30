@@ -16,7 +16,7 @@ const Layout = () => {
       <div className="page-content">
         <Outlet />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

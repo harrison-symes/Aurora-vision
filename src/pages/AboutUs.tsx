@@ -47,7 +47,6 @@ const AboutUs = () => {
         variant="white"
         name="HARRISON SYMES"
       />
-      <Footer />
     </div>
   );
 };

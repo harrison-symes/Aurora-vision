@@ -22,7 +22,9 @@ const TextBlockWithImage = (props: IProps) => {
             <div className="content-block__title">{props.title}</div>
           )}
           {props.paragraphs.map((p) => (
-            <div className="content-block__paragraph">{p}</div>
+            <div key={p.slice(10)} className="content-block__paragraph">
+              {p}
+            </div>
           ))}
         </div>
         <img

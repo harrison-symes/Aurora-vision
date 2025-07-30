@@ -122,7 +122,7 @@
 
             @keyframes slide-up {
                 0% {
-                    transform: translateY(150%);
+                    transform: translateY(200%);
                 }
 
                 100% {
@@ -130,7 +130,7 @@
                 }
             }
 
-            transform: translateY(150%);
+            transform: translateY(200%);
             
             &.is-active {
                 animation: slide-up 200ms ease-in-out forwards;

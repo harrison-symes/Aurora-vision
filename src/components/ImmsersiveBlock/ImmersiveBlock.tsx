@@ -22,7 +22,9 @@ const ImmersiveBlock = (props: IProps) => {
         <div className="immersive-block__text-container">
           <div className="immersive-block__title">{props.title}</div>
           {props.paragraphs.map((p) => (
-            <div className="immersive-block__paragraph">{p}</div>
+            <div key={p.slice(10)} className="immersive-block__paragraph">
+              {p}
+            </div>
           ))}
         </div>
       </div>

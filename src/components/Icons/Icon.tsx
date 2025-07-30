@@ -14,9 +14,9 @@ export interface IIconProps {
 
 const IconContainer = (props: IIconContainerProps) => {
   return (
-    <div className={cn("icon flex items-center", props.className)}>
+    <span className={cn("icon flex items-center", props.className)}>
       {props.children}
-    </div>
+    </span>
   );
 };
 

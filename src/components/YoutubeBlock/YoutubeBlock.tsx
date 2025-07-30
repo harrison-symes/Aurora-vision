@@ -31,7 +31,9 @@ const YoutubeBlock = (props: IProps) => {
         <img src={props.titleImageUrl} className="youtube-block__title-image" />
         <div className="youtube-block__text-container">
           {props.paragraphs.map((p) => (
-            <div className="youtube-block__paragraph">{p}</div>
+            <div key={p.slice(10)} className="youtube-block__paragraph">
+              {p}
+            </div>
           ))}
         </div>
       </div>

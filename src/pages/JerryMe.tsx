@@ -23,7 +23,6 @@ const JerryMe = () => {
             />
           </>
         ))}
-      <Footer />
     </div>
   );
 };

@@ -25,7 +25,7 @@
         }
         
         &--reverse {
-            direction: rtl;
+            flex-direction: row-reverse;
             gap: 0px;
         }
     }
@@ -47,6 +47,20 @@
 
         @media only screen and (max-width: 768px) {
             transform: none;
+        }
+    }
+
+    &__block--reverse {
+        .meet-our-crew__text-container {
+            grid-column-start: 1;
+            grid-column-end: span 4;
+            grid-row: 1;
+        }
+
+        .meet-our-crew__image {
+            grid-column-start: 5;
+            grid-column-end: span 9;
+            grid-row: 1;
         }
     }
 
