@@ -7,7 +7,7 @@ import YoutubeIcon from "./Icons/Youtube";
 const Footer = () => {
   return (
     <img
-      className="image-block"
+      className="footer image-block"
       src="/images/about-us-footer.png"
       alt="about-us"
     />

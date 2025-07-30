@@ -8,7 +8,8 @@
     position: relative;
     
     @media only screen and (max-width: 768px) {
-        height: 275px;
+        height: auto;
+        max-height: 200px;
     }
 
     &__container {
@@ -59,8 +60,10 @@
         justify-self: center;
 
         @media only screen and (max-width: 768px) {
-            height: 300px;
-            transform: translateY(-25px);
+            height: 110%;
+            max-height: 220px;
+            transform: translateY(-10%);
+            overflow: hidden;
         }
     }
 }

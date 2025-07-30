@@ -5,6 +5,7 @@ import { HistoryRouter } from "redux-first-history/rr6";
 import Layout from "./Layout";
 import { ROUTES_INTERNAL } from "./constants/router.constants";
 import { history } from "./configureStore";
+import JerryMe from "./pages/JerryMe";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const Loading = React.lazy(() => import("./components/Loading"));
@@ -52,6 +53,16 @@ const Router = () => {
             element={
               <React.Suspense fallback={<Loading />}>
                 <Contact />
+              </React.Suspense>
+            }
+          />
+        </Route>
+        <Route path={ROUTES_INTERNAL.JERRYME} element={<Layout />}>
+          <Route
+            index
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <JerryMe />
               </React.Suspense>
             }
           />

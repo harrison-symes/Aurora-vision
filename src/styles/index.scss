@@ -36,6 +36,10 @@ body {
 
 .page-content {
     margin-top: $navbar-height;
+
+    @media only screen and (max-width: 768px) {
+        margin-top: $navbar-height-mobile;
+    }
 }
 
 h1, p, div {

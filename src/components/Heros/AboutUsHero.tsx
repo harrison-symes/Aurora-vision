@@ -2,7 +2,7 @@ import * as React from "react";
 
 const AboutUsHero = () => {
   return (
-    <div>
+    <div className="about-us-hero__container">
       <div className="hero hero--about-us">
         <div className="hero__container">
           <div className="hero__text-container hero__text-container--top-right">
@@ -11,7 +11,7 @@ const AboutUsHero = () => {
           </div>
         </div>
       </div>
-      <div className="hero--overlay bg-grey">
+      <div className="hero--overlay">
         <img src="/images/character-banner.png" />
       </div>
     </div>

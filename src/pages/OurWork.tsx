@@ -12,7 +12,8 @@ const OurWork = () => {
           `"TEMPORAL" is a sci-fi short film that follows a spaceman struggling to survive on a distant alien world after an ion storm brings down is survey ship.`,
           "Determined to find his missing co-pilot, he pushes forward—but soon discovers that there’s something deeply unsettling about this planet.",
         ]}
-        videoId="qRlbaTyLC88"
+        videoId="Gh5c3q6LorE"
+        heightRatio={9 / 16}
       />
       <YoutubeBlock
         videoId="Q-a7B8SJCt0"
@@ -24,6 +25,7 @@ const OurWork = () => {
           "Shot over several weekends, the video blends natural light, grungey textures, and complimentary visual effects to evoke a feeling of otherworldly drifting - between memory, emotion, and atmosphere.",
           "Rooted in trust and experimentation, Charm the Wind is a quiet portrait of vulnerability, guided by Ekholaliah’s distinct sonic world.",
         ]}
+        heightRatio={3 / 4}
       />
       <YoutubeBlock
         videoId="C70IB3ZnWGU"
@@ -32,6 +34,7 @@ const OurWork = () => {
           "Life Been Strange is our first music video with artist MumuDuB - a chaotic, vibrant collage of colour, distortion, and dense visual texture. Warped lenses, shifting clones, and lo-fi grain reflect the unreality of a life lived at the edges.",
           "A deeply rewarding collaboration with one of Pōneke’s most original voices, this project celebrates what’s possible when local artists come together to make something weird, raw, and entirely their own.",
         ]}
+        heightRatio={9 / 16}
       />
       <YoutubeBlock
         videoId="ZFmLSYxPrhY"
@@ -42,6 +45,7 @@ const OurWork = () => {
         ]}
         isGrey
         isReverse
+        heightRatio={9 / 16}
       />
     </div>
   );

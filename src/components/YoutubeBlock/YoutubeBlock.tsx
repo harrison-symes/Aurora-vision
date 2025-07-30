@@ -8,6 +8,7 @@ interface IProps {
   paragraphs: string[];
   isReverse?: boolean;
   isGrey?: boolean;
+  heightRatio?: number;
 }
 
 const YoutubeBlock = (props: IProps) => {
@@ -24,6 +25,7 @@ const YoutubeBlock = (props: IProps) => {
           <YoutubePlayer
             containerRef={ref}
             videoId={props.videoId ?? "Q-a7B8SJCt0"}
+            heightRatio={props.heightRatio}
           />
         </div>
         <div className="youtube-block__text-container">

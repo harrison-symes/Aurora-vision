@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import useWindowWidth from "../hooks/useWindowWidth";
 import YouTube from "react-youtube";
 
 interface IYoutubePlayerProps {
   containerRef: React.RefObject<HTMLDivElement>;
   videoId: string;
+  heightRatio?: number;
 }
 
 const YoutubePlayer = (props: IYoutubePlayerProps) => {
   const windowWidth = useWindowWidth();
   const [containerWidth, setContainerWidth] = React.useState(0);
+  const playerRef = useRef<YouTube>(null);
 
   React.useEffect(() => {
     if (props.containerRef.current !== null) {
@@ -17,10 +19,22 @@ const YoutubePlayer = (props: IYoutubePlayerProps) => {
     }
   }, [props.containerRef.current, windowWidth]);
 
+  useEffect(() => {
+    // playerRef.current?.forceUpdate();
+    // playerRef.current?.resetPlayer();
+  }, [containerWidth]);
+
+  useEffect(() => {
+    return () => {
+      playerRef.current?.destroyPlayer();
+    };
+  }, []);
+
   const isMobile = windowWidth <= 768;
 
-  const width = isMobile ? windowWidth - 48 : containerWidth;
-  const height = (width * 3) / 4;
+  const width = isMobile ? windowWidth : containerWidth;
+  const height = width * (props.heightRatio ?? 3 / 4);
+  console.log(height, props.heightRatio);
 
   if (props.containerRef.current === null || containerWidth === 0) {
     return null;
@@ -28,6 +42,8 @@ const YoutubePlayer = (props: IYoutubePlayerProps) => {
 
   return (
     <YouTube
+      className="react-player"
+      ref={playerRef}
       videoId={props.videoId}
       opts={{
         width,

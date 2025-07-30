@@ -1,59 +1,6 @@
 @import "./colours.scss";
 
 .footer {
-    &__container {
-        margin-top: 4rem;
-        background-color: $black;
-        color: white;
-    }
-    &__inner {
-        padding: 1rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1600px;
-        margin: auto;
-        min-height: 80px;
-        height: 100%;
-        @media only screen and (max-width: 768px) {
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-    &__socials {
-        margin-right: auto;
-        display: flex;
-        align-items: center;
-
-        @media only screen and (max-width: 768px) {
-            justify-content: center;
-            margin: auto;
-            margin-bottom: .5rem;
-        }
-
-        a {
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-    }
-    &__github {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-
-        @media only screen and (max-width: 768px) {
-            flex-direction: column;
-            justify-content: center;
-            margin: auto;
-            margin-bottom: .5rem;
-        }
-        
-        a {
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-    }
+    position: relative;
+    z-index: 999;
 }
