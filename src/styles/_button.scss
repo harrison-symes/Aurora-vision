@@ -1,70 +1,45 @@
 @import "./colours";
 
 .button {
-    text-decoration: none;
-    border: none;
-    display: inline-block;
-    font-size: 1rem;
-    line-height: 1.6;
-    padding: .5rem 1rem;
+    margin-top: 1.5rem;
+    background-color: $white;
     cursor: pointer;
+    font-size: 1.25rem;
+    width: 100%;
+    max-width: 250px;
+    padding: .25rem .5rem;
+
     border-radius: .25rem;
-    transition: transform 100ms ease-in;
-    text-align: center;
-    width: auto;
+    box-shadow: none;
+
+    border: 1px solid $jet;
+
+    align-self: flex-start;
+    text-decoration: none;
+    color: $black;
 
     @media only screen and (max-width: 768px) {
         width: 100%;
+        max-width: none;
+        margin-top: 2.5rem;
     }
 
     &:hover {
-        transform: scale(1.01);
+        background-color: darken($white, 5%);
+    }
+
+    &:active,
+    &:focus,
+    &:target {
+        border-color: $pink;
     }
 
     &--large {
-        font-size: 1.5rem;
+        padding: .5rem 1rem;
+        margin-top: 2rem;
     }
 
-    &--purple {
-        background-color: $purple;
-        color: $white;
-        &:hover {
-            background-color: lighten($purple, 3%);
-        }
-    }
-    &--pink {
-        background-color: $pink;
-        color: $white;
-        &:hover {
-            background-color: lighten($pink, 3%);
-        }
-    }
-    &--green {
-        background-color: $green;
-        color: $white;
-        &:hover {
-            background-color: lighten($green, 3%);
-        }
-    }
-    &--blue {
-        background-color: $blue;
-        color: $jet;
-        &:hover {
-            background-color: darken($blue, 3%);
-        }
-    }
-    &--white {
-        background-color: $white;
-        color: $jet;
-        &:hover {
-            background-color: darken($white, 3%);
-        }
-    }
-    &--black {
-        background-color: $jet;
-        color: $white;
-        &:hover {
-            background-color: lighten($jet, 3%);
-        }
+    &__loader {
+        height: 1.25rem;
     }
 }

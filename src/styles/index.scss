@@ -4,7 +4,6 @@
 @import "./loader";
 @import "./navbar";
 @import "./latest-project";
-@import "./home-hero";
 @import "./button";
 @import "./footer";
 @import "./hero";
@@ -13,6 +12,7 @@
 @import "./immersive-block";
 @import "./youtube-block";
 @import "./meet-our-crew";
+@import "./contact-us";
 @import "./vars";
 
 
@@ -32,6 +32,7 @@ html {
 body {
     font-size: 16px;
     background-color: $white;
+    overflow-x: hidden;
 }
 
 .page-content {
@@ -42,10 +43,24 @@ body {
     }
 }
 
-h1, p, div {
+h1, p, div, input, button, textarea, select {
     font-family: "League Gothic", sans-serif;
+}
+
+p {
+    margin: 0;
+    font-family: 'League Gothic', serif;
 }
 
 .bg-grey {
     background-color: $grey;
+}
+
+.jeremy-selected {
+    filter: hue-rotate(240deg) drop-shadow(5px 5px gold);
+    overflow-x: hidden;
+}
+
+.jeremy-mode {
+    cursor: url("../../public/images/about-us/jerry-me.png"), auto;
 }

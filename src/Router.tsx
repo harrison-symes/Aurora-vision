@@ -7,8 +7,8 @@ import { ROUTES_INTERNAL } from "./constants/router.constants";
 import { history } from "./configureStore";
 import JerryMe from "./pages/JerryMe";
 
-const Home = React.lazy(() => import("./pages/Home"));
 const Loading = React.lazy(() => import("./components/Loading"));
+const Home = React.lazy(() => import("./pages/Home"));
 const AboutUs = React.lazy(() => import("./pages/AboutUs"));
 const OurWork = React.lazy(() => import("./pages/OurWork"));
 const Contact = React.lazy(() => import("./pages/Contact"));

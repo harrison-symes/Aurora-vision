@@ -12,6 +12,11 @@
         max-height: 200px;
     }
 
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        height: auto;
+        max-height: 300px;
+    }
+
     &__container {
         width: 100%;
         max-width: 1280px;
@@ -42,6 +47,10 @@
         @media only screen and (max-width: 768px) {
             font-size: $mobile-title;
         }
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            font-size: $tablet-title;
+        }
     }
 
     &__image {
@@ -54,9 +63,16 @@
         grid-row: 1;
 
         @media only screen and (max-width: 768px) {
-            height: 110%;
             max-height: 220px;
-            transform: translateY(-10%);
+            height: calc(100% + 20px);
+            transform: translateY(-20px);
+            overflow: hidden;
+        }
+        
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            height: calc(100% + 20px);
+            max-height: 320px;
+            transform: translateY(-20px);
             overflow: hidden;
         }
     }

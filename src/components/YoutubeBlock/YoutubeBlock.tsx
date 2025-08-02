@@ -1,14 +1,20 @@
 import * as react from "react";
 import cn from "classnames";
 import YoutubePlayer from "../YoutubePlayer";
+import { Link } from "react-router-dom";
 
 interface IProps {
   videoId?: string;
   titleImageUrl: string;
   paragraphs: string[];
+  credits?: Array<{
+    title: string;
+    fullName: string;
+  }>;
   isReverse?: boolean;
   isGrey?: boolean;
   heightRatio?: number;
+  buttonLink?: string;
 }
 
 const YoutubeBlock = (props: IProps) => {
@@ -31,10 +37,26 @@ const YoutubeBlock = (props: IProps) => {
         <img src={props.titleImageUrl} className="youtube-block__title-image" />
         <div className="youtube-block__text-container">
           {props.paragraphs.map((p) => (
-            <div key={p.slice(10)} className="youtube-block__paragraph">
+            <p key={p.slice(10)} className="youtube-block__paragraph">
               {p}
-            </div>
+            </p>
           ))}
+          {props.credits?.length && <hr className="youtube-block__hr" />}
+          <div className="youtube-block__credits">
+            {props.credits?.map(({ fullName, title }) => (
+              <p className="youtube-block__credit" key={title}>
+                {title} - {fullName}
+              </p>
+            ))}
+          </div>
+          {props.buttonLink && (
+            <Link
+              to={props.buttonLink}
+              className="button button--large youtube-block__button"
+            >
+              LEARN MORE
+            </Link>
+          )}
         </div>
       </div>
     </div>

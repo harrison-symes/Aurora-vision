@@ -3,22 +3,24 @@ import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithIm
 import ImmersiveBlock from "../components/ImmsersiveBlock/ImmersiveBlock";
 import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
 import MeetOurCrew from "../components/MeetOurCrew/MeetOurCrew";
-import Footer from "../components/Footer";
+
+import temporalLogo from "../svg/temporal-logo.svg";
 
 const Temporal = () => {
   return (
-    <div className="page__container">
+    <div className="page-container">
       <YoutubeBlock
-        titleImageUrl="/images/temporal_logo.png"
+        titleImageUrl={temporalLogo}
         paragraphs={[
           `"TEMPORAL" is a sci-fi short film that follows a spaceman struggling to survive on a distant alien world after an ion storm brings down his survey ship.`,
-          "Determined to find his missing co-pilot, he pushes forward — but soon discovers that there’s something deeply unsettling about this planet.",
+          `Determined to find his missing co-pilot, he pushes forward - but soon discovers that there’s something deeply unsettling about this planet.`,
         ]}
         videoId="mqDEVoZMv04"
         heightRatio={9 / 16}
       />
       <TextBlockWithImage
-        imageUrl="/images/directors.png"
+        slowImageUrl="/images/temporal/directors-min.png"
+        imageUrl="/images/temporal/directors.png"
         bgColour="grey"
         paragraphs={[
           "JAMES TWEDDLE and WESTON SYMES are longtime creative collaborators with a shared obsession for strange worlds, speculative futures, and stories that bend reality. TEMPORAL marks their latest entry into the realm of genre filmmaking; blending cassette futurism sci-fi, cosmic horror, and isolation into a tightly wound short film.",
@@ -27,10 +29,14 @@ const Temporal = () => {
         ]}
         title="MEET THE DIRECTORS"
         imageClass="directors-image"
+        imageAnimation="fadeInRight"
       />
       <ImmersiveBlock
         bgClass="immersive-block--boots"
-        imageUrl="/images/boots_cutout.png"
+        imageUrl="/images/temporal/boots-cutout.png"
+        imageUrlSlow="/images/temporal/boots-cutout-min.png"
+        bgImageUrl="/images/temporal/boots-background.png"
+        bgImageUrlSlow="/images/temporal/boots-background-min.png"
         link=""
         title="BOOTS"
         paragraphs={[
@@ -39,17 +45,21 @@ const Temporal = () => {
       />
       <ImmersiveBlock
         bgClass="immersive-block--emmons"
-        imageUrl="/images/emmons_cutout.png"
+        imageUrl="/images/temporal/emmons-cutout.png"
+        imageUrlSlow="/images/temporal/emmons-cutout-min.png"
+        bgImageUrl="/images/temporal/emmons-background.png"
+        bgImageUrlSlow="/images/temporal/emmons-background-min.png"
         link=""
         title="EMMONS"
         paragraphs={[
-          `Played by ALAINA PITT, EMMONS is the tough, seasoned backbone of the Aion Expedition. A lifelong spacer with a no-nonsense edge, they live for discovery. In Temporal, their disappearance ignites the story and sends BOOTS on a journey into the unknown.`,
+          `Played by ALAINA PITT, EMMONS is the tough, seasoned backbone of the Aion Scientific Expedition. A lifelong spacer with a no-nonsense edge, they live for discovery. In Temporal, their disappearance ignites the story and sends BOOTS on a journey into the unknown.`,
         ]}
         isReverse
       />
       <MeetOurCrew />
       <TextBlockWithImage
-        imageUrl="/images/script.png"
+        imageUrl="/images/temporal/script.png"
+        slowImageUrl="/images/temporal/script-min.png"
         bgColour="grey"
         paragraphs={[
           "TEMPORAL was born from a desire to tell a grounded, cosmic sci-fi story. It grew out of a music video collaboration between Weston and James, which featured a simple, pulpy narrative about a lone astronaut exploring an alien world.",
@@ -59,6 +69,7 @@ const Temporal = () => {
         ]}
         title="THE STORY"
         imageClass="space-ship"
+        imageAnimation="fadeIn"
       />
     </div>
   );

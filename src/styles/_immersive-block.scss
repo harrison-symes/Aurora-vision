@@ -10,6 +10,16 @@
     }
 }
 
+@keyframes zoomInMore {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
 .immersive-block {
     position: relative;
     width: 100%;
@@ -24,18 +34,26 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-image: url("../../public/images/boots_background.png");            /* Replace with your image */
+        background-color: #B1BBD5;
+        background-image: url("../../public/images/temporal/boots-background.png");            /* Replace with your image */
         background-size: cover;
         background-position: center;
         animation: zoomIn 10s alternate infinite;
         transform: scale(1);
         z-index: 0;
-    }
 
-    
+        @media only screen and (max-width: 768px) {
+            background-position: top;
+            animation: zoomInMore 10s alternate infinite;
+        }
+    }
 
     @media only screen and (max-width: 768px) {
         height: auto;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        height: 50vh;
     }
 
     // &--boots {
@@ -43,7 +61,8 @@
     // }
     &--emmons {
         &::before {
-            background-image: url("../../public/images/emmons_background.png");
+            background-color: #788ed8;
+            background-image: url("../../public/images/temporal/emmons-background.png");
         }
 
         @keyframes hologram {
@@ -85,6 +104,10 @@
             display: flex;
             flex-direction: column-reverse;
         }
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            grid-template-columns: auto 1fr;
+        }
     }
     
     &__image {
@@ -101,6 +124,14 @@
         @media only screen and (max-width: 768px) {
             margin-top: .5rem;
             height: auto;
+            width: 80%;
+            max-height: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            height: 40vh;
         }
     }
 

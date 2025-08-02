@@ -6,6 +6,8 @@ import Hamburger from "hamburger-react";
 import { useSelector } from "react-redux";
 import { getPath } from "../../selectors/router.selectors";
 
+import logo from "../../svg/av-logo.svg";
+
 const NavBar = () => {
   const [isActive, setIsActive] = React.useState<boolean>(false);
   const path = useSelector(getPath);
@@ -21,7 +23,7 @@ const NavBar = () => {
         <div className="navbar__inner">
           <div className="navbar__top">
             <Link to={"/"}>
-              <img src="/images/logo.png" className="navbar__logo" />
+              <img src={logo} className="navbar__logo" />
             </Link>
           </div>
           <div className="navbar__bottom">
@@ -42,10 +44,10 @@ const NavBar = () => {
                   onToggle={() => setIsActive((state) => !state)}
                 />
               </div>
-              <NavItem href="/" text="Home" />
-              <NavItem href="/about-us" text="About us" />
-              <NavItem href="/our-work" text="Our work" />
-              <NavItem href="/contact" text="Get in touch" />
+              <NavItem href="/" text="HOME" />
+              <NavItem href="/about-us" text="ABOUT US" />
+              <NavItem href="/our-work" text="OUR WORK" />
+              <NavItem href="/contact" text="CONTACT US" />
             </div>
           </div>
         </div>

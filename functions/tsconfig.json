@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                // Modern JS output
+    "module": "commonjs",             // Required for Node.js
+    "lib": ["ES2020"],
+    "outDir": "lib",                  // Compiled files go here
+    "rootDir": "src",                 // Your TypeScript source code
+    "esModuleInterop": true,           // Allows default imports from CommonJS modules
+    "moduleResolution": "node",
+    "strict": true,                    // Enables strict type checks
+    "sourceMap": true,                 // Optional: enables .map files for debugging
+    "resolveJsonModule": true,          // Allows importing .json files
+  },
+  "include": ["src"],                  // Compile everything in src/
+  "types": ["node"]
+}
