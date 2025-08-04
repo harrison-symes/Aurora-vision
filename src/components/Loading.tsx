@@ -1,15 +1,17 @@
-import * as React from "react"
-
-import Loader from "react-loaders"
+import * as React from "react";
+import { DNA } from "react-loader-spinner";
 
 const Loading = () => {
-    return <div className="loader__container">
-        <Loader 
-            active
-            type="line-scale-party"
-            innerClassName="loader__spinner"
-        />
+  return (
+    <div className="loader__container">
+      <DNA
+        visible={true}
+        ariaLabel="dna-loading"
+        wrapperStyle={{}}
+        wrapperClass="dna-wrapper loader__spinner"
+      />
     </div>
-}
+  );
+};
 
-export default Loading
+export default Loading;

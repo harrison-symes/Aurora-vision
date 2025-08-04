@@ -7,7 +7,7 @@ interface IProps {
   imageUrl: string;
   slowImageUrl?: string;
   title?: string;
-  paragraphs: string[];
+  paragraphs: Array<string | React.ReactNode>;
   imageClass?: string;
   bgColour?: "grey";
   imageAnimation?: string;
@@ -31,9 +31,7 @@ const TextBlockWithImage = (props: IProps) => {
             <div className="content-block__title">{props.title}</div>
           )}
           {props.paragraphs.map((p) => (
-            <p key={p.slice(10)} className="content-block__paragraph">
-              {p}
-            </p>
+            <p className="content-block__paragraph">{p}</p>
           ))}
         </div>
         <ScrollAnimation

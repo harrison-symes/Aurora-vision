@@ -1,6 +1,9 @@
 import * as React from "react";
 import { DNA } from "react-loader-spinner";
 import Loader from "react-loaders";
+import { useDispatch, useSelector } from "react-redux";
+import { jeremyCodeSubmitted } from "../../actions/jeremy.actions";
+import { getIsJeremyCodeSubmitted } from "../../selectors/jeremy.selectors";
 
 const subjects = [
   "CREATIVE DIRECTION & DEVELOPMENT",
@@ -17,6 +20,8 @@ const ContactForm = () => {
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [subject, setSubject] = React.useState<string | undefined>("default");
+  const dispatch = useDispatch();
+  const isCodeSubmitted = useSelector(getIsJeremyCodeSubmitted);
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
@@ -42,6 +47,9 @@ const ContactForm = () => {
         return res.text();
       })
       .then((msg) => {
+        if (msg === "JEREMY MODE") {
+          dispatch(jeremyCodeSubmitted());
+        }
         setIsLoading(false);
         setHasSent(true);
       })
@@ -50,6 +58,17 @@ const ContactForm = () => {
         console.error(err);
       });
   };
+
+  if (hasSent && isCodeSubmitted) {
+    return (
+      <div className="contact-form__confirmation">
+        <div className="contact-us-grid__title">JEREMY MODE!</div>
+        <p className="contact-us-grid__paragraph">
+          Thanks for going absolutely Jeremy mode.
+        </p>
+      </div>
+    );
+  }
 
   if (hasSent) {
     return (

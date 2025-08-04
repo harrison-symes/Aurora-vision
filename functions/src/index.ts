@@ -65,13 +65,42 @@ exports.sendContactEmail = onRequest(
       subject: `Message received!`,
     };
 
-    try {
-      await transporter.sendMail(mailOptions);
-      await transporter.sendMail(confirmationOptions);
-      return res.status(200).send("Message sent!");
-    } catch (error) {
-      console.error("Error sending email:", error);
-      return res.status(500).send("Failed to send message.");
+    console.log("message: ", message);
+    if (message.includes("J3R3MY M0D3")) {
+      console.log("matched code: ", message);
+      return res.status(200).send("JEREMY MODE");
+    }
+
+    if (
+      name.toLowerCase() === "jeremy brow" ||
+      name.toLowerCase() === "jeremy mode"
+    ) {
+      try {
+        await transporter.sendMail({
+          to: email,
+          name: "Jeremy Brow",
+          from: process.env.GMAIL_EMAIL,
+          text: `
+            Hey Jeremy!
+            
+            If you want to go absolutely Jeremy Mode on the contact page, please submit the contact form again, but with the secret code in the message box.
+            The secret code is: J3R3MY M0D3          
+            `,
+        });
+        return res.status(200).send("Jeremy code sent!");
+      } catch (error) {
+        console.error("Error sending email:", error);
+        return res.status(500).send("Failed to send message.");
+      }
+    } else {
+      try {
+        await transporter.sendMail(mailOptions);
+        await transporter.sendMail(confirmationOptions);
+        return res.status(200).send("Message sent!");
+      } catch (error) {
+        console.error("Error sending email:", error);
+        return res.status(500).send("Failed to send message.");
+      }
     }
   }
 );

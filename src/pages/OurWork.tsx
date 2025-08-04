@@ -3,11 +3,74 @@ import OurWorkHero from "../components/Heros/OurWorkHero";
 import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
 
 import temporalLogo from "../svg/temporal-logo.svg";
+import { useSelector } from "react-redux";
+import { getAreAllSecretsFound } from "../selectors/jeremy.selectors";
 
 const OurWork = () => {
+  const areAllSecretsFound = useSelector(getAreAllSecretsFound);
   return (
     <div>
       <OurWorkHero />
+      {areAllSecretsFound && (
+        <>
+          <YoutubeBlock
+            titleImageUrl="/images/our-work/quest.png"
+            paragraphs={[
+              "A couple of boys decide are on a ride, but one that will change their lives forever. After following a trail of clues they discover an old fort and get separated in the process of exploring it. But the two discover that an adventure isn't all fun and games.",
+            ]}
+            credits={[
+              {
+                fullName: "JEREMY BROW",
+                title: "The star of the show",
+              },
+              {
+                fullName: "JAMES TWEDDLE",
+                title: "Later learned he is better behind the camera",
+              },
+            ]}
+            videoId="lExjHGeXTiE"
+            heightRatio={3 / 4}
+            buttonLink="https://www.youtube.com/@ExplosiveBananaPRO"
+          />
+          <YoutubeBlock
+            titleImageUrl="/images/our-work/backwards.png"
+            paragraphs={[
+              "Just clips of my friend and i, doing epic stuff in reverse! lots of lolz! thanks to the gummi bear people for the music!",
+            ]}
+            credits={[
+              {
+                fullName: "JEREMY BROW",
+                title: "Producer",
+              },
+              {
+                fullName: "JAMES TWEDDLE",
+                title: "Producer",
+              },
+              {
+                fullName: "A plastic bag",
+                title: "Helper",
+              },
+              {
+                fullName: "A wharf",
+                title: "Helper",
+              },
+              {
+                fullName: "A banana",
+                title: "Helper",
+              },
+              {
+                fullName: "A Magazine",
+                title: "Helper",
+              },
+            ]}
+            videoId="YSE-Nfg8sS8"
+            heightRatio={3 / 4}
+            isGrey
+            isReverse
+            buttonLink="https://www.youtube.com/@ExplosiveBananaPRO"
+          />
+        </>
+      )}
       <YoutubeBlock
         titleImageUrl={temporalLogo}
         paragraphs={[

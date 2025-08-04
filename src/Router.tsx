@@ -8,10 +8,43 @@ import { history } from "./configureStore";
 import JerryMe from "./pages/JerryMe";
 
 const Loading = React.lazy(() => import("./components/Loading"));
-const Home = React.lazy(() => import("./pages/Home"));
-const AboutUs = React.lazy(() => import("./pages/AboutUs"));
-const OurWork = React.lazy(() => import("./pages/OurWork"));
-const Contact = React.lazy(() => import("./pages/Contact"));
+const Home = React.lazy(
+  () => import(/* webpackChunkName: "home" */ "./pages/Home")
+);
+const AboutUs = React.lazy(
+  () => import(/* webpackChunkName: "about-us" */ "./pages/AboutUs")
+);
+const OurWork = React.lazy(
+  () => import(/* webpackChunkName: "our-work" */ "./pages/OurWork")
+);
+const Contact = React.lazy(
+  () => import(/* webpackChunkName: "contact" */ "./pages/Contact")
+);
+
+const DelayedSuspense = ({
+  children,
+  fallback,
+  delay = 1000, // minimum delay in ms
+}: {
+  children: React.ReactNode;
+  fallback: React.ReactNode;
+  delay?: number;
+}) => {
+  const [showFallback, setShowFallback] = React.useState(true);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowFallback(false);
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  return (
+    <React.Suspense fallback={fallback}>
+      {showFallback ? fallback : children}
+    </React.Suspense>
+  );
+};
 
 const Router = () => {
   return (
@@ -21,9 +54,9 @@ const Router = () => {
           <Route
             index
             element={
-              <React.Suspense fallback={<Loading />}>
+              <DelayedSuspense fallback={<Loading />}>
                 <Home />
-              </React.Suspense>
+              </DelayedSuspense>
             }
           />
         </Route>
@@ -31,9 +64,9 @@ const Router = () => {
           <Route
             index
             element={
-              <React.Suspense fallback={<Loading />}>
+              <DelayedSuspense fallback={<Loading />}>
                 <AboutUs />
-              </React.Suspense>
+              </DelayedSuspense>
             }
           />
         </Route>
@@ -41,9 +74,9 @@ const Router = () => {
           <Route
             index
             element={
-              <React.Suspense fallback={<Loading />}>
+              <DelayedSuspense fallback={<Loading />}>
                 <OurWork />
-              </React.Suspense>
+              </DelayedSuspense>
             }
           />
         </Route>
@@ -51,9 +84,9 @@ const Router = () => {
           <Route
             index
             element={
-              <React.Suspense fallback={<Loading />}>
+              <DelayedSuspense fallback={<Loading />}>
                 <Contact />
-              </React.Suspense>
+              </DelayedSuspense>
             }
           />
         </Route>
@@ -61,9 +94,9 @@ const Router = () => {
           <Route
             index
             element={
-              <React.Suspense fallback={<Loading />}>
+              <DelayedSuspense fallback={<Loading />}>
                 <JerryMe />
-              </React.Suspense>
+              </DelayedSuspense>
             }
           />
         </Route>

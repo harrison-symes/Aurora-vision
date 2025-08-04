@@ -1,10 +1,18 @@
 import * as React from "react";
 import AboutUsHero from "../components/Heros/AboutUsHero";
 import MemberFrame from "../components/MemberFrame/MemberFrame";
+import { useDispatch } from "react-redux";
+import { allJerrysFound } from "../actions/jeremy.actions";
 
-const secret = [2, 6, 7, 4, 1];
+let secret = [1, 2, 3, 4, 5, 6];
+
+for (let i = secret.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [secret[i], secret[j]] = [secret[j], secret[i]];
+}
 
 const JerryMe = () => {
+  const dispatch = useDispatch();
   const [jeremy, setJeremy] = React.useState<number[]>([]);
 
   const onJeremyClick = (num: number) => {
@@ -20,11 +28,7 @@ const JerryMe = () => {
   };
 
   const missionComplete = () => {
-    const body = document.getElementsByTagName("body");
-
-    if (body.length > 0) {
-      body[0].classList.add("jeremy-mode");
-    }
+    dispatch(allJerrysFound());
   };
 
   React.useEffect(() => {
@@ -35,31 +39,33 @@ const JerryMe = () => {
     if (!mismatch) {
       missionComplete();
     }
-  });
+  }, [jeremy]);
 
   return (
     <div>
       <AboutUsHero />
-      {Array(8)
+      {Array(6)
         .fill(0)
         .map((_, num) => (
           <>
             <MemberFrame
-              key={`jeremy-${num}`}
+              key={`jeremy-${num + 1}`}
               imageUrl={
-                jeremy.find((n) => n === num)
+                jeremy.find((n) => n === num + 1)
                   ? "/images/about-us/jeremy-mode.png"
                   : "/images/about-us/jeremy-brow.png"
               }
-              variant={num % 2 ? "grey" : "white"}
+              variant={(num + 1) % 2 ? "white" : "grey"}
               name={
-                jeremy.find((n) => n === num)
-                  ? `JERRY ${secret.findIndex((n) => n === num) + 1}`
+                jeremy.find((n) => n === num + 1)
+                  ? `JERRY ${secret.findIndex((n) => n === num + 1) + 1}`
                   : "JERRY ME"
               }
-              onImageClick={() => onJeremyClick(num)}
+              onImageClick={() => onJeremyClick(num + 1)}
               imageClass={
-                jeremy.find((n) => n === num) ? "jeremy-selected" : undefined
+                jeremy.find((n) => n === num + 1)
+                  ? "jeremy-selected"
+                  : undefined
               }
             />
           </>

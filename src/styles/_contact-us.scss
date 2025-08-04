@@ -78,14 +78,14 @@
 
     &__paragraph {
         margin-top: .5rem;
-        font-size: $desktop-content-text;
+        font-size: $desktop-paragraph;
 
         @media only screen and (max-width: 768px) {
-            font-size: $mobile-content-text;
+            font-size: $mobile-paragraph;
         }
 
         @media only screen and (min-width: 768px) and (max-width: 1024px) {
-            font-size: $mobile-content-text;
+            font-size: $mobile-paragraph;
         }
     }
 
@@ -109,14 +109,14 @@
             }
         }
         &__subtitle {
-            font-size: $desktop-content-text;
+            font-size: $desktop-paragraph;
 
             @media only screen and (max-width: 768px) {
-                font-size: $mobile-content-text;
+                font-size: $mobile-paragraph;
             }
 
             @media only screen and (min-width: 768px) and (max-width: 1024px) {
-                font-size: $mobile-content-text;
+                font-size: $mobile-paragraph;
             }
         }
     }

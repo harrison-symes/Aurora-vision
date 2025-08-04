@@ -2,6 +2,8 @@ import * as React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer";
+import { useSelector } from "react-redux";
+import { TStoreState } from "./reducers";
 
 const Layout = () => {
   const { pathname } = useLocation();

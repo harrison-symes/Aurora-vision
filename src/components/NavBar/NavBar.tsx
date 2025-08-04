@@ -3,7 +3,7 @@ import cn from "classnames";
 import NavItem from "./NavItem";
 import { Link } from "react-router-dom";
 import Hamburger from "hamburger-react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getPath } from "../../selectors/router.selectors";
 
 import logo from "../../svg/av-logo.svg";

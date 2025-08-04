@@ -3,4 +3,5 @@ export enum ROUTES_INTERNAL {
   OUR_WORK = "/our-work",
   CONTACT = "/contact",
   JERRYME = "/jerry-me",
+  FONTS = "/fonts",
 }
