@@ -9,7 +9,8 @@ interface IProps {
   title?: string;
   paragraphs: Array<string | React.ReactNode>;
   imageClass?: string;
-  bgColour?: "grey";
+  bgColour?: "grey" | "white";
+  isReverse?: boolean;
   imageAnimation?: string;
 }
 
@@ -19,13 +20,26 @@ const TextBlockWithImage = (props: IProps) => {
     props.imageUrl
   );
 
+  const imageElement = (
+    <img
+      src={imageUrl}
+      className={cn("content-block__image", props.imageClass)}
+      alt="alt"
+    />
+  );
+
   return (
     <div
       className={cn("content-block", {
         "content-block--grey": props.bgColour === "grey",
+        "content-block--verse": props.isReverse,
       })}
     >
-      <div className="content-block__container">
+      <div
+        className={cn("content-block__container", {
+          "content-block__container--reverse": props.isReverse,
+        })}
+      >
         <div className="content-block__text-container">
           {props.title && (
             <div className="content-block__title">{props.title}</div>
@@ -34,16 +48,16 @@ const TextBlockWithImage = (props: IProps) => {
             <p className="content-block__paragraph">{p}</p>
           ))}
         </div>
-        <ScrollAnimation
-          animateIn={props.imageAnimation}
-          initiallyVisible={!props.imageAnimation}
-        >
-          <img
-            src={imageUrl}
-            className={cn("content-block__image", props.imageClass)}
-            alt="alt"
-          />
-        </ScrollAnimation>
+        {props.imageAnimation ? (
+          <ScrollAnimation
+            animateIn={props.imageAnimation}
+            initiallyVisible={!props.imageAnimation}
+          >
+            {imageElement}
+          </ScrollAnimation>
+        ) : (
+          imageElement
+        )}
       </div>
     </div>
   );

@@ -3,8 +3,10 @@ import OurWorkHero from "../components/Heros/OurWorkHero";
 import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
 
 import temporalLogo from "../svg/temporal-logo.svg";
+import thingsLogo from "../svg/things-logo.svg";
 import { useSelector } from "react-redux";
 import { getAreAllSecretsFound } from "../selectors/jeremy.selectors";
+import { ROUTES_INTERNAL } from "../constants/router.constants";
 
 const OurWork = () => {
   const areAllSecretsFound = useSelector(getAreAllSecretsFound);
@@ -31,6 +33,47 @@ const OurWork = () => {
             videoId="lExjHGeXTiE"
             heightRatio={3 / 4}
             buttonLink="https://www.youtube.com/@ExplosiveBananaPRO"
+          />
+          <YoutubeBlock
+            titleImageUrl="/images/our-work/coma.jpeg"
+            paragraphs={[
+              "A story of a young man who is hit by a car. He then struggles to keep his sanity as he lies helpless, trapped inside his own mind.",
+            ]}
+            credits={[
+              {
+                fullName: "JEREMY BROW",
+                title: "Coma man",
+              },
+              {
+                fullName: "ISAAC HOOPER",
+                title: "doctor",
+              },
+              {
+                fullName: "JAMES TWEDDLE",
+                title: "worried friend 1",
+              },
+              {
+                fullName: "Maclean Standring",
+                title: "worried friend 2",
+              },
+              {
+                fullName: "JAMES TWEDDLE",
+                title: "CameraMan",
+              },
+              {
+                fullName: "EVERYONE",
+                title: "ideas",
+              },
+              {
+                fullName: "Adam and Cameron",
+                title: "Special Thanks",
+              },
+            ]}
+            videoId="TInRBBG1b_Q"
+            isGrey
+            isReverse
+            heightRatio={3 / 4}
+            buttonLink="https://www.youtube.com/@thecheezle123"
           />
           <YoutubeBlock
             titleImageUrl="/images/our-work/backwards.png"
@@ -65,8 +108,6 @@ const OurWork = () => {
             ]}
             videoId="YSE-Nfg8sS8"
             heightRatio={3 / 4}
-            isGrey
-            isReverse
             buttonLink="https://www.youtube.com/@ExplosiveBananaPRO"
           />
         </>
@@ -80,6 +121,19 @@ const OurWork = () => {
         videoId="mqDEVoZMv04"
         heightRatio={9 / 16}
         buttonLink="/"
+      />
+      <YoutubeBlock
+        titleImageUrl={thingsLogo}
+        paragraphs={[
+          `A travelling salesman returns to a dark realm - just to forget a lesson he learned long ago.`,
+          `Created in just 48 hours, THINGS blends surrealism, horror, and absurdity into a haunting reflection on greed and consequence.`,
+          `The film was selected as a Regional Finalist and received the Incredibly Strange Award at the 2025 48Hours Film Festival.`,
+        ]}
+        videoId="oWRv-F90oHs"
+        heightRatio={9 / 16}
+        isGrey
+        isReverse
+        buttonLink={ROUTES_INTERNAL.THINGS}
       />
       <YoutubeBlock
         videoId="ZFmLSYxPrhY"
@@ -101,8 +155,6 @@ const OurWork = () => {
             title: "CAMERA ASSIST",
           },
         ]}
-        isGrey
-        isReverse
         heightRatio={9 / 16}
       />
       <YoutubeBlock
@@ -125,13 +177,13 @@ const OurWork = () => {
             title: "CAMERA ASSIST",
           },
         ]}
+        isGrey
+        isReverse
         heightRatio={9 / 16}
       />
       <YoutubeBlock
         videoId="Q-a7B8SJCt0"
         titleImageUrl="/images/our-work/charm-the-wind-logo.png"
-        isGrey
-        isReverse
         paragraphs={[
           `Charm the Wind was created in collaboration with friend and artist Ekholaliah, bringing their haunting and intimate track to life through a shared visual vision. The video blends natural light, grungey textures, and complimentary visual effects to evoke a feeling of otherworldly drifting - between memory, emotion, and atmosphere.`,
         ]}

@@ -20,6 +20,9 @@ const OurWork = React.lazy(
 const Contact = React.lazy(
   () => import(/* webpackChunkName: "contact" */ "./pages/Contact")
 );
+const Things = React.lazy(
+  () => import(/* webpackChunkName: "contact" */ "./pages/Things")
+);
 
 const DelayedSuspense = ({
   children,
@@ -86,6 +89,16 @@ const Router = () => {
             element={
               <DelayedSuspense fallback={<Loading />}>
                 <Contact />
+              </DelayedSuspense>
+            }
+          />
+        </Route>
+        <Route path={ROUTES_INTERNAL.THINGS} element={<Layout />}>
+          <Route
+            index
+            element={
+              <DelayedSuspense fallback={<Loading />}>
+                <Things />
               </DelayedSuspense>
             }
           />

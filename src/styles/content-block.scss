@@ -42,6 +42,19 @@
             column-gap: 1.5rem;
             margin-top: 0;
         }    
+
+        &--reverse {
+            @media only screen and (min-width: 768px) and (max-width: 1024px) {
+                grid-template-columns: 2fr 3fr;
+                column-gap: 1.5rem;
+                margin-top: 0;
+            }
+            
+            .content-block__text-container {
+                order: 1;
+            }
+        }
+
     }
 
     &__text-container {
@@ -125,6 +138,29 @@
         @media only screen and (min-width: 768px) and (max-width: 1024px) {
             height: 300px;
             transform: none;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+    .james-and-jan-image {
+        height: auto;
+        width: 100%;
+        transform: translateY(0);
+        // height: 600px;
+        // transform: scale(1.25);
+
+        @media only screen and (max-width: 768px) {
+            height: auto;
+            width: 100%;
+            transform: none;
+            justify-self: center;
+            align-self: flex-end;
+        }
+        
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            width: 100%;
+            // transform: none;
             justify-self: center;
             align-self: center;
         }

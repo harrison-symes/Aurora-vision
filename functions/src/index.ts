@@ -13,6 +13,9 @@ const allowedOrigins = [
   "http://localhost:3000",
   "https://aurora-vision-a8244.web.app",
   "https://aurora-vision.co.nz",
+  "https://aurora-vision.co.nz",
+  "https://www.auroravision.nz",
+  "https://auroravision.nz",
 ];
 
 exports.sendContactEmail = onRequest(
@@ -56,12 +59,11 @@ exports.sendContactEmail = onRequest(
       to: email,
       name: "Auroravision",
       from: process.env.GMAIL_EMAIL,
-      text: `
-        Kia ora ${name}, \n
-        Thanks for getting in touch with us! We've received your message and are looking forward to reading over it properly. \n
-        Whether you're reaching out with a project idea, a collaboration opportunity, or just a curious though - we'll take a moment to consider it carefully and get back to you as soon as we can. \n
-        Ngā mihi nui, \n
-        ⋆⭒˚.⋆ AuroraVision ⋆⭒˚.⋆`,
+      text: `Kia ora ${name}, \n
+Thanks for getting in touch with us! We've received your message and are looking forward to reading over it properly. \n
+Whether you're reaching out with a project idea, a collaboration opportunity, or just a curious though - we'll take a moment to consider it carefully and get back to you as soon as we can. \n
+Ngā mihi nui, \n
+⋆⭒˚.⋆ AuroraVision ⋆⭒˚.⋆`,
       subject: `Message received!`,
     };
 
