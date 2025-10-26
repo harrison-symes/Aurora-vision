@@ -1,5 +1,7 @@
 @import "../../node_modules/normalize.css";
 @import "../../node_modules/tachyons-sass";
+@import '@splidejs/react-splide/css';
+
 @import "./colours.scss";
 @import "./loader";
 @import "./navbar";
@@ -14,6 +16,7 @@
 @import "./meet-our-crew";
 @import "./contact-us";
 @import "./vars";
+@import "./carousel";
 
 
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
@@ -73,5 +76,19 @@ p {
     &--clicked {
         color: $pink;
         font-size: 3rem;
+    }
+}
+
+.bts-header {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: $grey;
+    color: $white;
+    padding: .5rem 1rem;
+    text-align: center;
+    font-size: $desktop-title;
+
+    @media only screen and (max-width: 768px) {
+        font-size: $mobile-title;
     }
 }

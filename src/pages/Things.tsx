@@ -3,6 +3,8 @@ import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
 import { ROUTES_INTERNAL } from "../constants/router.constants";
 import thingsLogo from "../svg/things-logo.svg";
 import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithImage";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import ThingsCarousel from "../components/Carousel/ThingsCarousel";
 
 const Things = () => {
   return (
@@ -16,7 +18,6 @@ const Things = () => {
         ]}
         videoId="oWRv-F90oHs"
         heightRatio={9 / 16}
-        buttonLink={ROUTES_INTERNAL.THINGS}
       />
       <TextBlockWithImage
         slowImageUrl="/images/things/james-and-jan.png"
@@ -45,6 +46,7 @@ const Things = () => {
         imageClass="team-moves-car-image"
         // imageAnimation="fadeInRight"
       />
+      <ThingsCarousel />
     </div>
   );
 };
