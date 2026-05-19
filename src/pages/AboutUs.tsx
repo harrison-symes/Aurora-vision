@@ -41,6 +41,16 @@ const AboutUs = () => {
         name="CHARLIE JONES"
       />
       <MemberFrame
+        imageUrl="/images/about-us/esther.png"
+        variant="white"
+        name="ESTHER SUSHAMES"
+      />
+      <MemberFrame
+        imageUrl="/images/about-us/manny.png"
+        variant="grey"
+        name="MANNY CABALLERO"
+      />
+      <MemberFrame
         imageUrl="/images/about-us/jeremy-brow.png"
         variant="white"
         name="JEREMY BROW"
