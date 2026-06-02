@@ -35,7 +35,7 @@
         position: absolute;
         inset: 0;
         background-color: #B1BBD5;
-        background-image: url("../assets/images/temporal/boots-background.png");
+        background-image: url("../assets/images/temporal/boots-background.webp");
         background-size: cover;
         background-position: center;
         animation: zoomIn 10s alternate infinite;
@@ -59,7 +59,7 @@
     &--emmons {
         &::before {
             background-color: #788ed8;
-            background-image: url("../assets/images/temporal/emmons-background.png");
+            background-image: url("../assets/images/temporal/emmons-background.webp");
         }
 
         @keyframes hologram {

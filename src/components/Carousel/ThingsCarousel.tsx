@@ -1,17 +1,17 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-import bts1 from "../../assets/images/things/bts/bts-1.jpg";
-import bts2 from "../../assets/images/things/bts/bts-2.JPG";
-import bts3 from "../../assets/images/things/bts/bts-3.JPG";
-import bts4 from "../../assets/images/things/bts/bts-4.JPG";
-import bts5 from "../../assets/images/things/bts/bts-5.JPG";
-import bts6 from "../../assets/images/things/bts/bts-6.JPG";
-import bts7 from "../../assets/images/things/bts/bts-7.JPG";
-import bts8 from "../../assets/images/things/bts/bts-8.JPG";
-import bts9 from "../../assets/images/things/bts/bts-9.JPG";
-import bts10 from "../../assets/images/things/bts/bts-10.JPG";
-import bts11 from "../../assets/images/things/bts/bts-11.png";
-import bts12 from "../../assets/images/things/bts/bts-12.png";
+import bts1 from "../../assets/images/things/bts/bts-1.webp";
+import bts2 from "../../assets/images/things/bts/bts-2.webp";
+import bts3 from "../../assets/images/things/bts/bts-3.webp";
+import bts4 from "../../assets/images/things/bts/bts-4.webp";
+import bts5 from "../../assets/images/things/bts/bts-5.webp";
+import bts6 from "../../assets/images/things/bts/bts-6.webp";
+import bts7 from "../../assets/images/things/bts/bts-7.webp";
+import bts8 from "../../assets/images/things/bts/bts-8.webp";
+import bts9 from "../../assets/images/things/bts/bts-9.webp";
+import bts10 from "../../assets/images/things/bts/bts-10.webp";
+import bts11 from "../../assets/images/things/bts/bts-11.webp";
+import bts12 from "../../assets/images/things/bts/bts-12.webp";
 
 // import "./thing-carousel.scss";
 

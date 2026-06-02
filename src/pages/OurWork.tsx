@@ -7,12 +7,12 @@ import thingsLogo from "../svg/things-logo.svg";
 import { useSelector } from "react-redux";
 import { getAreAllSecretsFound } from "../selectors/jeremy.selectors";
 import { ROUTES_INTERNAL } from "../constants/router.constants";
-import questLogo from "../assets/images/our-work/quest.png";
-import comaLogo from "../assets/images/our-work/coma.jpeg";
-import backwardsLogo from "../assets/images/our-work/backwards.png";
-import outcastLogo from "../assets/images/our-work/outcast-logo.png";
-import lifeBeenStrangeLogo from "../assets/images/our-work/life-been-strange-logo.png";
-import charmTheWindLogo from "../assets/images/our-work/charm-the-wind-logo.png";
+import questLogo from "../assets/images/our-work/quest.webp";
+import comaLogo from "../assets/images/our-work/coma.webp";
+import backwardsLogo from "../assets/images/our-work/backwards.webp";
+import outcastLogo from "../assets/images/our-work/outcast-logo.webp";
+import lifeBeenStrangeLogo from "../assets/images/our-work/life-been-strange-logo.webp";
+import charmTheWindLogo from "../assets/images/our-work/charm-the-wind-logo.webp";
 
 const OurWork = () => {
   const areAllSecretsFound = useSelector(getAreAllSecretsFound);

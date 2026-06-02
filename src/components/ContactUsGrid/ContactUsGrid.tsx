@@ -2,8 +2,8 @@ import * as React from "react";
 import ContactForm from "../ContactForm/ContactForm";
 import { useSelector } from "react-redux";
 import { getIsJeremyCodeSubmitted } from "../../selectors/jeremy.selectors";
-import jeremyMode from "../../assets/images/about-us/jeremy-mode.png";
-import charliePhone from "../../assets/images/contact-us/charlie-phone.png";
+import jeremyMode from "../../assets/images/about-us/jeremy-mode.webp";
+import charliePhone from "../../assets/images/contact-us/charlie-phone.webp";
 
 const offerings: Array<[string, string]> = [
   [

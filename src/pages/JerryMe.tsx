@@ -3,8 +3,8 @@ import AboutUsHero from "../components/Heros/AboutUsHero";
 import MemberFrame from "../components/MemberFrame/MemberFrame";
 import { useDispatch } from "react-redux";
 import { allJerrysFound } from "../actions/jeremy.actions";
-import jeremyMode from "../assets/images/about-us/jeremy-mode.png";
-import jeremyBrow from "../assets/images/about-us/jeremy-brow.png";
+import jeremyMode from "../assets/images/about-us/jeremy-mode.webp";
+import jeremyBrow from "../assets/images/about-us/jeremy-brow.webp";
 
 let secret = [1, 2, 3, 4, 5, 6];
 

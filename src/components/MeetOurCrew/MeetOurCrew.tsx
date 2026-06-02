@@ -2,11 +2,11 @@ import * as React from "react";
 import OptimisedImage from "../OptimisedImage/OptimisedImage";
 import { useSelector } from "react-redux";
 import { getAreAllJeremyLettersClicked } from "../../selectors/jeremy.selectors";
-import jeremyCrew from "../../assets/images/temporal/jeremy-crew.png";
-import meetOurCrew1 from "../../assets/images/temporal/meet-our-crew-1.png";
-import meetOurCrew1Min from "../../assets/images/temporal/meet-our-crew-1-min.png";
-import meetOurCrew2 from "../../assets/images/temporal/meet-our-crew-2.png";
-import meetOurCrew2Min from "../../assets/images/temporal/meet-our-crew-2-min.png";
+import jeremyCrew from "../../assets/images/temporal/jeremy-crew.webp";
+import meetOurCrew1 from "../../assets/images/temporal/meet-our-crew-1.webp";
+import meetOurCrew1Min from "../../assets/images/temporal/meet-our-crew-1-min.webp";
+import meetOurCrew2 from "../../assets/images/temporal/meet-our-crew-2.webp";
+import meetOurCrew2Min from "../../assets/images/temporal/meet-our-crew-2-min.webp";
 
 const MeetOurCrew = () => {
   const areAllLettersClicked = useSelector(getAreAllJeremyLettersClicked);

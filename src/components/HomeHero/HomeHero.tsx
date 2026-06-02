@@ -1,5 +1,5 @@
 import * as React from "react";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.webp";
 
 const HomeHero = () => {
   return (

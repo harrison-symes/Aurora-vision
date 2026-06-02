@@ -1,7 +1,7 @@
 import * as React from "react";
 import useOptimizedBackground from "../../hooks/useOptimisedBackground";
-import bannerMin from "../../assets/images/our-work/banner-min.png";
-import banner from "../../assets/images/our-work/banner.png";
+import bannerMin from "../../assets/images/our-work/banner-min.webp";
+import banner from "../../assets/images/our-work/banner.webp";
 
 const OurWorkHero = () => {
   const bgImage = useOptimizedBackground(

@@ -4,8 +4,8 @@ import { ROUTES_INTERNAL } from "../constants/router.constants";
 import thingsLogo from "../svg/things-logo.svg";
 import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithImage";
 import ThingsCarousel from "../components/Carousel/ThingsCarousel";
-import jamesAndJan from "../assets/images/things/james-and-jan.png";
-import teamMovesCar from "../assets/images/things/team-moves-car.png";
+import jamesAndJan from "../assets/images/things/james-and-jan.webp";
+import teamMovesCar from "../assets/images/things/team-moves-car.webp";
 
 const Things = () => {
   return (

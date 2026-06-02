@@ -5,15 +5,15 @@ import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithIm
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 
-import spaceship from "../assets/images/spaceship.png";
-import jamesTweddle from "../assets/images/about-us/james-tweddle.png";
-import westonSymes from "../assets/images/about-us/weston-symes.png";
-import charlieJones from "../assets/images/about-us/charlie-jones.png";
-import esther from "../assets/images/about-us/esther.png";
-import manny from "../assets/images/about-us/manny.png";
-import jeremyBrow from "../assets/images/about-us/jeremy-brow.png";
-import aidanFalconer from "../assets/images/about-us/aidan-falconer.png";
-import harrisonSymes from "../assets/images/about-us/harrison-symes.png";
+import spaceship from "../assets/images/spaceship.webp";
+import jamesTweddle from "../assets/images/about-us/james-tweddle.webp";
+import westonSymes from "../assets/images/about-us/weston-symes.webp";
+import charlieJones from "../assets/images/about-us/charlie-jones.webp";
+import esther from "../assets/images/about-us/esther.webp";
+import manny from "../assets/images/about-us/manny.webp";
+import jeremyBrow from "../assets/images/about-us/jeremy-brow.webp";
+import aidanFalconer from "../assets/images/about-us/aidan-falconer.webp";
+import harrisonSymes from "../assets/images/about-us/harrison-symes.webp";
 
 const AboutUs = () => {
   const navigate = useNavigate();
