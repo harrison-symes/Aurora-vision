@@ -4,6 +4,8 @@ import useOptimizedBackground from "../../hooks/useOptimisedBackground";
 import ScrollAnimation from "react-animate-on-scroll";
 import { useSelector } from "react-redux";
 import { getAreAllJeremyLettersClicked } from "../../selectors/jeremy.selectors";
+import jeremyMode from "../../assets/images/about-us/jeremy-mode.png";
+
 
 interface IProps {
   bgClass: string;
@@ -30,7 +32,7 @@ const ImmersiveBlock = (props: IProps) => {
   );
 
   if (areAllLettersClicked) {
-    imageUrl = "/images/about-us/jeremy-mode.png";
+    imageUrl = jeremyMode
   }
 
   return (

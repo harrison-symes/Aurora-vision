@@ -2,6 +2,8 @@ import * as React from "react";
 import ContactForm from "../ContactForm/ContactForm";
 import { useSelector } from "react-redux";
 import { getIsJeremyCodeSubmitted } from "../../selectors/jeremy.selectors";
+import jeremyMode from "../../assets/images/about-us/jeremy-mode.png";
+import charliePhone from "../../assets/images/contact-us/charlie-phone.png";
 
 const offerings: Array<[string, string]> = [
   [
@@ -95,11 +97,7 @@ const ContactUsGrid = () => {
       <div className="contact-us-grid__row contact-us-grid__row--2">
         <div className="contact-us-grid__tile contact-us-grid__tile--grey">
           <img
-            src={
-              isCodeSubmitted
-                ? "/images/about-us/jeremy-mode.png"
-                : "/images/contact-us/charlie-phone.png"
-            }
+            src={isCodeSubmitted ? jeremyMode : charliePhone}
             className="contact-us-grid__image"
           />
         </div>

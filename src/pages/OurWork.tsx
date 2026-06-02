@@ -7,6 +7,12 @@ import thingsLogo from "../svg/things-logo.svg";
 import { useSelector } from "react-redux";
 import { getAreAllSecretsFound } from "../selectors/jeremy.selectors";
 import { ROUTES_INTERNAL } from "../constants/router.constants";
+import questLogo from "../assets/images/our-work/quest.png";
+import comaLogo from "../assets/images/our-work/coma.jpeg";
+import backwardsLogo from "../assets/images/our-work/backwards.png";
+import outcastLogo from "../assets/images/our-work/outcast-logo.png";
+import lifeBeenStrangeLogo from "../assets/images/our-work/life-been-strange-logo.png";
+import charmTheWindLogo from "../assets/images/our-work/charm-the-wind-logo.png";
 
 const OurWork = () => {
   const areAllSecretsFound = useSelector(getAreAllSecretsFound);
@@ -16,7 +22,7 @@ const OurWork = () => {
       {areAllSecretsFound && (
         <>
           <YoutubeBlock
-            titleImageUrl="/images/our-work/quest.png"
+            titleImageUrl={questLogo}
             paragraphs={[
               "A couple of boys decide are on a ride, but one that will change their lives forever. After following a trail of clues they discover an old fort and get separated in the process of exploring it. But the two discover that an adventure isn't all fun and games.",
             ]}
@@ -35,7 +41,7 @@ const OurWork = () => {
             buttonLink="https://www.youtube.com/@ExplosiveBananaPRO"
           />
           <YoutubeBlock
-            titleImageUrl="/images/our-work/coma.jpeg"
+            titleImageUrl={comaLogo}
             paragraphs={[
               "A story of a young man who is hit by a car. He then struggles to keep his sanity as he lies helpless, trapped inside his own mind.",
             ]}
@@ -76,7 +82,7 @@ const OurWork = () => {
             buttonLink="https://www.youtube.com/@thecheezle123"
           />
           <YoutubeBlock
-            titleImageUrl="/images/our-work/backwards.png"
+            titleImageUrl={backwardsLogo}
             paragraphs={[
               "Just clips of my friend and i, doing epic stuff in reverse! lots of lolz! thanks to the gummi bear people for the music!",
             ]}
@@ -137,7 +143,7 @@ const OurWork = () => {
       />
       <YoutubeBlock
         videoId="ZFmLSYxPrhY"
-        titleImageUrl="/images/our-work/outcast-logo.png"
+        titleImageUrl={outcastLogo}
         paragraphs={[
           `OUTCAST is a music video for friend, collaborator and artist MumuDub.  OUTCAST is a visual anthem for those caught between worlds - too queer, too Māori, too much.`,
         ]}
@@ -159,7 +165,7 @@ const OurWork = () => {
       />
       <YoutubeBlock
         videoId="C70IB3ZnWGU"
-        titleImageUrl="/images/our-work/life-been-strange-logo.png"
+        titleImageUrl={lifeBeenStrangeLogo}
         paragraphs={[
           `Life Been Strange is our first music video with artist MumuDuB - a chaotic, vibrant collage of colour, distortion, and dense visual texture. Warped lenses, shifting clones, and lo-fi grain reflect the unreality of a life lived at the edges.`,
         ]}
@@ -183,7 +189,7 @@ const OurWork = () => {
       />
       <YoutubeBlock
         videoId="Q-a7B8SJCt0"
-        titleImageUrl="/images/our-work/charm-the-wind-logo.png"
+        titleImageUrl={charmTheWindLogo}
         paragraphs={[
           `Charm the Wind was created in collaboration with friend and artist Ekholaliah, bringing their haunting and intimate track to life through a shared visual vision. The video blends natural light, grungey textures, and complimentary visual effects to evoke a feeling of otherworldly drifting - between memory, emotion, and atmosphere.`,
         ]}

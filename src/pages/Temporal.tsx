@@ -5,6 +5,20 @@ import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
 import MeetOurCrew from "../components/MeetOurCrew/MeetOurCrew";
 
 import temporalLogo from "../svg/temporal-logo.svg";
+import jerryMe from "../assets/images/about-us/jerry-me.png";
+import directorsMin from "../assets/images/temporal/directors-min.png";
+import directors from "../assets/images/temporal/directors.png";
+import bootsCutout from "../assets/images/temporal/boots-cutout.png";
+import bootsCutoutMin from "../assets/images/temporal/boots-cutout-min.png";
+import bootsBackground from "../assets/images/temporal/boots-background.png";
+import bootsBackgroundMin from "../assets/images/temporal/boots-background-min.png";
+import emmonsCutout from "../assets/images/temporal/emmons-cutout.png";
+import emmonsCutoutMin from "../assets/images/temporal/emmons-cutout-min.png";
+import emmonsBackground from "../assets/images/temporal/emmons-background.png";
+import emmonsBackgroundMin from "../assets/images/temporal/emmons-background-min.png";
+import jeremyScript from "../assets/images/temporal/jeremy-script.png";
+import script from "../assets/images/temporal/script.png";
+import scriptMin from "../assets/images/temporal/script-min.png";
 import JeremyLetter from "../components/Jeremy/JeremyLetter";
 import { useSelector } from "react-redux";
 import { getAreAllJeremyLettersClicked } from "../selectors/jeremy.selectors";
@@ -75,13 +89,13 @@ const Temporal = () => {
       <TextBlockWithImage
         slowImageUrl={
           areAllLettersClicked
-            ? "images/about-us/jerry-me.png"
-            : "/images/temporal/directors-min.png"
+            ? jerryMe
+            : directorsMin
         }
         imageUrl={
           areAllLettersClicked
-            ? "images/about-us/jerry-me.png"
-            : "/images/temporal/directors.png"
+            ? jerryMe
+            : directors
         }
         bgColour="grey"
         paragraphs={directorsText}
@@ -91,10 +105,10 @@ const Temporal = () => {
       />
       <ImmersiveBlock
         bgClass="immersive-block--boots"
-        imageUrl="/images/temporal/boots-cutout.png"
-        imageUrlSlow="/images/temporal/boots-cutout-min.png"
-        bgImageUrl="/images/temporal/boots-background.png"
-        bgImageUrlSlow="/images/temporal/boots-background-min.png"
+        imageUrl={bootsCutout}
+        imageUrlSlow={bootsCutoutMin}
+        bgImageUrl={bootsBackground}
+        bgImageUrlSlow={bootsBackgroundMin}
         link=""
         title="BOOTS"
         paragraphs={[
@@ -105,10 +119,10 @@ const Temporal = () => {
       />
       <ImmersiveBlock
         bgClass="immersive-block--emmons"
-        imageUrl="/images/temporal/emmons-cutout.png"
-        imageUrlSlow="/images/temporal/emmons-cutout-min.png"
-        bgImageUrl="/images/temporal/emmons-background.png"
-        bgImageUrlSlow="/images/temporal/emmons-background-min.png"
+        imageUrl={emmonsCutout}
+        imageUrlSlow={emmonsCutoutMin}
+        bgImageUrl={emmonsBackground}
+        bgImageUrlSlow={emmonsBackgroundMin}
         link=""
         title="EMMONS"
         paragraphs={[
@@ -122,13 +136,13 @@ const Temporal = () => {
       <TextBlockWithImage
         imageUrl={
           areAllLettersClicked
-            ? "/images/temporal/jeremy-script.png"
-            : "/images/temporal/script.png"
+            ? jeremyScript
+            : script
         }
         slowImageUrl={
           areAllLettersClicked
-            ? "/images/temporal/jeremy-script.png"
-            : "/images/temporal/script-min.png"
+            ? jeremyScript
+            : scriptMin
         }
         bgColour="grey"
         paragraphs={[

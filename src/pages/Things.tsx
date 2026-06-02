@@ -3,8 +3,9 @@ import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
 import { ROUTES_INTERNAL } from "../constants/router.constants";
 import thingsLogo from "../svg/things-logo.svg";
 import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithImage";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import ThingsCarousel from "../components/Carousel/ThingsCarousel";
+import jamesAndJan from "../assets/images/things/james-and-jan.png";
+import teamMovesCar from "../assets/images/things/team-moves-car.png";
 
 const Things = () => {
   return (
@@ -20,8 +21,8 @@ const Things = () => {
         heightRatio={9 / 16}
       />
       <TextBlockWithImage
-        slowImageUrl="/images/things/james-and-jan.png"
-        imageUrl="/images/things/james-and-jan.png"
+        slowImageUrl={jamesAndJan}
+        imageUrl={jamesAndJan}
         bgColour="grey"
         paragraphs={[
           `AURORAVISION has been entering the 48Hour Film Festival as a production company for three years, and this year we decided to shake up our approach.`,
@@ -33,8 +34,8 @@ const Things = () => {
         // imageAnimation="fadeInRight"
       />
       <TextBlockWithImage
-        slowImageUrl="/images/things/team-moves-car.png"
-        imageUrl="/images/things/team-moves-car.png"
+        slowImageUrl={teamMovesCar}
+        imageUrl={teamMovesCar}
         bgColour="white"
         isReverse
         paragraphs={[

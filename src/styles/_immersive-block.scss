@@ -35,7 +35,7 @@
         position: absolute;
         inset: 0;
         background-color: #B1BBD5;
-        background-image: url("../../public/images/temporal/boots-background.png");            /* Replace with your image */
+        background-image: url("../assets/images/temporal/boots-background.png");
         background-size: cover;
         background-position: center;
         animation: zoomIn 10s alternate infinite;
@@ -56,13 +56,10 @@
         height: 50vh;
     }
 
-    // &--boots {
-    //     background-image: url("../../public/images/boots_background.png");
-    // }
     &--emmons {
         &::before {
             background-color: #788ed8;
-            background-image: url("../../public/images/temporal/emmons-background.png");
+            background-image: url("../assets/images/temporal/emmons-background.png");
         }
 
         @keyframes hologram {

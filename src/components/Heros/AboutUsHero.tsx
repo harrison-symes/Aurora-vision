@@ -1,10 +1,13 @@
 import * as React from "react";
 import useOptimizedBackground from "../../hooks/useOptimisedBackground";
+import bannerMin from "../../assets/images/about-us/banner-min.png";
+import banner from "../../assets/images/about-us/banner.png";
+import crewBanner from "../../assets/images/about-us/crew-banner.png";
 
 const AboutUsHero = () => {
   const bgImage = useOptimizedBackground(
-    "/images/about-us/banner-min.png",
-    "/images/about-us/banner.png"
+    bannerMin,
+    banner
   );
 
   return (
@@ -21,7 +24,7 @@ const AboutUsHero = () => {
         </div>
       </div>
       <div className="hero--overlay">
-        <img src="/images/about-us/crew-banner.png" />
+        <img src={crewBanner} />
       </div>
     </div>
   );

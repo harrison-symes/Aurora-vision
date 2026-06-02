@@ -1,10 +1,12 @@
 import * as React from "react";
 import useOptimizedBackground from "../../hooks/useOptimisedBackground";
+import bannerMin from "../../assets/images/contact-us/banner-min.png";
+import banner from "../../assets/images/contact-us/banner.png";
 
 const ContactUsHero = () => {
   const bgImage = useOptimizedBackground(
-    "/images/contact-us/banner-min.png",
-    "/images/contact-us/banner.png"
+    bannerMin,
+    banner
   );
 
   return (

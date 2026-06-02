@@ -2,6 +2,11 @@ import * as React from "react";
 import OptimisedImage from "../OptimisedImage/OptimisedImage";
 import { useSelector } from "react-redux";
 import { getAreAllJeremyLettersClicked } from "../../selectors/jeremy.selectors";
+import jeremyCrew from "../../assets/images/temporal/jeremy-crew.png";
+import meetOurCrew1 from "../../assets/images/temporal/meet-our-crew-1.png";
+import meetOurCrew1Min from "../../assets/images/temporal/meet-our-crew-1-min.png";
+import meetOurCrew2 from "../../assets/images/temporal/meet-our-crew-2.png";
+import meetOurCrew2Min from "../../assets/images/temporal/meet-our-crew-2-min.png";
 
 const MeetOurCrew = () => {
   const areAllLettersClicked = useSelector(getAreAllJeremyLettersClicked);
@@ -12,13 +17,13 @@ const MeetOurCrew = () => {
         <OptimisedImage
           imageUrl={
             areAllLettersClicked
-              ? "/images/temporal/jeremy-crew.png"
-              : "/images/temporal/meet-our-crew-1.png"
+              ? jeremyCrew
+              : meetOurCrew1
           }
           imageUrlSlow={
             areAllLettersClicked
-              ? "/images/temporal/jeremy-crew.png"
-              : "/images/temporal/meet-our-crew-1-min.png"
+              ? jeremyCrew
+              : meetOurCrew1Min
           }
           alt="meet our crew 1"
           className="meet-our-crew__image"
@@ -55,13 +60,13 @@ const MeetOurCrew = () => {
         <OptimisedImage
           imageUrl={
             areAllLettersClicked
-              ? "/images/temporal/jeremy-crew.png"
-              : "/images/temporal/meet-our-crew-2.png"
+              ? jeremyCrew
+              : meetOurCrew2
           }
           imageUrlSlow={
             areAllLettersClicked
-              ? "/images/temporal/jeremy-crew.png"
-              : "/images/temporal/meet-our-crew-2-min.png"
+              ? jeremyCrew
+              : meetOurCrew2Min
           }
           className="meet-our-crew__image meet-our-crew__image-2"
           alt="meet our crew 2"

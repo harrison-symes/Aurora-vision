@@ -5,6 +5,9 @@ import avLogo from "../svg/av-logo.svg";
 import instagram from "../svg/instagram.svg";
 import youtube from "../svg/youtube.svg";
 import facebook from "../svg/facebook.svg";
+import jerryMe from "../assets/images/about-us/jerry-me.png";
+import footerMin from "../assets/images/footer-min.png";
+import footer from "../assets/images/footer.png";
 import useOptimizedBackground from "../hooks/useOptimisedBackground";
 import cn from "classnames";
 import { useSelector } from "react-redux";
@@ -26,7 +29,7 @@ const Jerry = (props: IJerryProps) => {
         "footer__jerry--found": props.isFound,
       })}
       alt={props.alt}
-      src="/images/about-us/jerry-me.png"
+      src={jerryMe}
       title={props.alt}
     />
   );
@@ -58,8 +61,8 @@ const JerryCounter = () => {
 
 const Footer = () => {
   const bgImage = useOptimizedBackground(
-    "/images/footer-min.png",
-    "/images/footer.png"
+    footerMin,
+    footer
   );
   return (
     <footer

@@ -3,6 +3,8 @@ import AboutUsHero from "../components/Heros/AboutUsHero";
 import MemberFrame from "../components/MemberFrame/MemberFrame";
 import { useDispatch } from "react-redux";
 import { allJerrysFound } from "../actions/jeremy.actions";
+import jeremyMode from "../assets/images/about-us/jeremy-mode.png";
+import jeremyBrow from "../assets/images/about-us/jeremy-brow.png";
 
 let secret = [1, 2, 3, 4, 5, 6];
 
@@ -52,8 +54,8 @@ const JerryMe = () => {
               key={`jeremy-${num + 1}`}
               imageUrl={
                 jeremy.find((n) => n === num + 1)
-                  ? "/images/about-us/jeremy-mode.png"
-                  : "/images/about-us/jeremy-brow.png"
+                  ? jeremyMode
+                  : jeremyBrow
               }
               variant={(num + 1) % 2 ? "white" : "grey"}
               name={

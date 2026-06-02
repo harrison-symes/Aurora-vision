@@ -1,10 +1,11 @@
 import * as React from "react";
+import logo from "../../assets/images/logo.png";
 
 const HomeHero = () => {
   return (
     <div className="home-hero__container">
       <div className="home-hero__logo">
-        <img src="/images/logo.png" />
+        <img src={logo} />
       </div>
       {/* <div> */}
       <svg
