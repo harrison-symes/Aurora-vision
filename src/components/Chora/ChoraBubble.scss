@@ -30,6 +30,12 @@ $chora-bubble-float-distance: 12px;
   will-change: transform;
   cursor: pointer;
 
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* Older IE and Edge */
+    user-select: none;
+
   &:hover, &:focus, &:active, &.active {
     animation-play-state: paused;
 
@@ -41,6 +47,15 @@ $chora-bubble-float-distance: 12px;
   width: 100%;
   height: auto;
   max-width: 100px;
+
+    -webkit-user-select: none;
+        /* Safari */
+        -ms-user-select: none;
+        /* Older IE and Edge */
+        user-select: none;
+
+        -webkit-user-drag: none;
+            user-drag: none;
 
   @include lg {
     max-width: 120px;

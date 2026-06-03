@@ -8,7 +8,7 @@ import { mapWorldToData, ChoraData } from "../choraData";
 
 import cn from "classnames";
 
-const ANIMATION_DURATION = 100;
+const ANIMATION_DURATION = 400;
 
 const ChoraInfoPanel = () => {
     const dispatch = useDispatch();
@@ -60,6 +60,17 @@ const ChoraInfoPanel = () => {
             return;
         }
 
+        if (visibleData && nextData && visibleData.name === nextData.name && !isActive) {
+            // Reopen the same world while the panel is closing
+            if (closeTimeout.current) {
+                window.clearTimeout(closeTimeout.current);
+                closeTimeout.current = null;
+            }
+            setIsActive(true);
+            requestAnimationFrame(() => setIsContentVisible(true));
+            return;
+        }
+
         if (visibleData && !nextData) {
             // Closing from open
             setIsContentVisible(false);
@@ -67,13 +78,6 @@ const ChoraInfoPanel = () => {
             closeTimeout.current = window.setTimeout(() => {
                 setVisibleData(null);
                 setDisplayedData(null);
-                // Scroll to ChoraMap bottom after panel closes
-                const choraMap = document.querySelector('.chora-map');
-                if (choraMap) {
-                    const mapBottom = choraMap.getBoundingClientRect().bottom + window.scrollY;
-                    const scrollPosition = mapBottom - window.innerHeight;
-                    window.scrollTo({ top: Math.max(0, scrollPosition), behavior: 'smooth' });
-                }
             }, ANIMATION_DURATION);
             return () => {
                 if (closeTimeout.current) {
@@ -84,10 +88,19 @@ const ChoraInfoPanel = () => {
 
         if (visibleData && nextData && visibleData.name !== nextData.name) {
             // Switching between worlds while open
+            // Scroll immediately as soon as selection changes
+            if (panelRef.current) {
+                const panelBottom = panelRef.current.offsetTop + panelRef.current.offsetHeight;
+                const scrollPosition = panelBottom - window.innerHeight;
+                window.scrollTo({ top: scrollPosition, behavior: 'auto' });
+            }
+
             setIsContentVisible(false);
             closeTimeout.current = window.setTimeout(() => {
                 setDisplayedData(nextData);
                 setVisibleData(nextData);
+
+                // Then fade in the new content
                 requestAnimationFrame(() => setIsContentVisible(true));
             }, 500); // Wait for 0.5s fade out to complete
             return () => {
@@ -96,7 +109,7 @@ const ChoraInfoPanel = () => {
                 }
             };
         }
-    }, [nextData, visibleData]);
+    }, [nextData, visibleData, isActive]);
 
     // Scroll to panel bottom after opening or switching animation completes
     useEffect(() => {
@@ -124,8 +137,18 @@ const ChoraInfoPanel = () => {
     }
 
     const onClose = () => {
+        // Cancel any pending operations
+        if (closeTimeout.current) {
+            window.clearTimeout(closeTimeout.current);
+            closeTimeout.current = null;
+        }
+
+        // Hide content immediately
         setIsContentVisible(false);
-        setIsActive(false);
+
+        // Clear selection immediately to avoid re-open races
+        dispatch(clearChoraWorld());
+
         // Scroll immediately to ChoraMap
         const choraMap = document.querySelector('.chora-map');
         if (choraMap) {
@@ -133,9 +156,17 @@ const ChoraInfoPanel = () => {
             const scrollPosition = mapBottom - window.innerHeight;
             window.scrollTo({ top: Math.max(0, scrollPosition), behavior: 'smooth' });
         }
+
+        // Collapse the panel after a short delay so the scroll feels natural
         closeTimeout.current = window.setTimeout(() => {
-            dispatch(clearChoraWorld());
-        }, ANIMATION_DURATION);
+            setIsActive(false);
+            // Remove content and visible data after collapse animation
+            closeTimeout.current = window.setTimeout(() => {
+                setVisibleData(null);
+                setDisplayedData(null);
+                closeTimeout.current = null;
+            }, ANIMATION_DURATION);
+        }, 180);
     }
 
     return (
@@ -153,7 +184,9 @@ const ChoraInfoPanel = () => {
                         ref={contentRef}
                         className={cn("chora-info-panel__content", { "visible": isContentVisible })}
                     >
-                        <img className="chora-info-panel__image" src={displayedData.image} />
+                        <div className="chora-info-panel__image-wrapper">
+                            <img className="chora-info-panel__image" src={displayedData.image} />
+                        </div>
                         <div className="chora-info-panel__text">
                             <h3>Project: {displayedData.name}</h3>
                             <h3>Synopsis: {displayedData.description}</h3>

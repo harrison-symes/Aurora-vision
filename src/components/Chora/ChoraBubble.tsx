@@ -38,7 +38,7 @@ const ChoraBubble = (props: IChoraBubbleProps) => {
         <div className={cn("chora-bubble", {
             "active": selectedChoraWorld === props.world,
         })}>
-            <img onClick={onClick} src={data.image} alt="Chora Bubble" className="chora-bubble__image" />
+            <img draggable="false" onClick={onClick} src={data.image} alt="Chora Bubble" className="chora-bubble__image" />
         </div>
     )
 }
