@@ -1,0 +1,88 @@
+@import "../../../styles/colours.scss";
+@import "../../../styles/mixins.scss";
+
+$chora-pink: #fbaae3;
+
+.chora-info-panel {
+    z-index: 10;
+    background-color: $grey;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.1s ease-out, opacity 0.3s ease-out;
+}
+
+.chora-info-panel.active {
+    opacity: 1;
+}
+
+.chora-info-panel__chevron {
+    color: $white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten($grey, 5%);
+    }
+
+    .chevron-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.chora-info-panel__content {
+    padding: 1.5rem 1rem 2rem;
+    max-width: 980px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    
+    @include md {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.chora-info-panel__content.visible {
+    opacity: 1;
+}
+
+.chora-info-panel__image {
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    margin: 0 auto;
+    
+    @include md {
+        margin-left: auto;
+        margin-right: 0;
+        max-width: 200px;
+    }
+}
+
+.chora-info-panel__text {
+    color: $white;
+    font-size: 1.25rem;
+    max-width: 600px;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+
+    @include md {
+        text-align: left;
+        width: auto;
+        font-size: 1.5rem;
+    }
+}

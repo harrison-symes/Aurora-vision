@@ -2,12 +2,11 @@ import * as React from "react";
 import cn from "classnames";
 import { Link } from "react-router-dom";
 
-interface IButtonProps {
+interface IButtonProps extends React.PropsWithChildren {
   href?: string;
   onClick?: () => void;
   className?: string;
-  colour: "purple" | "pink" | "blue" | "green" | "black" | "white";
-  children: React.ReactNode;
+  colour?: "purple" | "pink" | "blue" | "green" | "black" | "white";
 }
 
 const Button = (props: IButtonProps) => {

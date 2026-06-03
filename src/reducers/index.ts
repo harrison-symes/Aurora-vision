@@ -2,6 +2,7 @@
 import { Reducer, StateFromReducersMapObject } from "redux";
 import { RouterState } from "redux-first-history";
 import jeremyReducer, { jeremyInitialState } from "./jeremy.reducers";
+import choraReducer, { choraInitialState } from "./chora.reducers";
 
 export const baseReducers = (router: Reducer<RouterState>) => ({
   router,
@@ -19,6 +20,7 @@ export const baseInitialState: IBaseState = {
 
 export const reducers = {
   jeremy: jeremyReducer,
+  chora: choraReducer,
 };
 
 export type TAppState = StateFromReducersMapObject<typeof reducers>;
@@ -27,4 +29,5 @@ export type TStoreState = TAppState & IBaseState;
 export const rootInitialState: TStoreState = {
   ...baseInitialState,
   jeremy: jeremyInitialState,
+  chora: choraInitialState,
 };
