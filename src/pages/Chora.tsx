@@ -1,6 +1,6 @@
 import ChoraBanner from "../components/Chora/ChoraBanner";
 import ChoraInfoPanel from "../components/Chora/ChoraInfoPanel/ChoraInfoPanel";
-import ChoraMap from "../components/Chora/ChoraMap";
+import ChoraMap from "../components/Chora/ChoraMap/ChoraMap";
 import FundraiseBanner from "../components/Chora/FundraiseBanner/FundraiseBanner";
 import WeWillShare from "../components/Chora/WeWillShare/WeWillShare";
 import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithImage";

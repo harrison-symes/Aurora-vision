@@ -10,6 +10,23 @@ $chora-pink: #fbaae3;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out;
+
+    // width: 240px;
+    // height: 240px;
+    // margin: auto;
+    background-image: repeating-radial-gradient(circle at 17% 33%, lighten($grey, 5%), darken($grey, 5%) 0.00085px);
+    background-position: center;
+    animation: back 20s linear infinite;
+}
+
+@keyframes back {
+    from {
+        background-size: 100% 100%;
+    }
+
+    to {
+        background-size: 200% 200%;
+    }
 }
 
 .chora-info-panel__chevron {
@@ -274,7 +291,7 @@ $chora-pink: #fbaae3;
     max-width: 600px;
     text-transform: uppercase;
     width: 100%;
-    text-align: center;
+    // text-align: center;
     margin: auto;
 
     font-family: "Bitcount Single", system-ui;
@@ -303,22 +320,6 @@ $chora-pink: #fbaae3;
 .chora-info-panel__text h3 {
     margin: .7rem 0 .3rem;
     line-height: 1.4;
-    position: relative;
-}
-
-.chora-info-panel__text h3::after {
-    content: ".";
-    position: absolute;
-    margin-left: 0.1em;
-    opacity: 0;
-    animation: chora-cursor-blink 0.5s steps(1) infinite;
-    animation-play-state: paused;
-    animation-delay: var(--cursor-start, 0ms);
-    animation-duration: calc(var(--cursor-end) - var(--cursor-start));
-}
-
-.chora-info-panel__content.visible .chora-info-panel__text h3::after {
-    animation-play-state: running;
 }
 
 .chora-info-panel__char {
@@ -338,16 +339,5 @@ $chora-pink: #fbaae3;
     }
     to {
         opacity: 1;
-    }
-}
-
-@keyframes chora-cursor-blink {
-    0%,
-    50% {
-        opacity: 1;
-    }
-    51%,
-    100% {
-        opacity: 0;
     }
 }

@@ -1,5 +1,5 @@
-@import "../../styles/colours.scss";
-@import "../../styles/mixins.scss";
+@import "../../../styles/colours.scss";
+@import "../../../styles/mixins.scss";
 
 $chora-pink: #fbaae3;
 $background: #544468;
@@ -16,7 +16,7 @@ $background: #544468;
     position: relative;
     max-width: 980px;
     margin: 0 auto;
-    background-image: url("../../assets/images/chora/radial_circles.png");
+    background-image: url("../../../assets/images/chora/radial_circles.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
