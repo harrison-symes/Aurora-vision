@@ -1,0 +1,36 @@
+import { useDispatch, useSelector } from "react-redux"
+import { getIsWorldEESolved, getWorldEEStepsFound } from "../../../selectors/chora.selectors"
+
+import star from "../../../assets/images/chora/chora_star.png"
+import { selectChoraWorld } from "../../../reducers/chora.reducers"
+import { ChoraWorlds } from "../choraData"
+
+import cn from "classnames"
+
+const EEStars = () => {
+    const dispatch = useDispatch()
+    const steps = useSelector(getWorldEEStepsFound)
+    const isSolved = useSelector(getIsWorldEESolved)
+
+    if (steps === 0 && !isSolved) {
+        return null
+    }
+
+    const onClick = () => {
+        if (isSolved) {
+            dispatch(selectChoraWorld(ChoraWorlds.EE_WANDERER))
+        }
+    }
+
+    return (
+        <div className={cn("chora-map__ee-stars", {
+            "solved": isSolved
+        })}>
+            {new Array(steps).fill(0).map(() => (
+                <img className="chora-map__ee-star" onClick={onClick} src={star} title="A fragment of something... fleeting? A memory? Could there be more..." />
+            ))}
+        </div>
+    )
+}
+
+export default EEStars

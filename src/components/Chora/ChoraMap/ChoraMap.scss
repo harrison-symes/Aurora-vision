@@ -124,3 +124,52 @@ $background: #544468;
         // position: absolute;
     }
 }
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    70% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.chora-map__ee-stars {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    top: 0;
+
+    :nth-child(1) {
+        transform: translateY(-10px);
+    }
+    :nth-child(2) {
+        transform: translateY(4px);
+    }
+    :nth-child(3) {
+        transform: translateY(-16px);
+    }
+    :nth-child(4) {
+        transform: translateY(12px);
+    }
+
+    &.solved {
+        .chora-map__ee-star {
+            animation: pulse-animation 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+    }
+}
+
+.chora-map__ee-star {
+    width: 2rem;
+
+}

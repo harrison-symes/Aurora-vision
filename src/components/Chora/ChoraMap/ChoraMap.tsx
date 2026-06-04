@@ -1,11 +1,13 @@
 import ChoraBubble from "../ChoraBubble/ChoraBubble";
 import { ChoraWorlds } from "../choraData";
 import "./ChoraMap.scss"
+import EEStars from "./EEStars";
 
 const ChoraMap = () => {
     return (
         <div className="chora-map">
             <div className="chora-map__inner">
+                <EEStars />
                 <div className="chora-map__title">
                     <h1>Chōra</h1>
                     <h2>The space between universes</h2>
