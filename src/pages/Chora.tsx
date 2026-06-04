@@ -1,6 +1,8 @@
 import ChoraBanner from "../components/Chora/ChoraBanner";
 import ChoraInfoPanel from "../components/Chora/ChoraInfoPanel/ChoraInfoPanel";
 import ChoraMap from "../components/Chora/ChoraMap";
+import FundraiseBanner from "../components/Chora/FundraiseBanner/FundraiseBanner";
+import WeWillShare from "../components/Chora/WeWillShare/WeWillShare";
 import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithImage";
 
 const Chora = () => {
@@ -20,10 +22,9 @@ const Chora = () => {
                 ]}
                 title="The Project"
             />
+            <FundraiseBanner />
             <TextBlockWithImage
                 imageUrl=""
-                bgColour="grey"
-                isReverse
                 paragraphs={[
                     <p>We are raising money to help bring the next stage of this anthology to life. The first two vignettes, <b>Momentum</b> & <b>Second Genesis</b>, have already been shot using the resources, gear, and volunteers we could put together ourselves. Now, we want to take the project further and give each piece the level of craft, care, and ambition they deserve.</p>,
                     "This campaign will help us support our cast and crew, build interesting sets, create unique costumes and props, access shooting locations, further develop compelling VFX and animation, and continue building inclusive creative pipelines for emerging filmmakers in Te Whanganui-a-Tara.",
@@ -32,15 +33,19 @@ const Chora = () => {
                     "And we believe this project can become a platform for the next wave of unique, artist driven filmmaking in Te Whanganui-a-Tara~!"
                 ]}
                 title="The Fundraiser"
-            />
+                />
             <TextBlockWithImage
                 imageUrl=""
+                bgColour="grey"
+                isReverse
                 paragraphs={[
                     "The AuroraVision Anthology is one short film made up of five distinct storyworlds, with each vignette into they storyworlds highlighting and pushing different aspects of the skillsets within the AuroraVision collective & our wider collaborative filmaking community in Te Whanganui-a-Tara.",
                     "Each world stands alone, but they are all connected by Chōra, the liminal space between realities."
                 ]}
                 title="The Film"
             />
+            <WeWillShare />
+            <FundraiseBanner />
         </div>
     )
 }

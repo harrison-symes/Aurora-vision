@@ -1,0 +1,66 @@
+@import "../../../styles/colours.scss";
+@import "../../../styles/mixins.scss";
+
+$chora-pink: #fbaae3;
+$background: #544468;
+
+.we-will-share {
+    width: 100%;
+    padding: 1.5rem 1rem 2rem;
+    background-color: $white;
+
+    color: $black;
+}
+
+.we-will-share__inner {
+    max-width: 980px;
+    margin: auto;
+}
+
+.we-will-share__text {
+    text-align: center;
+
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    
+    @include md {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.we-will-share__title {
+    text-align: center;
+    font-weight: bold;
+    color: $background;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+    @include md {
+        font-size: 3rem;
+    }
+}
+
+.we-will-share__list {
+    padding: 0;
+    margin: auto;
+    text-align: center;
+    
+    list-style: none;
+    color: $background;
+    font-size: 1.5rem;
+    
+    @include md {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include lg {
+        font-size: 2rem;
+    }
+
+    li {
+        margin-bottom: .5rem;
+    }
+}
