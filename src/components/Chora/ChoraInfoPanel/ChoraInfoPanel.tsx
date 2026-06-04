@@ -7,6 +7,7 @@ import { useEffect, useMemo, useRef, useState, isValidElement, ReactNode } from 
 import { mapWorldToData, ChoraData } from "../choraData";
 
 import cn from "classnames";
+import ChoraPanelImage from "./ChoraPanelImage";
 
 const getTextFromNode = (node: ReactNode): string => {
     if (node == null || node === false) {
@@ -22,26 +23,39 @@ const getTextFromNode = (node: ReactNode): string => {
     }
 
     if (isValidElement(node)) {
-        return getTextFromNode(node.props.children);
+        const text = getTextFromNode(node.props.children);
+        // Add line break after block-level elements (p, div, span wrapped in block context)
+        const isBlockElement = ["p", "div", "section", "article"].includes(
+            typeof node.type === "string" ? node.type : ""
+        );
+        return isBlockElement ? `${text}\n` : text;
     }
 
     return "";
 };
 
 const ANIMATION_DURATION = 400;
-const TEXT_CHAR_DELAY = 28;
-const LINE_START_DELAY = 120;
+const TEXT_CHAR_DELAY = 22;
+const LINE_START_DELAY = 1800;
+const LABEL_PAUSE = 1000; // extra delay after label
 
-const createAnimatedChars = (text: string, idPrefix: string, startDelay = 0) =>
-    text.split("").map((char, index) => (
-        <span
-            key={`${idPrefix}-${index}`}
-            className="chora-info-panel__char"
-            style={{ animationDelay: `${startDelay + index * TEXT_CHAR_DELAY}ms` }}
-        >
-            {char}
-        </span>
-    ));
+const createAnimatedChars = (text: string, idPrefix: string, startDelay = 0, labelLength = 0) =>
+    text.split("").map((char, index) => {
+        let charDelay = startDelay + index * TEXT_CHAR_DELAY;
+        // Add extra pause after the label
+        if (labelLength > 0 && index >= labelLength) {
+            charDelay += LABEL_PAUSE;
+        }
+        return (
+            <span
+                key={`${idPrefix}-${index}`}
+                className="chora-info-panel__char"
+                style={{ animationDelay: `${charDelay}ms` }}
+            >
+                {char}
+            </span>
+        );
+    });
 
 const ChoraInfoPanel = () => {
     const dispatch = useDispatch();
@@ -234,12 +248,13 @@ const ChoraInfoPanel = () => {
                         className={cn("chora-info-panel__content", { "visible": isContentVisible })}
                     >
                         <div className="chora-info-panel__image-wrapper">
-                            <img className="chora-info-panel__image" src={displayedData.image} />
+                            <ChoraPanelImage image={displayedData.image} />
+                            {/* <img className="chora-info-panel__image" src={displayedData.image} /> */}
                         </div>
                         <div className="chora-info-panel__text">
-                            <h3>{createAnimatedChars(projectText, `project-${animationKey}`, 0)}</h3>
-                            <h3>{createAnimatedChars(synopsisText, `synopsis-${animationKey}`, projectText.length * TEXT_CHAR_DELAY + LINE_START_DELAY)}</h3>
-                            <h3>{createAnimatedChars(statusText, `status-${animationKey}`, (projectText.length + synopsisText.length) * TEXT_CHAR_DELAY + LINE_START_DELAY * 2)}</h3>
+                            <h3>{createAnimatedChars(projectText, `project-${animationKey}`, 0, 9)}</h3>
+                            <h3>{createAnimatedChars(synopsisText, `synopsis-${animationKey}`, projectText.length * TEXT_CHAR_DELAY + LINE_START_DELAY, 10)}</h3>
+                            <h3>{createAnimatedChars(statusText, `status-${animationKey}`, (projectText.length + synopsisText.length) * TEXT_CHAR_DELAY + LINE_START_DELAY * 2, 8)}</h3>
                         </div>
                     </div>
                 )
