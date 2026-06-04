@@ -12,10 +12,6 @@ $chora-pink: #fbaae3;
     transition: max-height 0.4s ease-out;
 }
 
-.chora-info-panel.active {
-    /* Keep wrapper visible while height animates to avoid background flicker */
-}
-
 .chora-info-panel__chevron {
     color: $white;
     font-size: 2rem;
@@ -101,6 +97,9 @@ $chora-pink: #fbaae3;
         margin: none;
     }
 
+    white-space: normal;
+    word-break: normal;
+
     * {
         font-family: "Bitcount Single", system-ui;
         font-size: 1rem;
@@ -109,5 +108,30 @@ $chora-pink: #fbaae3;
         @include md {
             font-size: 1.25rem;
         }
+    }
+}
+
+.chora-info-panel__text h3 {
+    margin: .7rem 0 .3rem;
+    line-height: 1.4;
+}
+
+.chora-info-panel__char {
+    display: inline;
+    opacity: 0;
+    animation: chora-info-char-reveal 160ms ease forwards;
+    animation-play-state: paused;
+}
+
+.chora-info-panel__content.visible .chora-info-panel__char {
+    animation-play-state: running;
+}
+
+@keyframes chora-info-char-reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

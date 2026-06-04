@@ -3,12 +3,45 @@ import "./ChoraInfoPanel.scss";
 import { getSelectedChoraWorld } from "../../../selectors/chora.selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { clearChoraWorld } from "../../../reducers/chora.reducers";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, isValidElement, ReactNode } from "react";
 import { mapWorldToData, ChoraData } from "../choraData";
 
 import cn from "classnames";
 
+const getTextFromNode = (node: ReactNode): string => {
+    if (node == null || node === false) {
+        return "";
+    }
+
+    if (typeof node === "string" || typeof node === "number") {
+        return String(node);
+    }
+
+    if (Array.isArray(node)) {
+        return node.map(getTextFromNode).join("");
+    }
+
+    if (isValidElement(node)) {
+        return getTextFromNode(node.props.children);
+    }
+
+    return "";
+};
+
 const ANIMATION_DURATION = 400;
+const TEXT_CHAR_DELAY = 28;
+const LINE_START_DELAY = 120;
+
+const createAnimatedChars = (text: string, idPrefix: string, startDelay = 0) =>
+    text.split("").map((char, index) => (
+        <span
+            key={`${idPrefix}-${index}`}
+            className="chora-info-panel__char"
+            style={{ animationDelay: `${startDelay + index * TEXT_CHAR_DELAY}ms` }}
+        >
+            {char}
+        </span>
+    ));
 
 const ChoraInfoPanel = () => {
     const dispatch = useDispatch();
@@ -25,6 +58,25 @@ const ChoraInfoPanel = () => {
     const nextData = useMemo(
         () => (selectedChoraWorld ? mapWorldToData[selectedChoraWorld] : null),
         [selectedChoraWorld]
+    );
+
+    const descriptionText = useMemo(() => {
+        if (!displayedData) {
+            return "";
+        }
+
+        return typeof displayedData.description === "string"
+            ? displayedData.description
+            : getTextFromNode(displayedData.description);
+    }, [displayedData]);
+
+    const projectText = displayedData ? `Project: ${displayedData.name}` : "";
+    const synopsisText = displayedData ? `Synopsis: ${descriptionText}` : "";
+    const statusText = displayedData ? `Status: ${displayedData.status}` : "";
+
+    const animationKey = useMemo(
+        () => (displayedData ? displayedData.name.replace(/\s+/g, "-").toLowerCase() : ""),
+        [displayedData?.name]
     );
 
     // Measure and update max-height when content changes
@@ -111,16 +163,17 @@ const ChoraInfoPanel = () => {
         }
     }, [nextData, visibleData, isActive]);
 
-    // Scroll to panel bottom after opening or switching animation completes
     useEffect(() => {
         if (isActive && displayedData && isContentVisible) {
-            setTimeout(() => {
+            const scrollTimeout = window.setTimeout(() => {
                 if (panelRef.current) {
                     const panelBottom = panelRef.current.offsetTop + panelRef.current.offsetHeight;
                     const scrollPosition = panelBottom - window.innerHeight;
                     window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
                 }
             }, ANIMATION_DURATION);
+
+            return () => window.clearTimeout(scrollTimeout);
         }
     }, [isActive, isContentVisible, displayedData]);
 
@@ -131,10 +184,6 @@ const ChoraInfoPanel = () => {
             }
         };
     }, []);
-
-    if (!visibleData) {
-        return null;
-    }
 
     const onClose = () => {
         // Cancel any pending operations
@@ -188,9 +237,9 @@ const ChoraInfoPanel = () => {
                             <img className="chora-info-panel__image" src={displayedData.image} />
                         </div>
                         <div className="chora-info-panel__text">
-                            <h3>Project: {displayedData.name}</h3>
-                            <h3>Synopsis: {displayedData.description}</h3>
-                            <h3>Status: {displayedData.status}</h3>
+                            <h3>{createAnimatedChars(projectText, `project-${animationKey}`, 0)}</h3>
+                            <h3>{createAnimatedChars(synopsisText, `synopsis-${animationKey}`, projectText.length * TEXT_CHAR_DELAY + LINE_START_DELAY)}</h3>
+                            <h3>{createAnimatedChars(statusText, `status-${animationKey}`, (projectText.length + synopsisText.length) * TEXT_CHAR_DELAY + LINE_START_DELAY * 2)}</h3>
                         </div>
                     </div>
                 )

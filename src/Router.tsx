@@ -26,6 +26,9 @@ const Things = React.lazy(
 const Chora = React.lazy(
   () => import(/* webpackChunkName: "contact" */ "./pages/Chora")
 );
+const Temporal = React.lazy(
+  () => import(/* webpackChunkName: "contact" */ "./pages/Temporal")
+);
 
 const DelayedSuspense = ({
   children,
@@ -122,6 +125,16 @@ const Router = () => {
             element={
               <DelayedSuspense fallback={<Loading />}>
                 <Chora />
+              </DelayedSuspense>
+            }
+          />
+        </Route>
+        <Route path={ROUTES_INTERNAL.TEMPORAL} element={<Layout />}>
+          <Route
+            index
+            element={
+              <DelayedSuspense fallback={<Loading />}>
+                <Temporal />
               </DelayedSuspense>
             }
           />

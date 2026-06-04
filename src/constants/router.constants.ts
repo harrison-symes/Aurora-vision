@@ -6,4 +6,5 @@ export enum ROUTES_INTERNAL {
   JERRYME = "/jerry-me",
   FONTS = "/fonts",
   CHORA = "/chora",
+  TEMPORAL = "/temporal",
 }

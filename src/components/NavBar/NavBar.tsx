@@ -3,7 +3,7 @@ import cn from "classnames";
 import NavItem from "./NavItem";
 import { Link } from "react-router-dom";
 import Hamburger from "hamburger-react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getPath } from "../../selectors/router.selectors";
 
 import logo from "../../svg/av-logo.svg";
@@ -45,6 +45,8 @@ const NavBar = () => {
                 />
               </div>
               <NavItem href="/" text="HOME" />
+              {/* <NavItem href="/chora" text="CHORA" /> */}
+              {/* <NavItem href="/temporal" text="TEMPORAL" /> */}
               <NavItem href="/about-us" text="ABOUT US" />
               <NavItem href="/our-work" text="OUR WORK" />
               <NavItem href="/contact" text="CONTACT US" />

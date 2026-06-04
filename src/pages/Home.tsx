@@ -7,8 +7,6 @@ const Home = () => {
   return (
     <div>
       <Temporal />
-      {/* <HomeHero /> */}
-      {/* <LatestProject /> */}
     </div>
   );
 };
