@@ -27,7 +27,6 @@ const choraReducer = createReducer(choraInitialState, (thing) =>
     .addCase(selectChoraWorld, (state, { payload }) => {
       let ee = [...state.world_select_ee]
       let solved = state.world_select_ee_solved
-      let selectedWorld = payload
       
       if (!state.world_select_ee_solved) {
         ee = [...state.world_select_ee, payload]
@@ -35,13 +34,12 @@ const choraReducer = createReducer(choraInitialState, (thing) =>
           ee = []
         } else if (ee.length === key.length) {
           solved = true
-          selectedWorld = ChoraWorlds.EE_WANDERER
         }
       }
 
       return {
         ...state,
-        selectedWorld: selectedWorld,
+        selectedWorld: payload,
         world_select_ee: ee,
         world_select_ee_solved: solved
       }

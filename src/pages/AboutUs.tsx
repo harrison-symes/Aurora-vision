@@ -14,6 +14,7 @@ import manny from "../assets/images/about-us/manny.webp";
 import jeremyBrow from "../assets/images/about-us/jeremy-brow.webp";
 import aidanFalconer from "../assets/images/about-us/aidan-falconer.webp";
 import harrisonSymes from "../assets/images/about-us/harrison-symes.webp";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -24,6 +25,14 @@ const AboutUs = () => {
 
   return (
     <div>
+      <Helmet>
+          <title>About Us | Auroravision</title>
+          <meta
+              name="description"
+              content="AuroraVision is a New Zealand filmmaker collective specializing in film production, cinematography, editing, documentaries, music videos, commercial content, and visual storytelling."
+          />
+          <link rel="canonical" href="https://www.auroravision.nz/about-us" />
+      </Helmet>
       <AboutUsHero />
       <TextBlockWithImage
         imageUrl={spaceship}

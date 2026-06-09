@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import ChoraBanner from "../components/Chora/ChoraBanner";
 import ChoraInfoPanel from "../components/Chora/ChoraInfoPanel/ChoraInfoPanel";
 import ChoraMap from "../components/Chora/ChoraMap/ChoraMap";
@@ -8,6 +9,15 @@ import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithIm
 const Chora = () => {
     return (
         <div>
+            <Helmet>
+                <title>Chōra | Auroravision</title>
+                <meta
+                    name="description"
+                    content="Chōra is an anthology short film exploring five distinct sci-fi storyworlds."
+                />
+                <link rel="canonical" href="https://www.auroravision.nz/chora" />
+            </Helmet>
+            
             <ChoraBanner />
             <ChoraMap />
             <ChoraInfoPanel />

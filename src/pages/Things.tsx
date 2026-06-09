@@ -6,10 +6,19 @@ import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithIm
 import ThingsCarousel from "../components/Carousel/ThingsCarousel";
 import jamesAndJan from "../assets/images/things/james-and-jan.webp";
 import teamMovesCar from "../assets/images/things/team-moves-car.webp";
+import { Helmet } from "react-helmet-async";
 
 const Things = () => {
   return (
     <div>
+      <Helmet>
+          <title>Things | Auroravision</title>
+          <meta
+            name="description"
+            content={`Created in just 48 hours, THINGS blends surrealism, horror, and absurdity into a haunting reflection on greed and consequence. The film was selected as a Regional Finalist and received the Incredibly Strange Award at the 2025 48Hours Film Festival.`}
+          />
+          <link rel="canonical" href="https://www.auroravision.nz/things" />
+      </Helmet>
       <YoutubeBlock
         titleImageUrl={thingsLogo}
         paragraphs={[

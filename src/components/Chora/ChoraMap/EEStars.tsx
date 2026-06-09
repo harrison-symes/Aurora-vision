@@ -7,6 +7,14 @@ import { ChoraWorlds } from "../choraData"
 
 import cn from "classnames"
 
+const starText = [
+    "A fragment of something... fleeting? A memory? Could there be more...",
+    "A thought drums through your mind... Calm... Directive... Move.",
+    "You feel as though you are being watched. Strange. The sensation is indiscernibly both a higher power, as well as your own ego.",
+    "Your pockets are empty, but the weight of that could almost pull you to your knees.",
+    "Not all those who wander are lost."
+]
+
 const EEStars = () => {
     const dispatch = useDispatch()
     const steps = useSelector(getWorldEEStepsFound)
@@ -26,8 +34,8 @@ const EEStars = () => {
         <div className={cn("chora-map__ee-stars", {
             "solved": isSolved
         })}>
-            {new Array(steps).fill(0).map(() => (
-                <img className="chora-map__ee-star" onClick={onClick} src={star} title="A fragment of something... fleeting? A memory? Could there be more..." />
+            {new Array(steps).fill(0).map((_, idx) => (
+                <img className="chora-map__ee-star" onClick={onClick} src={star} title={starText[idx] ?? ""} />
             ))}
         </div>
     )
