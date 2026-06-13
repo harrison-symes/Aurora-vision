@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 
 interface IProps {
   videoId?: string;
-  titleImageUrl: string;
-  paragraphs: string[];
+  titleImageUrl?: string;
+  title?: string;
+  titleIcon?: string;
+  paragraphs: Array<string | React.ReactNode>;
   credits?: Array<{
     title: string;
     fullName: string;
@@ -15,6 +17,7 @@ interface IProps {
   isGrey?: boolean;
   heightRatio?: number;
   buttonLink?: string;
+  variant?: "splitWithTitle"
 }
 
 const YoutubeBlock = (props: IProps) => {
@@ -24,6 +27,8 @@ const YoutubeBlock = (props: IProps) => {
       className={cn("youtube-block", {
         "youtube-block--reverse": props.isReverse,
         "youtube-block--grey": props.isGrey,
+        "youtube-block--split": props.variant === "splitWithTitle",
+        "youtube-block--no-logo": props.titleImageUrl == null
       })}
     >
       <div className="youtube-block__container">
@@ -34,10 +39,17 @@ const YoutubeBlock = (props: IProps) => {
             heightRatio={props.heightRatio}
           />
         </div>
-        <img src={props.titleImageUrl} className="youtube-block__title-image" />
+        {props.titleImageUrl && <img src={props.titleImageUrl} className="youtube-block__title-image" />}
         <div className="youtube-block__text-container">
+          {props.title && (
+            <div className="youtube-block__title">
+              {props.titleIcon && <img alt={props.title} src={props.titleIcon} className="youtube-block__title__icon" />}
+              <h1 className="youtube-block__title__text">{props.title}</h1>
+              {props.titleIcon && <div className="youtube-block__title__spacer" />}
+            </div>
+          )}
           {props.paragraphs.map((p) => (
-            <p key={p.slice(10)} className="youtube-block__paragraph">
+            <p className="youtube-block__paragraph">
               {p}
             </p>
           ))}

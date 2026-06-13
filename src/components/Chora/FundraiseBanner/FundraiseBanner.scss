@@ -20,12 +20,20 @@ $background: #544468;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: $white;
-    // text-transform: uppercase;
+    text-transform: uppercase;
     
     @include md {
         font-size: 4rem;
         margin-bottom: 1.5rem;
     }
+}
+
+.fundraise-banner__chora {
+    font-family: "Bauhaus 93", sans-serif;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    line-height: 0.8;
+    color: $chora-pink;
 }
 
 .fundraise-banner__button {

@@ -7,12 +7,32 @@ interface IChoraReducerState {
   selectedWorld: ChoraWorlds | null;
   world_select_ee: ChoraWorlds[];
   world_select_ee_solved: boolean;
+  circlesClicked: number;
+  macleanLetters: {
+    m: boolean;
+    a: boolean;
+    c: boolean;
+    l: boolean;
+    e: boolean;
+    a2: boolean;
+    n: boolean;
+  }
 }
 
 export const choraInitialState: IChoraReducerState = {
   selectedWorld: null,
   world_select_ee: [],
   world_select_ee_solved: false,
+  circlesClicked: 0,
+  macleanLetters: {
+    m: false,
+    a: false,
+    c: false,
+    l: false,
+    e: false,
+    a2: false,
+    n: false,
+  }
 };
 
 export const selectChoraWorld = createAction<ChoraWorlds>(
@@ -20,6 +40,12 @@ export const selectChoraWorld = createAction<ChoraWorlds>(
 );
 export const clearChoraWorld = createAction(
   "CHORA/CLEAR_WORLD"
+);
+export const clickChoraCircle = createAction(
+  "CHORA/CLICK_CIRCLE"
+);
+export const clickMacleanLetter = createAction<string>(
+  "CHORA/CLICK_MACLEAN_LETTER"
 );
 
 const choraReducer = createReducer(choraInitialState, (thing) =>
@@ -48,6 +74,30 @@ const choraReducer = createReducer(choraInitialState, (thing) =>
       ...state,
       selectedWorld: null,
     }))
+    .addCase(clickChoraCircle, (state) => {
+      const newClicked = state.circlesClicked + 1 
+      if (newClicked >= 14) {
+        return {
+          ...state,
+          selectedWorld: ChoraWorlds.EE_COSMOS,
+          circlesClicked: 14
+        }
+      }
+
+      return {
+        ...state,
+        circlesClicked: newClicked
+      }
+    })
+    .addCase(clickMacleanLetter, (state, {payload}) => {
+      console.log(payload)
+      return {
+      ...state,
+      macleanLetters: {
+        ...state.macleanLetters,
+        [payload as any]: true 
+      }
+    }})
 );
 
 export default choraReducer;

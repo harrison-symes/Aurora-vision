@@ -17,7 +17,8 @@ export enum ChoraWorlds {
     SecondGenesis = "Second Genesis",
     Octopod = "Octopod",
     GodComplex = "God Complex",
-    EE_WANDERER = "Wanderer"
+    EE_WANDERER = "Wanderer",
+    EE_COSMOS = "A Higher Cosmos"
 }
 
 export const mapWorldToData: Record<ChoraWorlds, ChoraData> = {
@@ -93,4 +94,16 @@ export const mapWorldToData: Record<ChoraWorlds, ChoraData> = {
         ),
         image: coherence
     },
+    [ChoraWorlds.EE_COSMOS]: {
+        name: ChoraWorlds.EE_COSMOS,
+        status: "UNKNOWN",
+        description: (
+            <span>
+                <p>Some things here were never born. Others clawed their way free. Beings drift above this space ~ some watching. Some remembering.</p>
+                <p>And I…</p>
+                <p>I am small. But I am.</p>
+            </span>
+        ),
+        image: coherence
+    }
 }

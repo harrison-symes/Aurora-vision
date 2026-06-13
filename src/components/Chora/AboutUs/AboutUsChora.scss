@@ -1,0 +1,152 @@
+@import "../../../styles/colours.scss";
+@import "../../../styles/mixins.scss";
+
+$chora-pink: #fbaae3;
+
+.about-us-chora {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    background-color: $grey;
+}
+
+.about-us-chora__title {
+    font-size: 2.5rem;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 auto 2.5rem;
+
+    @include md {
+        font-size: 3rem;
+    }
+
+    &--pink {
+        font-family: "Bauhaus 93", sans-serif;
+        letter-spacing: -4px;
+        text-transform: uppercase;
+        line-height: 0.8;
+        color: $chora-pink;
+    }
+}
+
+.about-us-chora__inner {
+    max-width: 980px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+
+    @include md {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    @include lg {
+        gap: 1.5rem;
+    }
+    // @include md {
+    //     display: grid;
+    //     grid-template-columns: repeat(2, 1fr);
+    //     align-items: start;
+    //     justify-content: center;
+    //     gap: 2rem;
+    // }
+
+    // @include lg {
+    //     grid-template-columns: repeat(4, 1fr);
+    //     gap: 1.5rem;
+    //     justify-content: center;
+    // }
+}
+
+.about-us-chora__frame {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+        margin-bottom: 0;
+        max-width: 350px;
+    }
+    
+    @include lg {
+        max-width: 200px;
+        // max-width: calc(25% - .5rem);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        filter: drop-shadow(0px 0px 0px $white)
+    }
+    
+    30% {
+        filter: drop-shadow(0px 0px 1px $white)
+    }
+    50% {
+        filter: drop-shadow(0px 0px 2px $white)
+    }
+    75% {
+        filter: drop-shadow(0px 0px 4px $white)
+    }
+    
+    100% {
+        filter: drop-shadow(0px 0px 5px $white)
+    }
+}
+
+.about-us-chora__image {
+    max-width: 60vw;
+    margin-bottom: .5rem;
+
+    animation: pulse 2s infinite alternate;
+    transition: filter;
+
+    @include md {
+        max-width: 100%;
+    }
+}
+
+.about-us-chora__name {
+    font-size: 2rem;
+    color: $white;
+    font-family: "League Gothic", sans-serif;
+    letter-spacing: 1px;
+    margin: 0 auto .5rem;
+    text-transform: uppercase;
+}
+
+.about-us-chora__role {
+    font-size: 1.25rem;
+    color: $white;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 1px;
+    margin: 0 auto .5rem;
+}
+
+.about-us-chora__circle {
+    cursor: pointer;
+    &.active {
+        color: $chora-pink;
+    }
+}
+
+.mac-letter {
+    cursor: pointer;
+
+    &.clicked {
+        color: $chora-pink;
+        cursor: auto;
+    }
+}

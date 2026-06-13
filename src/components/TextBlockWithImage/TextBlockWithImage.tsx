@@ -7,6 +7,7 @@ interface IProps {
   imageUrl: string;
   slowImageUrl?: string;
   title?: string;
+  titleIcon?: string;
   paragraphs: Array<string | React.ReactNode>;
   imageClass?: string;
   bgColour?: "grey" | "white";
@@ -42,7 +43,13 @@ const TextBlockWithImage = (props: IProps) => {
       >
         <div className="content-block__text-container">
           {props.title && (
-            <div className="content-block__title">{props.title}</div>
+            <div className={cn("content-block__title", {
+              "content-block__title--with-icon": props.titleIcon
+            })}>
+              {props.titleIcon && <img alt={props.title} src={props.titleIcon} className="content-block__title__icon" />}
+              <h1 className="content-block__title__text">{props.title}</h1>
+              {props.titleIcon && <div className="content-block__title__spacer" />}
+            </div>
           )}
           {props.paragraphs.map((p) => (
             <p className="content-block__paragraph">{p}</p>

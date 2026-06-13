@@ -1,0 +1,100 @@
+@import "../../styles/colours.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/vars";
+
+.split-text-panel {
+    width: 100%;
+}
+
+.split-text-panel__inner {
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.split-text-panel__content {
+    padding: 1rem 1rem;
+    text-align: center;
+
+    @include lg {
+        padding: 1rem 1rem 1.5rem;
+    }
+    
+    &--grey {
+        background-color: $grey;
+        color: $white;
+    }
+    
+    &:first-child {
+        .split-text-panel__content__inner {
+            margin-left: auto;
+        }
+    }
+    &:last-child {
+        .split-text-panel__content__inner {
+            margin-right: auto;
+        }
+    }
+}
+
+.split-text-panel__content__inner {
+    width: 100%;
+
+    @include lg {
+        max-width: calc((1280px / 2) - 2rem);
+    }
+}
+
+.split-text-panel__title {
+    margin-bottom: 1rem;
+    display: grid;
+    gap: .5rem;
+
+    &--with-icon {
+        grid-template-columns: 1fr auto 1fr;
+    }
+}
+
+.split-text-panel__title__text {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    font-size: $mobile-title;
+    
+    @include md {
+        font-size: $tablet-title;
+    }
+    
+    @include lg {
+        font-size: $desktop-title;
+    }
+    
+}
+
+.split-text-panel__paragraph {
+    margin-bottom: .5rem;
+}
+
+
+.split-text-panel__title__icon {
+    justify-self: flex-end;
+    align-self: center;
+    max-height: $mobile-title;
+
+    @include md {
+        max-height: $tablet-title;
+    }
+
+    @include lg {
+        max-height: $desktop-title;
+    }
+}
+
+.split-text-panel__title__spacer {
+
+}

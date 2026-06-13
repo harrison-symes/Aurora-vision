@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
-import { getIsWorldEESolved, getWorldEEStepsFound } from "../../../selectors/chora.selectors"
+import { getAreAllCirclesClicked, getIsWorldEESolved, getWorldEEStepsFound } from "../../../selectors/chora.selectors"
 
 import star from "../../../assets/images/chora/chora_star.png"
+import pink_star from "../../../assets/images/chora/chora_star_pink.png"
 import { selectChoraWorld } from "../../../reducers/chora.reducers"
 import { ChoraWorlds } from "../choraData"
 
@@ -19,15 +20,20 @@ const EEStars = () => {
     const dispatch = useDispatch()
     const steps = useSelector(getWorldEEStepsFound)
     const isSolved = useSelector(getIsWorldEESolved)
+    const circlesClicked = useSelector(getAreAllCirclesClicked)
 
-    if (steps === 0 && !isSolved) {
+    if ((steps === 0 && !isSolved) && !circlesClicked) {
         return null
     }
 
-    const onClick = () => {
+    const onClickBlue = () => {
         if (isSolved) {
             dispatch(selectChoraWorld(ChoraWorlds.EE_WANDERER))
         }
+    }
+
+    const onClickPink = () => {
+        dispatch(selectChoraWorld(ChoraWorlds.EE_COSMOS))
     }
 
     return (
@@ -35,8 +41,13 @@ const EEStars = () => {
             "solved": isSolved
         })}>
             {new Array(steps).fill(0).map((_, idx) => (
-                <img className="chora-map__ee-star" onClick={onClick} src={star} title={starText[idx] ?? ""} />
+                <img className="chora-map__ee-star" onClick={onClickBlue} src={star} title={starText[idx] ?? ""} />
             ))}
+            {
+                circlesClicked && (
+                    <img className="chora-map__ee-star pink" onClick={onClickPink} src={pink_star} />
+                )
+            }
         </div>
     )
 }

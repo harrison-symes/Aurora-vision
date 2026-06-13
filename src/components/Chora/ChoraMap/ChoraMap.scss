@@ -172,4 +172,8 @@ $background: #544468;
 .chora-map__ee-star {
     width: 2rem;
 
+
+    &.pink {
+        cursor: pointer;
+    }
 }

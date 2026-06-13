@@ -31,6 +31,9 @@
     font-style: normal;
 }
 
+$chora-pink: #fbaae3;
+$background: #544468;
+
 $main-width: 1280px; 
 
 * {
@@ -88,15 +91,26 @@ p {
 }
 
 .bts-header {
-    margin-top: 1rem;
     width: 100%;
     background-color: $grey;
     color: $white;
-    padding: .5rem 1rem;
+    padding: 1rem 1rem .5rem;
     text-align: center;
     font-size: $desktop-title;
 
     @media only screen and (max-width: 768px) {
         font-size: $mobile-title;
     }
+
+    &--purple {
+        background-color: $background;
+    }
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.chora-pink {
+    color: $chora-pink;
 }
