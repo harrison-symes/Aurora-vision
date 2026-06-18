@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 import { getAreAllCirclesClicked, getIsWorldEESolved, getWorldEEStepsFound } from "../../../selectors/chora.selectors"
 
-import star from "../../../assets/images/chora/chora_star.png"
-import pink_star from "../../../assets/images/chora/chora_star_pink.png"
+import star from "../../../assets/images/chora/chora_star.webp"
+import pink_star from "../../../assets/images/chora/chora_star_pink.webp"
 import { selectChoraWorld } from "../../../reducers/chora.reducers"
 import { ChoraWorlds } from "../choraData"
 

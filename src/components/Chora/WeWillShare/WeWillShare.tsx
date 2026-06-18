@@ -5,7 +5,7 @@ const WeWillShare = () => {
         <div className="we-will-share">
             <div className="we-will-share__inner">
                 <div className="we-will-share__title">
-                    We will share:
+                    WE WILL SHARE:
                 </div>
                 <ul className="we-will-share__list">
                     <li>Behind-the-scenes footage from shoots</li>

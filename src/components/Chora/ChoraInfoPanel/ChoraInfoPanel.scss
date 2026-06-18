@@ -327,6 +327,11 @@ $chora-pink: #fbaae3;
     opacity: 0;
     animation: chora-info-char-reveal 160ms ease forwards;
     animation-play-state: paused;
+
+
+    &--blue {
+        color: $blue;
+    }
 }
 
 .chora-info-panel__content.visible .chora-info-panel__char {

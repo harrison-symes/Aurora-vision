@@ -7,12 +7,13 @@ import WeWillShare from "../components/Chora/WeWillShare/WeWillShare";
 import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithImage";
 import AboutUsChora from "../components/Chora/AboutUs/AboutUsChora";
 import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
-import BTSCarousel from "../components/Chora/BehindTheScenes/BTSCarousel";
+import MomentumBTS from "../components/Chora/BehindTheScenes/MomentumBTS";
 
-import project_icon from "../assets/images/chora/icons/project_icon.png"
-import fundraiser_icon from "../assets/images/chora/icons/fundraiser_icon.png"
-import impact_icon from "../assets/images/chora/icons/impact_icon.png"
+import project_icon from "../assets/images/chora/icons/project_icon.webp"
+import fundraiser_icon from "../assets/images/chora/icons/fundraiser_icon.webp"
+import impact_icon from "../assets/images/chora/icons/impact_icon.webp"
 import SplitTextPanel from "../components/SplitTextPanel/SplitTextPanel";
+import SecondGenesisStoryboard from "../components/Chora/BehindTheScenes/SecondGenesisStoryboard";
 
 const Chora = () => {
     return (
@@ -48,11 +49,9 @@ const Chora = () => {
             <SplitTextPanel 
                 leftContent={{
                     paragraphs: [
-                        <>We are raising money to help bring the next stage of this anthology to life. The first two vignettes, <b>Momentum</b> & <b>Second Genesis</b>, have already been shot using the resources, gear, and volunteers we could put together ourselves. Now, we want to take the project further and give each piece the level of craft, care, and ambition they deserve.</>,
-                        "This campaign will help us support our cast and crew, build interesting sets, create unique costumes and props, access shooting locations, further develop compelling VFX and animation, and continue building inclusive creative pipelines for emerging filmmakers in Te Whanganui-a-Tara.",
-                        "We believe in ambitious, independent genre filmmaking.",
-                        "We believe in the creative community around us.",
-                        "And we believe this project can become a platform for the next wave of unique, artist driven filmmaking in Te Whanganui-a-Tara~!"
+                        <>The AuroraVision Anthology is being produced independently by a passionate team working with limited resources, borrowed gear, personal equipment, favours, and a huge amount of volunteer labour. </>,
+                        <>We have already started. <b>Momentum</b> and <b>Second Genesis</b> have been shot, and development is underway on the next pieces of the anthology. Our internal budget forecast gives us a clear baseline for the core production needs, but this campaign is designed to give the project proper breathing room beyond the bare minimum.</>,
+                        <>We are raising <b>$10,000</b> to help us complete the next stage of the anthology and support the practical costs of making five unique storyworlds within one film.</>
                     ],
                     title: "THE FUNDRAISER",
                     titleIcon: fundraiser_icon,
@@ -74,9 +73,10 @@ const Chora = () => {
                     titleIcon: impact_icon
                 }}
             />
-            <BTSCarousel />
+            <SecondGenesisStoryboard />
             <WeWillShare />
             <AboutUsChora />
+            <MomentumBTS />
             <FundraiseBanner />
         </div>
     )

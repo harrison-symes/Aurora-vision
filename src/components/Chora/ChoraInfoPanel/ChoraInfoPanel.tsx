@@ -49,7 +49,9 @@ const createAnimatedChars = (text: string, idPrefix: string, startDelay = 0, lab
         return (
             <span
                 key={`${idPrefix}-${index}`}
-                className="chora-info-panel__char"
+                className={cn("chora-info-panel__char", {
+                    "chora-info-panel__char--blue": labelLength > 0 && index < labelLength 
+                })}
                 style={{ animationDelay: `${charDelay}ms` }}
             >
                 {char}

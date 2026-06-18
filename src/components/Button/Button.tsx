@@ -7,6 +7,7 @@ interface IButtonProps extends React.PropsWithChildren {
   onClick?: () => void;
   className?: string;
   colour?: "purple" | "pink" | "blue" | "green" | "black" | "white";
+  externalLink?: boolean;
 }
 
 const Button = (props: IButtonProps) => {
@@ -21,7 +22,7 @@ const Button = (props: IButtonProps) => {
 
   if (typeof props.href !== "undefined") {
     return (
-      <Link className={className} to={props.href}>
+      <Link className={className} to={props.href} target={props.externalLink ? "_blank" : "_self"}>
         {props.children}
       </Link>
     );

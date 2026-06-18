@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { clickChoraCircle } from "../../../reducers/chora.reducers";
 import { getAreMacleanLettersClicked } from "../../../selectors/chora.selectors";
 
-import maclean from "../../../assets/images/chora/placeholder.png"
-import maclean_2 from "../../../assets/images/chora/maclean_2.png"
-import maclean_3 from "../../../assets/images/chora/maclean_3.png"
-import maclean_4 from "../../../assets/images/chora/maclean_4.png"
-import maclean_5 from "../../../assets/images/chora/maclean_5.png"
-import maclean_6 from "../../../assets/images/chora/maclean_6.png"
-import maclean_7 from "../../../assets/images/chora/maclean_7.png"
+import maclean from "../../../assets/images/chora/placeholder.webp"
+import maclean_2 from "../../../assets/images/chora/maclean_2.webp"
+import maclean_3 from "../../../assets/images/chora/maclean_3.webp"
+import maclean_4 from "../../../assets/images/chora/maclean_4.webp"
+import maclean_5 from "../../../assets/images/chora/maclean_5.webp"
+import maclean_6 from "../../../assets/images/chora/maclean_6.webp"
+import maclean_7 from "../../../assets/images/chora/maclean_7.webp"
 
 interface IProps {
     name: string | React.ReactNode;

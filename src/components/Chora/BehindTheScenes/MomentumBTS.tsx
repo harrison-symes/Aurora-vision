@@ -1,17 +1,17 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-import bts1 from "../../../assets/images/chora/bts/bts-1.png";
-import bts2 from "../../../assets/images/chora/bts/bts-2.png";
-import bts3 from "../../../assets/images/chora/bts/bts-3.png";
-import bts4 from "../../../assets/images/chora/bts/bts-4.png";
-import bts5 from "../../../assets/images/chora/bts/bts-5.png";
-import bts6 from "../../../assets/images/chora/bts/bts-6.png";
-import bts7 from "../../../assets/images/chora/bts/bts-7.png";
-import bts8 from "../../../assets/images/chora/bts/bts-8.png";
-import bts9 from "../../../assets/images/chora/bts/bts-9.png";
-import bts10 from "../../../assets/images/chora/bts/bts-10.png";
+import bts1 from "../../../assets/images/chora/bts/bts-1.webp";
+import bts2 from "../../../assets/images/chora/bts/bts-2.webp";
+import bts3 from "../../../assets/images/chora/bts/bts-3.webp";
+import bts4 from "../../../assets/images/chora/bts/bts-4.webp";
+import bts5 from "../../../assets/images/chora/bts/bts-5.webp";
+import bts6 from "../../../assets/images/chora/bts/bts-6.webp";
+import bts7 from "../../../assets/images/chora/bts/bts-7.webp";
+import bts8 from "../../../assets/images/chora/bts/bts-8.webp";
+import bts9 from "../../../assets/images/chora/bts/bts-9.webp";
+import bts10 from "../../../assets/images/chora/bts/bts-10.webp";
 
-const BTSCarousel = () => {
+const MomentumBTS = () => {
   const carouselImages: string[] = [
     bts1,
     bts2,
@@ -31,7 +31,7 @@ const BTSCarousel = () => {
         <Splide
           aria-label="Behind the scenes images"
           options={{
-            autoplay: true,
+            autoplay: false,
             autoWidth: true,
             autoHeight: true,
             wheel: false,
@@ -61,4 +61,4 @@ const BTSCarousel = () => {
   );
 };
 
-export default BTSCarousel;
+export default MomentumBTS;

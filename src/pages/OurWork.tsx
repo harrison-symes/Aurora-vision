@@ -126,7 +126,7 @@ const OurWork = () => {
         ]}
         videoId="mqDEVoZMv04"
         heightRatio={9 / 16}
-        buttonLink="/"
+        buttonLink="/temporal"
       />
       <YoutubeBlock
         titleImageUrl={thingsLogo}

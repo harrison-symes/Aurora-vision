@@ -1,5 +1,6 @@
 @import "../../../styles/colours.scss";
 @import "../../../styles/mixins.scss";
+@import "../../../styles/vars.scss";
 
 $chora-pink: #fbaae3;
 $background: #544468;
@@ -20,10 +21,10 @@ $background: #544468;
 .we-will-share__text {
     text-align: center;
 
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     
     @include md {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         max-width: 600px;
         margin: auto;
     }
@@ -33,11 +34,15 @@ $background: #544468;
     text-align: center;
     font-weight: bold;
     color: $background;
-    font-size: 2.5rem;
+    font-size: $mobile-title;
     margin-bottom: 1rem;
 
     @include md {
-        font-size: 3rem;
+        font-size: $tablet-title;
+    }
+
+    @include lg {
+        font-size: $desktop-title;
     }
 }
 

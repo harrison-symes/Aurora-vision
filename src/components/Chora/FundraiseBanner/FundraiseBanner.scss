@@ -1,5 +1,6 @@
 @import "../../../styles/colours.scss";
 @import "../../../styles/mixins.scss";
+@import "../../../styles/vars.scss";
 
 $chora-pink: #fbaae3;
 $background: #544468;
@@ -17,14 +18,18 @@ $background: #544468;
 
 .fundraise-banner__title {
     margin: auto;
-    font-size: 2.5rem;
+    font-size: $mobile-title;
     margin-bottom: 1rem;
     color: $white;
     text-transform: uppercase;
     
     @include md {
-        font-size: 4rem;
+        font-size: $tablet-title;
         margin-bottom: 1.5rem;
+    }
+
+    @include lg {
+        font-size: $desktop-title;
     }
 }
 
@@ -40,20 +45,25 @@ $background: #544468;
     margin: auto;
     max-width: none;
     padding: .5rem 1rem;
-    font-size: 2rem;
+    font-size: $mobile-title - .25rem;
     
     border: none;
     color: $background;
     background-color: $chora-pink;
     width: 100%;
     // text-transform: uppercase;
-    
+
     @include md {
+        font-size: $tablet-title - .5rem;
         padding: .5rem 1rem;
         font-size: 2.5rem;
         width: auto;
     }
-
+        
+    @include lg {
+        font-size: $desktop-title - .5rem;
+    }
+    
     &:hover {
         background-color: darken($chora-pink, 3%);
     }

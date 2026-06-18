@@ -44,9 +44,9 @@ const NavBar = () => {
                   onToggle={() => setIsActive((state) => !state)}
                 />
               </div>
-              <NavItem href="/" text="HOME" />
-              {/* <NavItem href="/chora" text="CHORA" /> */}
-              {/* <NavItem href="/temporal" text="TEMPORAL" /> */}
+              {/* <NavItem href="/" text="HOME" /> */}
+              <NavItem href="/" text="CHORA" />
+              <NavItem href="/temporal" text="TEMPORAL" />
               <NavItem href="/about-us" text="ABOUT US" />
               <NavItem href="/our-work" text="OUR WORK" />
               <NavItem href="/contact" text="CONTACT US" />

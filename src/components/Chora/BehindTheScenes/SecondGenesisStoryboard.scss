@@ -1,0 +1,52 @@
+@import "../../../styles/colours.scss";
+@import "../../../styles/mixins.scss";
+@import "../../../styles/vars.scss";
+
+$background: #544468;
+
+.sg-storyboard {
+    width: 100%;
+    background-color: $background;
+}
+
+.sg-storyboard__inner {
+    width: 100%;
+    max-width: 980px;
+    margin: auto;
+    padding: 1.5rem 1rem;
+
+    color: $white;
+}
+
+.sg-storyboard__title {
+    text-align: center;
+    font-size: $mobile-title;
+    margin: 0 auto 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    @include md {
+        font-size: $tablet-title;
+    }
+
+    @include lg {
+        font-size: $desktop-title;
+    }
+}
+
+.sg-storyboard__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    @include md {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+.sg-storyboard__image {
+    border-radius: .25rem;
+}

@@ -1,5 +1,6 @@
 @import "../../../styles/colours.scss";
 @import "../../../styles/mixins.scss";
+@import "../../../styles/vars.scss";
 
 $chora-pink: #fbaae3;
 
@@ -10,16 +11,20 @@ $chora-pink: #fbaae3;
 }
 
 .about-us-chora__title {
-    font-size: 2.5rem;
     color: $white;
     text-align: center;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 0 auto 2.5rem;
+    font-size: $mobile-title;
 
     @include md {
-        font-size: 3rem;
+        font-size: $tablet-title;
+    }
+
+    @include lg {
+        font-size: $desktop-title;
     }
 
     &--pink {

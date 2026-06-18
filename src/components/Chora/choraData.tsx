@@ -1,8 +1,8 @@
-import momentum from "../../assets/images/chora/momentum.png";
-import coherence from "../../assets/images/chora/coherence.png";
-import god_complex from "../../assets/images/chora/god_complex.png";
-import second_genesis from "../../assets/images/chora/second_genesis.png";
-import octopod from "../../assets/images/chora/octopod.png";
+import momentum from "../../assets/images/chora/momentum.webp";
+import coherence from "../../assets/images/chora/coherence.webp";
+import god_complex from "../../assets/images/chora/god_complex.webp";
+import second_genesis from "../../assets/images/chora/second_genesis.webp";
+import octopod from "../../assets/images/chora/octopod.webp";
 
 export interface ChoraData {
     name: ChoraWorlds;
@@ -39,10 +39,10 @@ export const mapWorldToData: Record<ChoraWorlds, ChoraData> = {
         description: (
             <span>
                 <p>
-                    In Coherence, we follow two characters who exist within Chōra itself; The Observer and the Chorus Orb. They move through the fragments of these worlds together. 
+                    Between each of these worlds is Chōra. A space between universes. A higher plane. A cosmic membrane where different timelines, memories, and systems touch and intertwine.
                 </p>
                 <p>
-                    The Observer searches for meaning, patterns, and systems. The Chorus Orb offers something stranger: consensus, surrender, and the possibility of “true understanding”
+                    Coherence follows two characters who exist within Chōra itself; “The Observer” and the Chorus Orb. They move through the fragments of these worlds together. The Observer searches for meaning, patterns, and systems. The Chorus Orb offers something stranger: consensus, surrender, and the possibility of “true understanding”.
                 </p>
             </span>
         ),
@@ -72,11 +72,10 @@ export const mapWorldToData: Record<ChoraWorlds, ChoraData> = {
     },
     [ChoraWorlds.SecondGenesis]: {
         name: ChoraWorlds.SecondGenesis,
-        status: "Pre Production",
+        status: "Post Production",
         description: (
             <span>
-                <p>Set in a post-collapse Aotearoa, Second Genesis follows a community of people who come to worship a robot as a god.</p>
-                <p>Old technology has become myth. Broken systems have become ritual. Offerings of techno-trash are brought to the machine, which slowly begins using them to build something new.</p>
+                <p>Set in a post-collapse Aotearoa, Second Genesis follows a robot who has come to be worshipped like a god by a community of human survivors. In a future where old technology has become myth and systems turn into ritual, offerings of techno-trash are brought to the machine, who slowly begins using them to build something new.</p>
             </span>
         ),
         image: second_genesis
