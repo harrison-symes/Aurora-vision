@@ -1,115 +1,81 @@
-.hero {
-    width: 100%;
-    height: 450px;
+@import "colours";
+@import "vars";
+@import "mixins";
 
-    background-color: $grey;
+// One hero for every page. Variants:
+//   --photo  background photograph, title bottom-left over a scrim
+//   --plain  flat surface ground, for pages with no location still
+// The Chora page keeps its own ChoraBanner and is not built from this.
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: clamp(240px, 32vw, 420px);
+    display: flex;
+    align-items: flex-end;
+
+    background-color: $surface;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    // background-color: $grey;
 
-    @media only screen and (max-width: 768px) {
-        height: 220px;
-    }
-    
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        height: 240px;
+    // Scrim: keeps the title legible over any still without dimming
+    // the whole photograph.
+    &--photo::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to top,
+            rgba(14, 15, 23, 0.8) 0%,
+            rgba(14, 15, 23, 0.35) 45%,
+            rgba(14, 15, 23, 0) 75%
+        );
     }
 
-    @media only screen and (min-width: 1024px) and (max-width: 1100px) {
-        height: 280px;
-    }
-    
     &__container {
-        max-width: 1280px;
-        margin: auto;
-        position: relative;
-        padding: 1rem;
-
-        height: 100%;
+        position: relative; // above the scrim
+        z-index: 1;
         width: 100%;
+        max-width: $container;
+        margin: 0 auto;
+        padding: $sp-4 $gutter;
+
         display: flex;
-        justify-content: center;
-        align-items: flex-end;
-
-        @media only screen and (max-width: 768px) {
-            max-width: 100%;
-        }
-
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
-            max-width: 800px;
-        }
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $sp-1;
     }
 
-    &--our-work {
-        background-image: url("../../public/images/our-work/banner.webp");
-        // background-position: 0% 75%;
+    &__eyebrow {
+        font-family: $font-mono;
+        font-size: $fs-label;
+        letter-spacing: $tracking-label;
+        text-transform: uppercase;
+        color: $accent;
+        margin: 0;
     }
 
-    &--about-us {
-        background-image: url("../../public/images/about-us/banner.webp");
-        // background-position: 0% 50%;
-    }
+    &__title {
+        margin: 0;
+        max-width: 18ch;
 
-    &--contact-us {
-        background-image: url("../../public/images/contact-us/banner.webp");
-        // background-position: 0% 50%;
-    }
-
-    &__text {
-        font-weight: bold;
-        margin-top: 0;
-        line-height: 1;
-        letter-spacing: 2px;
-
-        @media only screen and (max-width: 768px) {
-            font-size: 2.5rem;
-        }
-
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
-            font-size: 3rem;
-        }
-
-        @media only screen and (min-width: 1024px) and (max-width: 1100px) {
-            font-size: 4rem;
-        }
-    }
-
-    &__text-container {
-        font-size: 5rem;
-        color: $black;
-
-        @media only screen and (max-width: 768px) {
-            font-size: 3rem;
-        }
-
-        &--top-right {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-
-            @media only screen and (max-width: 768px) {
-                top: .25rem;
-                right: .25rem;
-            }
-        }
-        &--bottom-center {
-            
-            // position: absolute;
-            font-size: 7rem;
-            color: $white;
-            text-shadow: 2px 2px $black;
-        }
+        font-family: $font-display;
+        font-weight: 800;
+        font-size: $fs-display;
+        line-height: $lh-tight;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        text-wrap: balance;
+        color: $light;
     }
 }
 
+// About Us: crew cut-out that rises out of the band below the hero.
 .hero--overlay {
     height: 350px;
-
     width: 100%;
-
     position: relative;
-
     display: flex;
     justify-content: center;
 
@@ -138,5 +104,5 @@
 }
 
 .about-us-hero__container {
-    background-color: $grey;
+    background-color: $surface;
 }
