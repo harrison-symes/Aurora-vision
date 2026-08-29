@@ -1,10 +1,11 @@
 @import "./colours.scss";
 @import "vars";
+@import "mixins";
 
 .navbar {
     &__container {
         width: 100%;
-        // height: $navHeight;
+        height: $navbar-height;
         background-color: $black;
         z-index: 1000;
         position: fixed;
@@ -18,32 +19,27 @@
     
     &__inner {
         width: 100%;
+        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-direction: column;
-        padding: 0 1rem;
-        max-width: 1600px;
-
-        @media only screen and (max-width: 768px) {
-            padding: 0 1rem;
-
-            display: flex;
-            flex-direction: row;
-        }
+        flex-direction: row;
+        gap: $sp-3;
+        padding: 0 $gutter;
+        max-width: $container;
     }
 
     &__top {
-        margin-top: 1rem;
+        margin-top: 0;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         width: 100%;
-        height: 60px;
+        height: 100%;
 
-        @media only screen and (max-width: 768px) {
-            margin-top: 0;
-            justify-content: space-between;
+        @include md {
+            width: auto;
+            flex: 0 0 auto;
         }
     }
     
@@ -51,17 +47,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: .5rem;
+        height: 100%;
     }
 
     &__logo {
-        max-height: 70px;
-        width: 100%;
-        padding: .25rem 0;
+        display: block;
+        height: 40px;
+        width: auto;
+        padding: 0;
         cursor: pointer;
 
         @media only screen and (max-width: 768px) {
-            max-height: 50px;
+            height: 34px;
         }
     }
 
@@ -93,8 +90,8 @@
     &__items {
         height: 100%;
         display: flex;
-        justify-content: space-evenly;
-        align-items: flex-end;
+        justify-content: flex-end;
+        align-items: center;
 
         @media only screen and (max-width: 768px) {
             position: fixed;
@@ -142,14 +139,16 @@
 
     &__item {
         white-space: nowrap;
-        font-size: $desktop-paragraph;
-        padding: .5rem 1rem;
+        font-family: $font-mono;
+        font-size: $fs-label;
+        letter-spacing: $tracking-label;
+        text-transform: uppercase;
+        padding: .5rem .9rem;
         line-height: 1.2;
-        letter-spacing: 1px;
         height: 100%;
         cursor: pointer;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         color: $white;
         text-decoration: none;
 
