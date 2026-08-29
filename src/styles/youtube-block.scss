@@ -2,8 +2,8 @@
 
 .youtube-block {
     padding: 2rem 2rem;
-    background-color: $white;
-    color: $black;
+    background-color: $light;
+    color: $text-on-light;
 
     &__button {
         display: block;
@@ -16,7 +16,7 @@
     }
 
     &__container {
-        max-width: 1280px;
+        max-width: $container;
         margin: auto;
 
         display: grid;
@@ -36,8 +36,8 @@
     }
 
     &--grey {
-        background-color: $grey;
-        color: $white;
+        background-color: $surface;
+        color: $text;
     }
 
 
@@ -59,7 +59,8 @@
     }
 
     &__text-container {
-        text-align: center;
+        font-family: $font-body;
+        text-align: left;
         width: 100%;
 
         grid-column: 2;
@@ -114,8 +115,8 @@
         }
 
         &__text {
-            font-size: $desktop-title;
-            text-align: center;
+            font-size: $fs-heading;
+            text-align: left;
             font-weight: bold;
             letter-spacing: 1px;
             margin-top: 0;
@@ -172,9 +173,6 @@
         font-size: $desktop-paragraph;
         padding: 0 .5rem;
 
-        @media only screen and (max-width: 768px) {
-            text-align: center;
-        }
     }
 
     &__hr {

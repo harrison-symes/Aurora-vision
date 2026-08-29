@@ -1,7 +1,7 @@
 @import "vars";
 
 .member-frame {
-    background-color: $white;
+    background-color: $light;
 
     height: 400px;
     width: 100%;
@@ -19,7 +19,7 @@
 
     &__container {
         width: 100%;
-        max-width: 1280px;
+        max-width: $container;
         margin: auto;
 
         display: grid;
@@ -78,11 +78,11 @@
     }
 
     &--grey {
-        background-color: $grey;
+        background-color: $surface;
 
         .member-frame__name {
             grid-column: 2;
-            color: $white;
+            color: $text;
         }
         .member-frame__image {
             grid-column: 1;

@@ -1,7 +1,7 @@
 @import "vars";
 
 .meet-our-crew {
-    max-width: 1280px;
+    max-width: $container;
     margin: auto;
     padding: 1.5rem;
     margin-bottom: 4rem;
@@ -99,9 +99,10 @@
     }
 
     &__paragraph {
-        margin-top: 1rem;
-        font-size: $desktop-paragraph;
-        text-align: center;
+        margin-top: $sp-2;
+        font-size: $fs-body;
+        line-height: $lh-body;
+        text-align: left;
 
         @media only screen and (max-width: 768px) {
             font-size: $mobile-paragraph;
