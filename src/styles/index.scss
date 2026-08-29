@@ -3,6 +3,7 @@
 @import '@splidejs/react-splide/css';
 
 @import "./colours.scss";
+@import "./vars";
 @import "./loader";
 @import "./navbar";
 @import "./latest-project";
@@ -15,14 +16,9 @@
 @import "./youtube-block";
 @import "./meet-our-crew";
 @import "./contact-us";
-@import "./vars";
 @import "./carousel";
 @import "./mixins.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap');
 
 @font-face {
     font-family: "Bauhaus 93";
@@ -30,9 +26,6 @@
     font-weight: bold;
     font-style: normal;
 }
-
-$chora-pink: #fbaae3;
-$background: #544468;
 
 $main-width: 1280px; 
 
@@ -58,13 +51,22 @@ body {
     }
 }
 
-h1, p, div, input, button, textarea, select {
+// Freeze Chora map typography: its subtitle is the only element in the
+// map that inherits a font from the global rules below. Everything else
+// there (Bauhaus 93 title, Bitcount tooltips and info panel) is explicit.
+.chora-map__title h2 {
     font-family: "League Gothic", sans-serif;
+}
+
+h1, p, div, input, button, textarea, select {
+    font-family: $font-display;
+    font-weight: 600;
 }
 
 p {
     margin: 0;
-    font-family: 'Quicksand', sans-serif;
+    font-family: $font-body;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -110,7 +112,7 @@ p {
     }
 
     &--purple {
-        background-color: $background;
+        background-color: $skin-chora;
     }
 }
 
@@ -119,5 +121,5 @@ p {
 }
 
 .chora-pink {
-    color: $chora-pink;
+    color: $skin-chora-accent;
 }

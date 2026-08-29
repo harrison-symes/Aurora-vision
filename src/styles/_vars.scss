@@ -1,3 +1,10 @@
+// ── Typography ───────────────────────────────────────────────
+// See docs/DESIGN_PLAN.md. Bauhaus 93 stays pinned to the Chora
+// wordmark; Bitcount Single stays pinned to the Chora info panel.
+$font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+$font-body: "IBM Plex Sans", system-ui, sans-serif;
+$font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
 $navbar-height: 119px;
 $navbar-height-mobile: 60px;
 

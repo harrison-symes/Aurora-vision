@@ -126,7 +126,7 @@ $chora-pink: #fbaae3;
 .about-us-chora__name {
     font-size: 2rem;
     color: $white;
-    font-family: "League Gothic", sans-serif;
+    font-family: $font-display;
     letter-spacing: 1px;
     margin: 0 auto .5rem;
     text-transform: uppercase;
@@ -135,7 +135,7 @@ $chora-pink: #fbaae3;
 .about-us-chora__role {
     font-size: 1.25rem;
     color: $white;
-    font-family: 'Quicksand', sans-serif;
+    font-family: $font-body;
     letter-spacing: 1px;
     margin: 0 auto .5rem;
 }

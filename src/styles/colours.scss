@@ -1,14 +1,59 @@
+// ─────────────────────────────────────────────────────────────
+// AuroraVision colour tokens — Palette A "Aurora"
+// See docs/DESIGN_PLAN.md
+//
+// Tokens are SCSS variables so colour functions (darken/lighten)
+// keep working, and are mirrored as CSS custom properties for
+// any styles that prefer them.
+//
+// Legacy names below keep their ORIGINAL values on purpose:
+// components move onto the new tokens one phase at a time, so
+// nothing shifts until its phase lands. Phase 9 deletes them.
+// ─────────────────────────────────────────────────────────────
+
+// Core
+$ground:        #0E0F17; // page ground, nav, footer
+$surface:       #2A2633; // dark section ground (replaces $grey)
+$light:         #F1EEF4; // light section ground (replaces $white)
+$text:          #F1EEF4; // text on dark
+$text-on-light: #17141D; // text on light
+$muted:         #9A93A8; // secondary text, hairlines
+$accent:        #D627A9; // links, active nav, primary button
+
+// Project skins — set per film page, never site-wide
+$skin-chora:        #544468;
+$skin-chora-accent: #fbaae3;
+$skin-chora-blue:   #61B9E8;
+$skin-temporal:     #00D4D4;
+
+// ── Legacy aliases (unchanged values) ────────────────────────
+$black: #0E0F17;
+$grey: #4C4C5C;
+$white: #EAEAEA;
+$pink: #D627A9;
+$blue: #00D4D4;
+$purple: #866EFF;
 $jet: #41393E;
 $violet: #5D4E6D;
 $green: #00AF54;
-$very-light-grey: #eeeeee; 
-$light-grey: #dddddd; 
-$dark-grey: #bbbbbb; 
-$very-dark-grey: #aaaaaa; 
+$very-light-grey: #eeeeee;
+$light-grey: #dddddd;
+$dark-grey: #bbbbbb;
+$very-dark-grey: #aaaaaa;
+$chora-pink: #fbaae3;
+$chora-blue: #61B9E8;
+$chora-purple: #544468;
 
-$purple: #866EFF;
-$blue: #00D4D4;
-$pink: #D627A9;
-$black: #0E0F17;
-$grey: #4C4C5C;
-$white: #EAEAEA; 
+:root {
+    --ground: #{$ground};
+    --surface: #{$surface};
+    --light: #{$light};
+    --text: #{$text};
+    --text-on-light: #{$text-on-light};
+    --muted: #{$muted};
+    --accent: #{$accent};
+
+    --skin-chora: #{$skin-chora};
+    --skin-chora-accent: #{$skin-chora-accent};
+    --skin-temporal: #{$skin-temporal};
+}
