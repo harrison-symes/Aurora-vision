@@ -27,7 +27,6 @@ const Things = () => {
           `The film was selected as a Regional Finalist and received the Incredibly Strange Award at the 2025 48Hours Film Festival.`,
         ]}
         videoId="oWRv-F90oHs"
-        heightRatio={9 / 16}
       />
       <TextBlockWithImage
         slowImageUrl={jamesAndJan}

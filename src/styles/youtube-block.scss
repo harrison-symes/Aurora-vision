@@ -1,23 +1,18 @@
 @import "vars";
 
 .youtube-block {
-    padding: 2rem 2rem;
+    padding: $section-padding 0;
     background-color: $light;
     color: $text-on-light;
 
     &__button {
-        display: block;
-        margin: auto;
-        margin-top: 4rem;
-
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
-            margin-top: 1rem;
-        }
+        margin-top: $sp-4;
     }
 
     &__container {
         max-width: $container;
         margin: auto;
+        padding: 0 $gutter;
 
         display: grid;
         grid-template-columns: 3fr 2fr;
@@ -66,8 +61,6 @@
         grid-column: 2;
         grid-row: 2 / span 5;
 
-        padding-right: 1rem;
-        padding-left: 0;
 
         @media only screen and (max-width: 768px) {
             padding: 0;
@@ -85,12 +78,9 @@
 
         grid-column: 2;
         grid-row: 1;
-        // grid-column: 6 / span 9;
-        justify-self: center;
+        justify-self: start;
         align-self: center;
 
-        padding-right: 1rem;
-        padding-left: 0;
 
         @media only screen and (max-width: 768px) {
             order: 0;
@@ -107,7 +97,8 @@
         margin-bottom: 1rem;
 
         display: grid;
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: auto auto 1fr;
+        align-items: center;
         gap: .5rem;
 
         @media only screen and (max-width: 768px) {
@@ -193,8 +184,6 @@
 
         .youtube-block__text-container {
             grid-column: 1;
-            padding-left: 1rem;
-            padding-right: 0;
 
             @media only screen and (max-width: 768px) {
                 padding: 0;
@@ -203,8 +192,6 @@
 
         .youtube-block__title-image {
             grid-column: 1;
-            padding-left: 1rem;
-            padding-right: 0;
 
             @media only screen and (min-width: 768px) and (max-width: 1024px) {
                 grid-row: 1;

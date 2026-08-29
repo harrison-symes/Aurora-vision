@@ -1,0 +1,127 @@
+@import "colours";
+@import "vars";
+
+// Thumbnail + play button. Sized by CSS aspect-ratio rather than the
+// measured pixel width the old embed used, which is what left videos
+// sitting off-centre in their column.
+.video {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    overflow: hidden;
+
+    background-color: $ground;
+    cursor: pointer;
+
+    &__thumb {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+
+        background-color: rgba($ground, 0.72);
+        border: 1px solid rgba($light, 0.5);
+        color: $light;
+
+        transition: background-color 140ms ease, transform 140ms ease;
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            margin-left: 0.15rem; // optical centring of the triangle
+        }
+    }
+
+    &:hover &__play,
+    &:focus-visible &__play {
+        background-color: $accent;
+        border-color: $accent;
+        transform: translate(-50%, -50%) scale(1.06);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $accent;
+        outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__play {
+            transition: none;
+        }
+    }
+}
+
+.video-modal {
+    width: min(94vw, 1600px);
+    max-width: none;
+    max-height: 100vh;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+
+    &::backdrop {
+        background-color: rgba(14, 15, 23, 0.93);
+    }
+
+    &__frame {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-height: 84vh;
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+
+    &__close {
+        display: block;
+        margin: 0 0 $sp-2 auto;
+
+        padding: 0.4rem 0.8rem;
+        font-family: $font-mono;
+        font-size: $fs-label;
+        letter-spacing: $tracking-label;
+        text-transform: uppercase;
+
+        color: $light;
+        background: transparent;
+        border: 1px solid rgba($light, 0.45);
+        border-radius: 2px;
+        cursor: pointer;
+
+        &:hover {
+            border-color: $light;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $accent;
+            outline-offset: 2px;
+        }
+    }
+}

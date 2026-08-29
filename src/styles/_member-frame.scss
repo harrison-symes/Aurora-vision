@@ -20,6 +20,7 @@
     &__container {
         width: 100%;
         max-width: $container;
+        padding: 0 $gutter;
         margin: auto;
 
         display: grid;

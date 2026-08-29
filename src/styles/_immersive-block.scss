@@ -95,6 +95,7 @@
         grid-template-columns: 1fr 1fr;
         margin: auto;
         max-width: $container;
+        padding: 0 $gutter;
         height: 100%;
 
         @media only screen and (max-width: 768px) {

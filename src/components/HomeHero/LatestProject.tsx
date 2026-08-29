@@ -4,7 +4,6 @@ import Button from "../Button/Button";
 import { ROUTES_INTERNAL } from "../../constants/router.constants";
 
 const LatestProject = () => {
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
   return (
     <div className="latest-project__container">
@@ -12,8 +11,8 @@ const LatestProject = () => {
         Charm the Wind - SilvaSpiral (Music Video)
       </h1>
       <div className="latest-project__inner">
-        <div className="latest-project__video-box" ref={containerRef}>
-          <YoutubePlayer containerRef={containerRef} videoId="Q-a7B8SJCt0" />
+        <div className="latest-project__video-box">
+          <YoutubePlayer videoId="Q-a7B8SJCt0" />
         </div>
         <div className="latest-project__details">
           <div className="latest-project__description">

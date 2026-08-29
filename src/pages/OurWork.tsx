@@ -37,7 +37,6 @@ const OurWork = () => {
               },
             ]}
             videoId="lExjHGeXTiE"
-            heightRatio={3 / 4}
             buttonLink="https://www.youtube.com/@ExplosiveBananaPRO"
           />
           <YoutubeBlock
@@ -78,7 +77,6 @@ const OurWork = () => {
             videoId="TInRBBG1b_Q"
             isGrey
             isReverse
-            heightRatio={3 / 4}
             buttonLink="https://www.youtube.com/@thecheezle123"
           />
           <YoutubeBlock
@@ -113,7 +111,6 @@ const OurWork = () => {
               },
             ]}
             videoId="YSE-Nfg8sS8"
-            heightRatio={3 / 4}
             buttonLink="https://www.youtube.com/@ExplosiveBananaPRO"
           />
         </>
@@ -125,7 +122,6 @@ const OurWork = () => {
           `Determined to find his missing co-pilot, he pushes forward - but soon discovers that there’s something deeply unsettling about this planet.`,
         ]}
         videoId="mqDEVoZMv04"
-        heightRatio={9 / 16}
         buttonLink="/temporal"
       />
       <YoutubeBlock
@@ -136,7 +132,6 @@ const OurWork = () => {
           `The film was selected as a Regional Finalist and received the Incredibly Strange Award at the 2025 48Hours Film Festival.`,
         ]}
         videoId="oWRv-F90oHs"
-        heightRatio={9 / 16}
         isGrey
         isReverse
         buttonLink={ROUTES_INTERNAL.THINGS}
@@ -161,7 +156,6 @@ const OurWork = () => {
             title: "CAMERA ASSIST",
           },
         ]}
-        heightRatio={9 / 16}
       />
       <YoutubeBlock
         videoId="C70IB3ZnWGU"
@@ -185,7 +179,6 @@ const OurWork = () => {
         ]}
         isGrey
         isReverse
-        heightRatio={9 / 16}
       />
       <YoutubeBlock
         videoId="Q-a7B8SJCt0"
@@ -207,7 +200,6 @@ const OurWork = () => {
             title: "PRODUCTION ASSIST",
           },
         ]}
-        heightRatio={3 / 4}
       />
     </div>
   );

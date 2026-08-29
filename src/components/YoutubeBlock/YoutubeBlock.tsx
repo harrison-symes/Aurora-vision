@@ -15,13 +15,11 @@ interface IProps {
   }>;
   isReverse?: boolean;
   isGrey?: boolean;
-  heightRatio?: number;
   buttonLink?: string;
   variant?: "splitWithTitle"
 }
 
 const YoutubeBlock = (props: IProps) => {
-  const ref = react.useRef<HTMLDivElement>(null);
   return (
     <div
       className={cn("youtube-block", {
@@ -32,11 +30,10 @@ const YoutubeBlock = (props: IProps) => {
       })}
     >
       <div className="youtube-block__container">
-        <div className="youtube-block__player-container" ref={ref}>
+        <div className="youtube-block__player-container">
           <YoutubePlayer
-            containerRef={ref}
             videoId={props.videoId ?? "Q-a7B8SJCt0"}
-            heightRatio={props.heightRatio}
+            title={props.title ? `Play ${props.title}` : undefined}
           />
         </div>
         {props.titleImageUrl && <img src={props.titleImageUrl} className="youtube-block__title-image" />}

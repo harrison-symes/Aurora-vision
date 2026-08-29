@@ -43,7 +43,6 @@ const Chora = () => {
                 title="THE PROJECT"
                 titleIcon={project_icon}
                 isReverse
-                heightRatio={9 / 16}
             />
             <FundraiseBanner />
             <SplitTextPanel 
