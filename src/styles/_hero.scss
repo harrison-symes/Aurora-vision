@@ -70,39 +70,3 @@
         color: $light;
     }
 }
-
-// About Us: crew cut-out that rises out of the band below the hero.
-.hero--overlay {
-    height: 350px;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-
-    @media only screen and (max-width: 768px) {
-        height: 180px;
-    }
-
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        height: 300px;
-    }
-
-    img {
-        height: calc(100% + 100px);
-        transform: translateY(-100px);
-
-        @media only screen and (max-width: 768px) {
-            height: calc(100% + 40px);
-            transform: translateY(-40px);
-        }
-
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
-            height: calc(100% + 50px);
-            transform: translateY(-50px);
-        }
-    }
-}
-
-.about-us-hero__container {
-    background-color: $surface;
-}
