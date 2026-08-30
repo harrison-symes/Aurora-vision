@@ -87,19 +87,35 @@ If you still want a dedicated face after seeing that, worth saying: the site jus
 
 **Where:** `.navbar__items` below `md`.
 
-Not yet diagnosed. The mobile menu is a fixed panel that slides up from the bottom with a pink top border and a hamburger absolutely positioned at `translateY(-58px)`, all written against the old 119px stacked bar. The bar is 64px now, so those offsets are stale.
+**Cause.** Confirmed at a real 390px viewport. `NavBar` renders the hamburger twice — once in the bar and once inside the slide-up panel — and the panel's copy is absolutely positioned at `translateY(-58px)` with its own pink borders, an offset written for the old 119px stacked bar. With the bar at 64px the result is two close buttons on screen at once: one in the bar, one floating over the hero copy roughly halfway down the page, attached to nothing.
+
+The panel itself is `position: fixed; bottom: 0` with a base `transform: translateY(200%)` and a 200ms `slide-up` animation on `.is-active`. It works, but it depends on the animation completing to be on screen, so any interruption leaves the menu parked below the fold.
+
+**Fix direction.** One hamburger, living in the bar and toggling between menu and close. Drop the duplicate and its `translateY(-58px)` positioning. Consider driving the panel with a transform on `.is-active` rather than an animation, so its resting position does not depend on an animation having run.
 
 ## 9. Footer is cramped and hard to read on mobile
 
 **Where:** `.footer__inner` below `md`, where the grid becomes a centred flex column.
 
-The logo, credit and the two social links stack with no gap between them, and the footer photograph is only 300px tall on mobile, so everything is squeezed against the bottom edge. Needs its own vertical rhythm rather than inheriting the desktop padding.
+**Cause.** Measured at 390px: the flex column has **no `gap`** (`gap: normal`), so the logo, the FOLLOW US block and the credit stack with nothing between them — 40px logo at y2748, socials at y2820, credit at y2861. All of it is crammed into the bottom 166px of a 300px band, hard against the edge. The credit and the FOLLOW US label are mono at `$fs-label` (12px), which is fine on a flat ground beside a logo but too small and too low-contrast sitting over a photograph.
+
+**Fix.** Give the mobile column a real `gap` off the spacing scale, more bottom padding, and bump the label and credit a step up in size for the photo ground.
 
 ---
 
-## Blocked on tooling
+## Testing mobile
 
-**Items 8 and 9 cannot be verified here.** The browser used for this work will not change its rendered viewport width — `resize_window` reports success but the page keeps painting at desktop width — so every check so far has been at desktop plus reading the code. Both items are mobile-only. They need either devtools device emulation or a real handset to confirm a fix, otherwise any change is guesswork.
+`resize_window` does not work in this environment: it reports success, but the page keeps painting at 1778px. The browser reports `outerWidth`/`outerHeight` of `0` and a `screen.width` identical to `innerWidth`, i.e. the viewport is not backed by a resizable OS window, so there is nothing for a window resize to act on.
+
+Workaround: load the site into an iframe of the target width from a page on the same origin. Media queries inside an iframe resolve against the iframe's own viewport, so the mobile layout renders and can be measured and screenshotted:
+
+```js
+document.documentElement.innerHTML =
+  '<body style="margin:0"><iframe src="/about-us" style="width:390px;height:844px;border:0"></iframe></body>';
+// then reach in: frame.contentWindow.innerWidth === 390, media queries match
+```
+
+Items 8 and 9 were diagnosed this way. Scroll and click inside the frame via `contentWindow` rather than page coordinates.
 
 ---
 
