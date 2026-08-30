@@ -53,7 +53,9 @@ Add an optional `role` prop rendered under `.member-frame__name`, with a tempora
 
 **Cause.** This is a regression from phase 2, not a missing font. The block's body copy was Exo 2; it got swapped to `$font-display` along with everything else. Big Shoulders is a *condensed display* face — at body size, over a photograph, it is cramped and hard to read, and it gives the character name and its description the same voice, so the hierarchy collapses. The `text-shadow: 1px 1px` under it is a hard 1px offset that reads as cheap at this size.
 
-**Recommendation — no fourth family.**
+**Partly fixed in `999af8d`:** the hard 1px shadow is now a layered halo — one tight pass for edge definition, two soft wide passes that darken whatever sits behind the type. Verified at 1440px over both the pale rock behind BOOTS and the blue interior behind EMMONS. The title and body also moved onto the fluid scale, and the paragraph gained a measure and a body line-height.
+
+**Still open — the typeface.**
 
 - Character name keeps `$font-display`, large, uppercase, tracked.
 - Description moves to `$font-mono` — the terminal voice already used by the Chōra info panel and the nav. Mono over a film still reads as a production slate or title card, which is more genuinely "cinematic" than a second display face, and it costs no new font.
@@ -105,7 +107,7 @@ The panel itself is `position: fixed; bottom: 0` with a base `transform: transla
 
 ## Testing mobile
 
-`resize_window` does not work in this environment: it reports success, but the page keeps painting at 1778px. The browser reports `outerWidth`/`outerHeight` of `0` and a `screen.width` identical to `innerWidth`, i.e. the viewport is not backed by a resizable OS window, so there is nothing for a window resize to act on.
+`resize_window` is unreliable here. It reports success immediately but the viewport does not follow: a resize can be ignored entirely, or land minutes later — one call to 420x860 applied only after several unrelated tool calls, by which point the window was stuck small and would not resize back. While a resize is pending the browser reports `outerWidth`/`outerHeight` of `0` and a `screen.width` identical to `innerWidth`. Do not trust it for responsive checks.
 
 Workaround: load the site into an iframe of the target width from a page on the same origin. Media queries inside an iframe resolve against the iframe's own viewport, so the mobile layout renders and can be measured and screenshotted:
 
@@ -123,6 +125,7 @@ Items 8 and 9 were diagnosed this way. Scroll and click inside the frame via `co
 
 Fixed and committed since this queue was opened:
 
+- Temporal character blocks: layered text halo, fluid sizes, measure and line-height on the paragraph (`999af8d`). Typeface still open.
 - Chora funding bar set to 100% with no fill animation, and the "Help us make Chora" heading removed (`e175ece`).
 - Chora block spacing standardised on the site's section rhythm; SplitTextPanel left-aligned (`e175ece`).
 - We Will Share rebuilt as a hairline spec sheet (`e175ece`).
