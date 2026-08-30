@@ -11,9 +11,9 @@ $background: #544468;
 
 .sg-storyboard__inner {
     width: 100%;
-    max-width: 980px;
+    max-width: $container;
     margin: auto;
-    padding: 1.5rem 1rem;
+    padding: $section-padding $gutter;
 
     color: $white;
 }

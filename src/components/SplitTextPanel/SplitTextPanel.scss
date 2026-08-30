@@ -17,16 +17,16 @@
 }
 
 .split-text-panel__content {
-    padding: 1rem 1rem;
-    text-align: center;
+    padding: $section-padding $gutter;
+    text-align: left;
 
     @include lg {
-        padding: 1rem 1rem 1.5rem;
+        padding: $section-padding $gutter;
     }
     
     &--grey {
-        background-color: $grey;
-        color: $white;
+        background-color: $surface;
+        color: $text;
     }
     
     &:first-child {
@@ -45,7 +45,7 @@
     width: 100%;
 
     @include lg {
-        max-width: calc((1280px / 2) - 2rem);
+        max-width: $half-container;
     }
 }
 
@@ -55,24 +55,21 @@
     gap: .5rem;
 
     &--with-icon {
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: auto auto 1fr;
+        align-items: center;
     }
 }
 
 .split-text-panel__title__text {
-    text-align: center;
+    text-align: left;
     font-weight: bold;
     letter-spacing: 1px;
     margin: 0;
-    font-size: $mobile-title;
+    font-size: $fs-heading;
     
-    @include md {
-        font-size: $tablet-title;
-    }
+
     
-    @include lg {
-        font-size: $desktop-title;
-    }
+
     
 }
 

@@ -95,9 +95,9 @@ p {
 
 .bts-header {
     width: 100%;
-    background-color: $grey;
-    color: $white;
-    padding: 1rem 1rem .5rem;
+    background-color: $surface;
+    color: $text;
+    padding: $sp-3 $gutter;
     text-align: center;
     font-size: $mobile-title;
 

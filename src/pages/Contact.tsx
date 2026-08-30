@@ -1,6 +1,7 @@
 import * as React from "react";
 import ContactUsHero from "../components/Heros/ContactUsHero";
 import ContactUsGrid from "../components/ContactUsGrid/ContactUsGrid";
+import InstagramPrompt from "../components/ContactUsGrid/InstagramPrompt";
 import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
@@ -16,6 +17,7 @@ const Contact = () => {
       </Helmet>
       <ContactUsHero />
       <ContactUsGrid />
+      <InstagramPrompt />
     </div>
   );
 };

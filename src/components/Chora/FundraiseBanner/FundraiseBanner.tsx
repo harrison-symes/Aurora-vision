@@ -1,12 +1,16 @@
-import Button from "../../Button/Button"
+import { lazy, Suspense } from "react"
 
 import "./FundraiseBanner.scss"
+
+const ProgressBar = lazy(() => import('./ProgressBar'));
 
 const FundraiseBanner = () => {
     return (
         <div className="fundraise-banner">
-            <h1 className="fundraise-banner__title">Help us make <span className="fundraise-banner__chora">Chōra</span></h1>
-            <Button externalLink href="https://www.thearts.co.nz/boosted/projects/chora-the-auroravision-anthology/" className="fundraise-banner__button">Support the project</Button>
+            <Suspense fallback={null}>
+                <ProgressBar />
+            </Suspense>
+            <h1 className="progress__funded">Thank you to everyone who donated!</h1>
         </div>
     )
 }

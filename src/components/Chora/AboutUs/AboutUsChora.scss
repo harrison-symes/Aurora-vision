@@ -6,8 +6,8 @@ $chora-pink: #fbaae3;
 
 .about-us-chora {
     width: 100%;
-    padding: 1.5rem 1rem;
-    background-color: $grey;
+    padding: $section-padding 0;
+    background-color: $surface;
 }
 
 .about-us-chora__title {
@@ -16,16 +16,8 @@ $chora-pink: #fbaae3;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin: 0 auto 2.5rem;
-    font-size: $mobile-title;
-
-    @include md {
-        font-size: $tablet-title;
-    }
-
-    @include lg {
-        font-size: $desktop-title;
-    }
+    margin: 0 auto $sp-5;
+    font-size: $fs-heading;
 
     &--pink {
         font-family: "Bauhaus 93", sans-serif;
@@ -36,59 +28,33 @@ $chora-pink: #fbaae3;
     }
 }
 
+// Equal columns: as flex items the frames sized to their names, so a long
+// name made a wider frame and a bigger portrait than a short one.
 .about-us-chora__inner {
-    max-width: 980px;
+    max-width: $container;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    padding: 0 $gutter;
 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $sp-4 $sp-3;
+    justify-items: center;
 
     @include md {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     @include lg {
-        gap: 1.5rem;
+        grid-template-columns: repeat(4, 1fr);
     }
-    // @include md {
-    //     display: grid;
-    //     grid-template-columns: repeat(2, 1fr);
-    //     align-items: start;
-    //     justify-content: center;
-    //     gap: 2rem;
-    // }
-
-    // @include lg {
-    //     grid-template-columns: repeat(4, 1fr);
-    //     gap: 1.5rem;
-    //     justify-content: center;
-    // }
 }
 
 .about-us-chora__frame {
+    width: 100%;
+    max-width: 200px;
     text-align: center;
-    margin-bottom: 1.5rem;
-    max-width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-
-    @include md {
-        margin-bottom: 0;
-        max-width: 350px;
-    }
-    
-    @include lg {
-        max-width: 200px;
-        // max-width: calc(25% - .5rem);
-    }
 }
 
 @keyframes pulse {
@@ -112,20 +78,23 @@ $chora-pink: #fbaae3;
 }
 
 .about-us-chora__image {
-    max-width: 60vw;
-    margin-bottom: .5rem;
+    width: 100%;
+    height: auto;
+    margin-bottom: $sp-1;
 
     animation: pulse 2s infinite alternate;
     transition: filter;
 
-    @include md {
-        max-width: 100%;
-    }
 }
 
 .about-us-chora__name {
-    font-size: 2rem;
-    color: $white;
+    font-size: 1.75rem;
+    min-height: 2.2em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-wrap: balance;
+    color: $text;
     font-family: $font-display;
     letter-spacing: 1px;
     margin: 0 auto .5rem;

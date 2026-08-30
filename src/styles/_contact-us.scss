@@ -287,3 +287,46 @@
         color: $text;
     }
 }
+// Full-width band under the contact grid: one line, one link.
+.instagram-prompt {
+    width: 100%;
+    padding: $section-padding $gutter;
+    background-color: $ground;
+    color: $text;
+    text-align: center;
+}
+
+.instagram-prompt__text {
+    max-width: $container;
+    margin: 0 auto;
+
+    font-family: $font-display;
+    font-size: $fs-heading;
+    font-weight: 700;
+    line-height: $lh-tight;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.instagram-prompt__link {
+    color: $accent;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 120ms ease, border-color 120ms ease;
+
+    &:hover,
+    &:focus-visible {
+        color: $light;
+        border-bottom-color: currentColor;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $accent;
+        outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+}

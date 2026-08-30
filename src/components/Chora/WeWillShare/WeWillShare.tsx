@@ -1,27 +1,36 @@
 import "./WeWillShare.scss"
 
+const ITEMS = [
+    "Behind-the-scenes footage from shoots",
+    "Green screen and VFX breakdowns",
+    "Concept art and worldbuilding updates",
+    "Team introductions",
+    "Short-form videos exploring Chōra and each storyworld",
+    "Teasers, trailers, and production updates",
+    "Commentary tracks from creative leads",
+    "Festival and screening announcements",
+]
+
 const WeWillShare = () => {
     return (
-        <div className="we-will-share">
+        <section className="we-will-share">
             <div className="we-will-share__inner">
-                <div className="we-will-share__title">
-                    WE WILL SHARE:
-                </div>
+                <h2 className="we-will-share__title">We will share</h2>
+                <p className="we-will-share__lede">
+                    The AuroraVision Anthology has already and will continue to be
+                    supported by a strong social media and behind-the-scenes campaign,
+                    giving audiences a clear view into the process of building the
+                    project.
+                </p>
                 <ul className="we-will-share__list">
-                    <li>Behind-the-scenes footage from shoots</li>
-                    <li>Green screen and VFX breakdowns</li>
-                    <li>Concept art and worldbuilding updates</li>
-                    <li>Team introductions</li>
-                    <li>Short-form videos exploring Chōra and each storyworld</li>
-                    <li>Teasers, trailers, and production updates</li>
-                    <li>Commentary tracks from creative leads</li>
-                    <li>Festival and screening announcements</li>
+                    {ITEMS.map((item) => (
+                        <li className="we-will-share__item" key={item}>
+                            {item}
+                        </li>
+                    ))}
                 </ul>
-                <div className="we-will-share__text">
-                    The AuroraVision Anthology has already and will continue to be supported by a strong social media and behind-the-scenes campaign, giving audiences a clear view into the process of building the project.
-                </div>
             </div>
-        </div>
+        </section>
     )
 }
 

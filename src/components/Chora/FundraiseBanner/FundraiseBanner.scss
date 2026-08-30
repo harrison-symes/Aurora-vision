@@ -10,7 +10,7 @@ $background: #544468;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 1rem 2rem;
+    padding: $section-padding $gutter;
 
     background-color: $background;
 
@@ -50,6 +50,7 @@ $background: #544468;
     border: none;
     color: $background;
     background-color: $chora-pink;
+    text-align: center;
     width: 100%;
     // text-transform: uppercase;
 

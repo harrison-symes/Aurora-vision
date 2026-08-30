@@ -2,72 +2,61 @@
 @import "../../../styles/mixins.scss";
 @import "../../../styles/vars.scss";
 
-$chora-pink: #fbaae3;
-$background: #544468;
-
 .we-will-share {
     width: 100%;
-    padding: 1.5rem 1rem 2rem;
-    background-color: $white;
-
-    color: $black;
+    padding: $section-padding 0;
+    background-color: $light;
+    color: $text-on-light;
 }
 
 .we-will-share__inner {
-    max-width: 980px;
-    margin: auto;
-}
-
-.we-will-share__text {
-    text-align: center;
-
-    font-size: 1.25rem;
-    
-    @include md {
-        font-size: 1.5rem;
-        max-width: 600px;
-        margin: auto;
-    }
+    max-width: $container;
+    margin: 0 auto;
+    padding: 0 $gutter;
 }
 
 .we-will-share__title {
-    text-align: center;
-    font-weight: bold;
-    color: $background;
-    font-size: $mobile-title;
-    margin-bottom: 1rem;
+    margin: 0;
+    font-family: $font-display;
+    font-size: $fs-heading;
+    font-weight: 800;
+    line-height: $lh-tight;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: $skin-chora;
+}
+
+.we-will-share__lede {
+    max-width: $measure;
+    margin: $sp-2 0 $sp-5;
+    font-family: $font-body;
+    font-size: $fs-body;
+    line-height: $lh-body;
+    color: $text-on-light;
+}
+
+// A spec sheet rather than a list of headings: hairline-separated rows in
+// two columns, so eight short items scan in one pass.
+.we-will-share__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: $sp-5;
 
     @include md {
-        font-size: $tablet-title;
-    }
-
-    @include lg {
-        font-size: $desktop-title;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-.we-will-share__list {
-    padding: 0;
-    margin: auto;
-    text-align: center;
-    
-    list-style: none;
-    color: $background;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-    
-    @include md {
-        display: grid;
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    @include lg {
-        font-size: 2rem;
-    }
+.we-will-share__item {
+    padding: $sp-2 0;
+    border-top: 1px solid rgba($skin-chora, 0.28);
 
-    li {
-        margin-bottom: .5rem;
-    }
+    font-family: $font-body;
+    font-size: $fs-body;
+    line-height: $lh-body;
+    color: $text-on-light;
 }
