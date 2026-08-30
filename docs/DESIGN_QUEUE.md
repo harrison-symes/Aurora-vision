@@ -82,3 +82,33 @@ If you still want a dedicated face after seeing that, worth saying: the site jus
 **Cause.** `padding: 0 .5rem` on the credits block, left over from the old centred layout. The credits sit 8px right of the paragraph above them, giving the column a ragged left edge — visible on the OUTCAST block.
 
 **Fix.** Drop the horizontal padding so credits share the paragraphs' left edge. The `--reverse` variant also sets `text-align: right` on credits; check whether that is still wanted now that everything else is left-aligned.
+
+## 8. Mobile navigation popup needs work
+
+**Where:** `.navbar__items` below `md`.
+
+Not yet diagnosed. The mobile menu is a fixed panel that slides up from the bottom with a pink top border and a hamburger absolutely positioned at `translateY(-58px)`, all written against the old 119px stacked bar. The bar is 64px now, so those offsets are stale.
+
+## 9. Footer is cramped and hard to read on mobile
+
+**Where:** `.footer__inner` below `md`, where the grid becomes a centred flex column.
+
+The logo, credit and the two social links stack with no gap between them, and the footer photograph is only 300px tall on mobile, so everything is squeezed against the bottom edge. Needs its own vertical rhythm rather than inheriting the desktop padding.
+
+---
+
+## Blocked on tooling
+
+**Items 8 and 9 cannot be verified here.** The browser used for this work will not change its rendered viewport width — `resize_window` reports success but the page keeps painting at desktop width — so every check so far has been at desktop plus reading the code. Both items are mobile-only. They need either devtools device emulation or a real handset to confirm a fix, otherwise any change is guesswork.
+
+---
+
+## Done
+
+Fixed and committed since this queue was opened:
+
+- Chora funding bar set to 100% with no fill animation, and the "Help us make Chora" heading removed (`e175ece`).
+- Chora block spacing standardised on the site's section rhythm; SplitTextPanel left-aligned (`e175ece`).
+- We Will Share rebuilt as a hairline spec sheet (`e175ece`).
+- The minds behind Chora: equal grid columns and a two-line name slot, so portraits share a size and a baseline (`e175ece`).
+- Contact gained the full-width Instagram band (`e175ece`).
