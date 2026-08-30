@@ -2,9 +2,6 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import avLogo from "../svg/av-logo.svg";
-import instagram from "../svg/instagram.svg";
-import youtube from "../svg/youtube.svg";
-import facebook from "../svg/facebook.svg";
 import jerryMe from "../assets/images/about-us/jerry-me.webp";
 import footerMin from "../assets/images/footer-min.webp";
 import footer from "../assets/images/footer.webp";
@@ -76,30 +73,29 @@ const Footer = () => {
         <div className="footer__credit">Website by Harrison Symes</div>
         <div className="footer__right">
           <div className="footer__socials">
-            <div className="footer__socials__text">FOLLOW US</div>
-            <div className="footer__socials__icons">
-              <Link to="https://www.instagram.com/auroravision.nz">
-                <img
-                  src={instagram}
-                  alt="Instagram"
-                  className="footer__socials__instagram"
-                />
-              </Link>
-              {/* <Link to="https://www.instagram.com/auroravision.studio">
-                <img
-                  src={facebook}
-                  alt="Facebook"
-                  className="footer__socials__facebook"
-                />
-              </Link> */}
-              <Link to="https://www.youtube.com/@auroravision_">
-                <img
-                  src={youtube}
-                  alt="Youtube"
-                  className="footer__socials__youtube"
-                />
-              </Link>
-            </div>
+            <p className="footer__socials__label">Follow us</p>
+            <ul className="footer__socials__links">
+              <li>
+                <a
+                  className="footer__social footer__social--instagram"
+                  href="https://www.instagram.com/auroravision.nz"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  className="footer__social footer__social--youtube"
+                  href="https://www.youtube.com/@auroravision_"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  YouTube
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
