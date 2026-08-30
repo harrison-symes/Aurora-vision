@@ -34,6 +34,8 @@ $section-padding: clamp(#{$sp-4}, 8vw, #{$sp-6});
 // ── Layout ───────────────────────────────────────────────────
 $container: 1200px;
 $gutter: clamp(1rem, 4vw, 2.5rem);
+// Content width inside one half of a full-bleed split panel.
+$half-container: calc(#{$container} / 2 - #{$gutter} * 2);
 
 // ── Legacy scale (per-component, replaced as each file is rebuilt) ──
 $navbar-height: 64px;

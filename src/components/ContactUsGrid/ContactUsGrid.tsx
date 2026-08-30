@@ -57,7 +57,8 @@ const ContactUsGrid = () => {
   return (
     <div className="contact-us-grid__container">
       <div className="contact-us-grid__row">
-        <div className="contact-us-grid__tile contact-us-grid__text-block">
+        <div className="contact-us-grid__tile">
+          <div className="contact-us-grid__text-block">
           <div className="contact-us-grid__title">
             {isCodeSubmitted ? "JEREMY'S SKILLS" : "OUR SERVICES"}
           </div>
@@ -89,6 +90,7 @@ const ContactUsGrid = () => {
               </p>
             </>
           )}
+          </div>
         </div>
         <div className="contact-us-grid__tile contact-us-grid__tile--grey">
           <ContactForm />

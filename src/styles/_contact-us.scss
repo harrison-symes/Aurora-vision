@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 
 .contact-us-grid {
     &__container {
@@ -43,15 +44,39 @@
         &--grey {
             background-color: $surface;
         }
+
+        // Content in the left panel ends a gutter short of the seam and
+        // starts on the container's left edge; the right panel mirrors it.
+        // Tiles holding only the photograph keep it centred.
+        @include md {
+            &:has(.contact-us-grid__text-block),
+            &:has(.contact-form) {
+                &:nth-child(odd) {
+                    justify-content: flex-end;
+                    padding-right: $gutter;
+                }
+
+                &:nth-child(even) {
+                    justify-content: flex-start;
+                    padding-left: $gutter;
+                }
+            }
+        }
     }
 
     &__text-block {
         font-family: $font-body;
         padding: $sp-2;
+
+        @include md {
+            padding: $sp-2 0;
+        }
+
         text-align: left;
         color: $text-on-light;
-        max-width: $measure;
-        margin: auto;
+        width: 100%;
+        max-width: $half-container;
+        margin: 0;
 
         display: flex;
         flex-direction: column;
@@ -150,9 +175,14 @@
 }
 
 .contact-form {
-    padding: 1rem;
+    padding: $sp-2;
+
+    @include md {
+        padding: $sp-2 0;
+    }
+
     width: 100%;
-    max-width: 500px;
+    max-width: $half-container;
     
     display: flex;
     flex-direction: column;
