@@ -158,24 +158,31 @@
         }
     }
 
+    // These sit straight on the film stills, which run from bright sky to
+    // near-black in the same frame, so the type needs to carry its own
+    // ground. A layered halo does that: a tight pass for edge definition
+    // and two soft wide passes that darken whatever is behind the text
+    // without reading as a drop shadow.
     &__title {
-        font-size: $desktop-title;
-        font-weight: bold;
-        text-shadow: 1px 1px $black;
-
-        @media only screen and (max-width: 768px) {
-            font-size: $mobile-title;
-        }
+        font-size: $fs-heading;
+        font-weight: 800;
+        line-height: $lh-tight;
+        text-shadow:
+            0 1px 2px rgba($ground, 0.95),
+            0 2px 14px rgba($ground, 0.8),
+            0 0 34px rgba($ground, 0.65);
     }
+
     &__paragraph {
-        font-size: $desktop-content-text;
-        text-shadow: 1px 1px $black;
+        max-width: $measure;
+        font-size: $fs-body;
+        line-height: $lh-body;
         text-align: left;
         font-weight: 500;
         font-family: $font-display;
-
-        @media only screen and (max-width: 768px) {
-            font-size: $mobile-content-text;
-        }
+        text-shadow:
+            0 1px 2px rgba($ground, 0.95),
+            0 1px 10px rgba($ground, 0.85),
+            0 0 26px rgba($ground, 0.6);
     }
 }
