@@ -1,3 +1,5 @@
+@import "colours";
+
 .loader__container {
     width: 100%;
     height: 100vh;
@@ -7,6 +9,28 @@
     justify-content: center;
 }
 
-.loader__spinnder {
+.loader__spinner {
     width: 10vh;
+}
+
+// The DNA spinner ships with its own pink and cyan and takes no colour
+// props, so its two strands are recoloured here into the AuroraVision
+// magenta and cyan. Targeting the fill attribute rather than nth-child
+// keeps the two `fill: none` circles out of it, whatever order they render
+// in.
+//
+// !important is doing real work: the loader animates `fill` through SMIL,
+// which outranks an ordinary author rule. Without it only fill-opacity
+// takes and the strands stay the library's colours. The circles still
+// animate their radius and position, so the helix motion is unaffected -
+// only the colour shimmer is pinned.
+.dna-wrapper {
+    circle[fill^="rgba"] {
+        fill: $accent !important;
+        fill-opacity: 0.75;
+    }
+
+    circle[fill="#46dff0"] {
+        fill: $skin-temporal !important;
+    }
 }
