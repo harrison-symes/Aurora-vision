@@ -100,7 +100,7 @@ const Temporal = () => {
         ]}
         videoId="csSuSydxKvM"
         buttonLink="https://boxd.it/RCue"
-        buttonText="Review it on Letterboxd"
+        buttonText="Review Temporal on Letterboxd"
       />
       <TextBlockWithImage
         slowImageUrl={
