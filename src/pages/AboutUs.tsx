@@ -12,7 +12,6 @@ import charlieJones from "../assets/images/about-us/charlie-jones.webp";
 import esther from "../assets/images/about-us/esther.webp";
 import manny from "../assets/images/about-us/manny.webp";
 import jeremyBrow from "../assets/images/about-us/jeremy-brow.webp";
-import aidanFalconer from "../assets/images/about-us/aidan-falconer.webp";
 import harrisonSymes from "../assets/images/about-us/harrison-symes.webp";
 import { Helmet } from "react-helmet-async";
 
@@ -48,50 +47,44 @@ const AboutUs = () => {
         imageUrl={jamesTweddle}
         variant="grey"
         name="JAMES TWEDDLE"
-        role="role here"
+        role="Co-Founder, Director"
       />
       <MemberFrame
         imageUrl={westonSymes}
         variant="white"
         name="WESTON SYMES"
-        role="role here"
+        role="Co-Founder, VFX Artist"
       />
       <MemberFrame
         imageUrl={charlieJones}
         variant="grey"
         name="CHARLIE JONES"
-        role="role here"
+        role="Actor, Artist"
       />
       <MemberFrame
         imageUrl={esther}
         variant="white"
         name="ESTHER SUSHAMES"
-        role="role here"
+        role="Co-Producer"
       />
       <MemberFrame
         imageUrl={manny}
         variant="grey"
         name="MANNY CABALLERO"
-        role="role here"
+        role="Co-Producer"
       />
       <MemberFrame
         imageUrl={jeremyBrow}
         variant="white"
         name="JEREMY BROW"
         onImageClick={onClickJerryMe}
-        role="role here"
-      />
-      <MemberFrame
-        imageUrl={aidanFalconer}
-        variant="grey"
-        name="AIDAN FALCONER"
-        role="role here"
+        role="Actor, Writer"
       />
       <MemberFrame
         imageUrl={harrisonSymes}
-        variant="white"
+        variant="grey"
         name="HARRISON SYMES"
-        role="role here"
+        role="Web Developer, Writer"
       />
     </div>
   );
