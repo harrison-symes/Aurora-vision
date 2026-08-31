@@ -38,12 +38,6 @@ const NavBar = () => {
                 "is-active": isActive,
               })}
             >
-              <div className="navbar__hamburger">
-                <Hamburger
-                  toggled={isActive}
-                  onToggle={() => setIsActive((state) => !state)}
-                />
-              </div>
               {/* <NavItem href="/" text="HOME" /> */}
               <NavItem href="/" text="CHORA" />
               <NavItem href="/temporal" text="TEMPORAL" />

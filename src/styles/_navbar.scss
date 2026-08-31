@@ -63,8 +63,10 @@
     }
 
     &__hamburger {
-        color: $white;
+        color: $text;
         display: none;
+        position: relative;
+        z-index: 1001;
 
         @media only screen and (max-width: 768px) {
             display: block;
@@ -95,44 +97,36 @@
 
         @media only screen and (max-width: 768px) {
             position: fixed;
+            left: 0;
             bottom: 0;
-            right: 0;
             width: 100%;
-            z-index: 1000;
-            background-color: $black;
-            padding: .25rem .5rem;
             height: auto;
-            border-top: 2px solid $pink;
+            z-index: 1000;
 
-            .navbar__hamburger {
-                position: absolute;
-                transform: translateY(-58px);
-                background-color: $black;
-                border-left: 2px solid $pink;
-                border-top: 2px solid $pink;
-                border-bottom: 1px solid $black;
-                padding-right: 1rem;
-                padding-left: 1rem;
-                padding-top: .25rem;
-                // right: 1rem;
-                right: 0;
+            flex-direction: column;
+            align-items: stretch;
+            padding: $sp-2 $gutter calc(#{$sp-3} + env(safe-area-inset-bottom));
+
+            background-color: $ground;
+            border-top: 2px solid $accent;
+
+            // A transition on .is-active rather than an animation: the panel's
+            // resting position no longer depends on an animation having run,
+            // so it cannot be left parked below the fold.
+            // Presence, not position. The panel used to be parked off-screen
+            // with a transform and slid in by an animation, which meant any
+            // failure of that animation left the menu permanently below the
+            // fold. Now it simply is not in the layout until it is open.
+            &:not(.is-active) {
+                display: none;
             }
 
-            @keyframes slide-up {
-                0% {
-                    transform: translateY(200%);
-                }
-
-                100% {
-                    transform: translateY(0%);
-                }
-            }
-
-            transform: translateY(200%);
-            
             &.is-active {
-                animation: slide-up 200ms ease-in-out forwards;
-                display: block;
+                display: flex;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                transition: none;
             }
         }
     }
@@ -153,10 +147,10 @@
         text-decoration: none;
 
         @media only screen and (max-width: 768px) {
-            font-size: $mobile-content-text;
+            font-size: 1rem;
             justify-content: center;
-            padding: .25rem 1rem;
-            margin: 1rem auto;
+            padding: $sp-2 0;
+            margin: 0;
         }
         
         &.is-active:nth-child(even) {
