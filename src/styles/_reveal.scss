@@ -1,11 +1,17 @@
 @import "vars";
 
-// The outer box never transforms, so it cannot push past the viewport; it
-// only clips the inner element's entry. Nothing here hides content until
-// Reveal has mounted and armed itself, so a failure to run leaves the
-// content visible.
+// Nothing here hides content until Reveal has mounted and armed itself, so
+// a failure to run leaves the content visible.
+//
+// The clip is mobile-only on purpose. These images bleed vertically on
+// desktop - 600px of picture in a 500px box, pulled up 100px - and clipping
+// the wrapper cut that bleed off. Below md the images set transform: none
+// and fill their column, so there is nothing to clip except the entry
+// animation, which is exactly what would otherwise overflow the viewport.
 .reveal {
-    overflow: hidden;
+    @media only screen and (max-width: 768px) {
+        overflow: hidden;
+    }
 }
 
 .reveal__inner {

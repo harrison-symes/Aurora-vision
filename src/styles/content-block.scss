@@ -119,10 +119,13 @@
         margin-bottom: -100px;
         justify-self: end;
 
+        // The negative margin only pairs with the desktop bleed; leaving it
+        // on below md made the layout box 100px shorter than the image.
         @media only screen and (max-width: 768px) {
             height: auto;
             width: 100%;
             transform: none;
+            margin-bottom: 0;
             justify-self: center;
             align-self: center;
         }
@@ -131,6 +134,7 @@
             height: auto;
             width: 100%;
             transform: none;
+            margin-bottom: 0;
             justify-self: center;
             align-self: center;
         }
