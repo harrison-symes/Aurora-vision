@@ -1,5 +1,6 @@
 import * as React from "react";
 import Hero from "../components/Heros/Hero";
+import Seo from "../components/Seo/Seo";
 import bannerMin from "../assets/images/about-us/banner-min.webp";
 import banner from "../assets/images/about-us/banner.webp";
 import MemberFrame from "../components/MemberFrame/MemberFrame";
@@ -47,6 +48,12 @@ const JerryMe = () => {
 
   return (
     <div>
+      <Seo
+        title="About Jerry Me"
+        path="/jerry-me"
+        description="You found the secret Jeremys."
+        noIndex
+      />
       <Hero
         imageMin={bannerMin}
         image={banner}

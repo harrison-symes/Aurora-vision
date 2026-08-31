@@ -13,7 +13,7 @@ import esther from "../assets/images/about-us/esther.webp";
 import manny from "../assets/images/about-us/manny.webp";
 import jeremyBrow from "../assets/images/about-us/jeremy-brow.webp";
 import harrisonSymes from "../assets/images/about-us/harrison-symes.webp";
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo/Seo";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -24,14 +24,11 @@ const AboutUs = () => {
 
   return (
     <div>
-      <Helmet>
-          <title>About Us | Auroravision</title>
-          <meta
-              name="description"
-              content="AuroraVision is a New Zealand filmmaker collective specializing in film production, cinematography, editing, documentaries, music videos, commercial content, and visual storytelling."
-          />
-          <link rel="canonical" href="https://www.auroravision.nz/about-us" />
-      </Helmet>
+      <Seo
+        title="About us"
+        path="/about-us"
+        description="AuroraVision is a New Zealand filmmaker collective specializing in film production, cinematography, editing, documentaries, music videos, commercial content, and visual storytelling."
+      />
       <AboutUsHero />
       <TextBlockWithImage
         imageUrl={spaceship}

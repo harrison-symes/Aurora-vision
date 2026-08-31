@@ -1,4 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
+Disallow: /jerry-me
+
 Sitemap: https://www.auroravision.nz/sitemap.xml

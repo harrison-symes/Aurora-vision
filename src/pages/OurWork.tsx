@@ -1,5 +1,6 @@
 import * as React from "react";
 import OurWorkHero from "../components/Heros/OurWorkHero";
+import Seo from "../components/Seo/Seo";
 import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
 
 import temporalLogo from "../svg/temporal-logo.svg";
@@ -18,6 +19,11 @@ const OurWork = () => {
   const areAllSecretsFound = useSelector(getAreAllSecretsFound);
   return (
     <div>
+      <Seo
+        title="Our work"
+        path="/our-work"
+        description="Short films, music videos and commercial work from AuroraVision: Temporal, Things, Outcast, Charm the Wind, Life Been Strange and more, made in Te Whanganui-a-Tara."
+      />
       <OurWorkHero />
       {areAllSecretsFound && (
         <>

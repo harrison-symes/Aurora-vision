@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo/Seo";
 import ChoraBanner from "../components/Chora/ChoraBanner";
 import ChoraInfoPanel from "../components/Chora/ChoraInfoPanel/ChoraInfoPanel";
 import ChoraMap from "../components/Chora/ChoraMap/ChoraMap";
@@ -18,14 +18,12 @@ import SecondGenesisStoryboard from "../components/Chora/BehindTheScenes/SecondG
 const Chora = () => {
     return (
         <div>
-            <Helmet>
-                <title>Chōra | Auroravision</title>
-                <meta
-                    name="description"
-                    content="Chōra is an anthology short film exploring five distinct sci-fi storyworlds."
-                />
-                <link rel="canonical" href="https://www.auroravision.nz/chora" />
-            </Helmet>
+            <Seo
+                title="Chōra"
+                path="/"
+                type="video.other"
+                description="Chōra is an anthology short film exploring five distinct sci-fi storyworlds, from an AuroraVision collective in Te Whanganui-a-Tara."
+            />
             
             <ChoraBanner />
             <ChoraMap />

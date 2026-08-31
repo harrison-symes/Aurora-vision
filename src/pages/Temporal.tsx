@@ -23,7 +23,7 @@ import scriptMin from "../assets/images/temporal/script-min.webp";
 import JeremyLetter from "../components/Jeremy/JeremyLetter";
 import { useSelector } from "react-redux";
 import { getAreAllJeremyLettersClicked } from "../selectors/jeremy.selectors";
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo/Seo";
 
 const Temporal = () => {
   const areAllLettersClicked = useSelector(getAreAllJeremyLettersClicked);
@@ -79,14 +79,12 @@ const Temporal = () => {
 
   return (
     <div className="page-container">
-      <Helmet>
-          <title>Temporal | Auroravision</title>
-          <meta
-            name="description"
-            content={`"TEMPORAL" is a sci-fi short film that follows a spaceman struggling to survive on a distant alien world after an ion storm brings down his survey ship.`}
-          />
-          <link rel="canonical" href="https://www.auroravision.nz/temporal" />
-      </Helmet>
+      <Seo
+        title="Temporal"
+        path="/temporal"
+        type="video.other"
+        description={`"TEMPORAL" is a sci-fi short film that follows a spaceman struggling to survive on a distant alien world after an ion storm brings down his survey ship.`}
+      />
       <Hero
         imageMin={bootsBackgroundMin}
         image={bootsBackground}

@@ -21,6 +21,13 @@
         ]
       }
     ],
+    "redirects": [
+      {
+        "source": "/chora",
+        "destination": "/",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",
