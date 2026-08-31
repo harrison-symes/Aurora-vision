@@ -35,7 +35,7 @@ const AboutUs = () => {
       <AboutUsHero />
       <TextBlockWithImage
         imageUrl={spaceship}
-        imageClass="space-ship"
+        imageClass="space-ship hide-mobile"
         paragraphs={[
           "AURORAVISION is a creative collective crafting tactile, atmosphere-rich media that blends practical craft, visual effects, and speculative storytelling.",
           "With a focus on production design, animation and visual effects. AURORAVISION builds emotionally resonant worlds that feel lived-in, uncanny, and slightly out of time. From lo-fi sci-fi to cosmic dreamscapes, their work explores the edges of genre through meticulous worldbuilding and hybrid visual techniques.",

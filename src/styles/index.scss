@@ -122,6 +122,13 @@ p {
     white-space: nowrap;
 }
 
+// For decorative imagery that only earns its space on a wider screen.
+.hide-mobile {
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
 .chora-pink {
     color: $skin-chora-accent;
 }
