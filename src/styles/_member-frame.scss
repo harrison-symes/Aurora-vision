@@ -30,28 +30,35 @@
         flex-direction: row-reverse;
     }
 
-    &__name {
+    &__identity {
         width: 100%;
-        font-size: $desktop-title;
-        color: $grey;
-        font-weight: bold;
-        letter-spacing: 1px;
-
-        display: flex;
-        justify-content: center;
-
         margin-top: 4rem;
 
         grid-column: 1;
         grid-row: 1;
 
-        @media only screen and (max-width: 768px) {
-            font-size: $mobile-title;
-        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $sp-1;
+    }
 
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
-            font-size: $tablet-title;
-        }
+    &__name {
+        font-size: $fs-heading;
+        color: $muted;
+        font-weight: 800;
+        line-height: $lh-tight;
+        letter-spacing: 0.01em;
+        text-align: center;
+    }
+
+    &__role {
+        font-family: $font-mono;
+        font-size: $fs-label;
+        letter-spacing: $tracking-label;
+        text-transform: uppercase;
+        color: $muted;
+        text-align: center;
     }
 
     &__image {
@@ -81,8 +88,11 @@
     &--grey {
         background-color: $surface;
 
-        .member-frame__name {
+        .member-frame__identity {
             grid-column: 2;
+        }
+        .member-frame__name,
+        .member-frame__role {
             color: $text;
         }
         .member-frame__image {

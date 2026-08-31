@@ -1,0 +1,35 @@
+@import "vars";
+
+// Nothing here hides content until Reveal has mounted and added a
+// --{animation} class, so a failure to run leaves the content visible.
+.reveal {
+    &--fadeIn,
+    &--fadeInRight,
+    &--fadeInLeft {
+        opacity: 0;
+        transition: opacity 700ms ease-out, transform 700ms ease-out;
+
+        &.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    &--fadeInRight {
+        transform: translateX(40px);
+    }
+
+    &--fadeInLeft {
+        transform: translateX(-40px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &--fadeIn,
+        &--fadeInRight,
+        &--fadeInLeft {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+}

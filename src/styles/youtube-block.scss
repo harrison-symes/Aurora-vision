@@ -159,11 +159,9 @@
     }
 
     &__credits {
-        margin-top: 1rem;
+        margin-top: $sp-2;
         text-align: left;
-        font-size: $desktop-paragraph;
-        padding: 0 .5rem;
-
+        font-size: $fs-body;
     }
 
     &__hr {
@@ -200,11 +198,7 @@
         }
 
         .youtube-block__credits {
-            text-align: right;
-
-            @media only screen and (max-width: 768px) {
-                text-align: center;
-            }
+            text-align: left;
         }
     }
 

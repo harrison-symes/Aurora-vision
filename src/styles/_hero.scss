@@ -25,12 +25,18 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-            to top,
-            rgba(14, 15, 23, 0.8) 0%,
-            rgba(14, 15, 23, 0.35) 45%,
-            rgba(14, 15, 23, 0) 75%
-        );
+
+        // A flat tint carries the whole frame, so bright sky behind the
+        // title is handled wherever it falls; the radial adds weight in
+        // the bottom-left corner where the type actually sits.
+        background:
+            radial-gradient(
+                95% 80% at 6% 100%,
+                rgba($ground, 0.85) 0%,
+                rgba($ground, 0.35) 55%,
+                rgba($ground, 0) 82%
+            ),
+            rgba($ground, 0.55);
     }
 
     &__container {
@@ -52,7 +58,8 @@
         font-size: $fs-label;
         letter-spacing: $tracking-label;
         text-transform: uppercase;
-        color: $accent;
+        color: $light;
+        opacity: 0.85;
         margin: 0;
     }
 

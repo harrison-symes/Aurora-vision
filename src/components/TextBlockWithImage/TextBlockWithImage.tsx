@@ -1,7 +1,7 @@
 import * as React from "react";
 import cn from "classnames";
 import useOptimizedBackground from "../../hooks/useOptimisedBackground";
-import ScrollAnimation from "react-animate-on-scroll";
+import Reveal, { RevealAnimation } from "../Reveal/Reveal";
 
 interface IProps {
   imageUrl: string;
@@ -12,7 +12,7 @@ interface IProps {
   imageClass?: string;
   bgColour?: "grey" | "white";
   isReverse?: boolean;
-  imageAnimation?: string;
+  imageAnimation?: RevealAnimation;
 }
 
 const TextBlockWithImage = (props: IProps) => {
@@ -56,12 +56,7 @@ const TextBlockWithImage = (props: IProps) => {
           ))}
         </div>
         {props.imageAnimation ? (
-          <ScrollAnimation
-            animateIn={props.imageAnimation}
-            initiallyVisible={!props.imageAnimation}
-          >
-            {imageElement}
-          </ScrollAnimation>
+          <Reveal animation={props.imageAnimation}>{imageElement}</Reveal>
         ) : (
           imageElement
         )}

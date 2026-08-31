@@ -48,42 +48,50 @@ const AboutUs = () => {
         imageUrl={jamesTweddle}
         variant="grey"
         name="JAMES TWEDDLE"
+        role="role here"
       />
       <MemberFrame
         imageUrl={westonSymes}
         variant="white"
         name="WESTON SYMES"
+        role="role here"
       />
       <MemberFrame
         imageUrl={charlieJones}
         variant="grey"
         name="CHARLIE JONES"
+        role="role here"
       />
       <MemberFrame
         imageUrl={esther}
         variant="white"
         name="ESTHER SUSHAMES"
+        role="role here"
       />
       <MemberFrame
         imageUrl={manny}
         variant="grey"
         name="MANNY CABALLERO"
+        role="role here"
       />
       <MemberFrame
         imageUrl={jeremyBrow}
         variant="white"
         name="JEREMY BROW"
         onImageClick={onClickJerryMe}
+        role="role here"
       />
       <MemberFrame
         imageUrl={aidanFalconer}
         variant="grey"
         name="AIDAN FALCONER"
+        role="role here"
       />
       <MemberFrame
         imageUrl={harrisonSymes}
         variant="white"
         name="HARRISON SYMES"
+        role="role here"
       />
     </div>
   );

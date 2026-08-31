@@ -1,7 +1,6 @@
 import * as React from "react";
 import cn from "classnames";
 import useOptimizedBackground from "../../hooks/useOptimisedBackground";
-import ScrollAnimation from "react-animate-on-scroll";
 import { useSelector } from "react-redux";
 import { getAreAllJeremyLettersClicked } from "../../selectors/jeremy.selectors";
 import jeremyMode from "../../assets/images/about-us/jeremy-mode.webp";

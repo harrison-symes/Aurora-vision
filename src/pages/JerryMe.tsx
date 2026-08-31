@@ -69,6 +69,7 @@ const JerryMe = () => {
                   ? "jeremy-selected"
                   : undefined
               }
+        role="role here"
             />
           </>
         ))}
