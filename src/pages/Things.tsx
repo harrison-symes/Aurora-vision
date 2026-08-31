@@ -7,6 +7,7 @@ import ThingsCarousel from "../components/Carousel/ThingsCarousel";
 import Hero from "../components/Heros/Hero";
 import jamesAndJan from "../assets/images/things/james-and-jan.webp";
 import teamMovesCar from "../assets/images/things/team-moves-car.webp";
+import heroStill from "../assets/images/things/bts/bts-4.webp";
 import Seo from "../components/Seo/Seo";
 
 const Things = () => {
@@ -19,8 +20,8 @@ const Things = () => {
         description={`Created in just 48 hours, THINGS blends surrealism, horror, and absurdity into a haunting reflection on greed and consequence. Regional Finalist and winner of the Incredibly Strange Award at the 2025 48Hours Film Festival.`}
       />
       <Hero
-        imageMin={teamMovesCar}
-        image={teamMovesCar}
+        imageMin={heroStill}
+        image={heroStill}
         eyebrow="Short film"
         title="Things"
       />
