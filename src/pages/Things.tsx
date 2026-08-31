@@ -23,6 +23,7 @@ const Things = () => {
         imageMin={heroStill}
         image={heroStill}
         eyebrow="Short film"
+        mono
         title="Things"
       />
       <YoutubeBlock

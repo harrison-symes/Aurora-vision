@@ -39,6 +39,14 @@
             rgba($ground, 0.55);
     }
 
+    // The film stills are the only colour photography on the site; the
+    // location stills everywhere else are already black and white.
+    // Greyscaling the whole hero is safe: the title and eyebrow are both
+    // near-white, so they pass through unchanged.
+    &--mono {
+        filter: grayscale(1);
+    }
+
     &__container {
         position: relative; // above the scrim
         z-index: 1;

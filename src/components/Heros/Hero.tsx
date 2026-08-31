@@ -1,4 +1,5 @@
 import * as React from "react";
+import cn from "classnames";
 import useOptimizedBackground from "../../hooks/useOptimisedBackground";
 
 interface IHeroProps {
@@ -8,6 +9,8 @@ interface IHeroProps {
   title: React.ReactNode;
   /** Small label above the title, e.g. the section name. */
   eyebrow?: string;
+  /** Desaturates the still, to match the site's black-and-white photography. */
+  mono?: boolean;
 }
 
 const Hero = (props: IHeroProps) => {
@@ -16,7 +19,7 @@ const Hero = (props: IHeroProps) => {
   return (
     <div className="hero-block">
       <div
-        className="hero hero--photo"
+        className={cn("hero hero--photo", { "hero--mono": props.mono })}
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="hero__container">

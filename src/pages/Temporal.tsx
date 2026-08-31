@@ -89,6 +89,7 @@ const Temporal = () => {
         imageMin={bootsBackgroundMin}
         image={bootsBackground}
         eyebrow="Short film"
+        mono
         title="Temporal"
       />
       <YoutubeBlock
