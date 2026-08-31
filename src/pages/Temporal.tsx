@@ -99,6 +99,8 @@ const Temporal = () => {
           `Determined to find his missing co-pilot, he pushes forward - but soon discovers that there’s something deeply unsettling about this planet.`,
         ]}
         videoId="csSuSydxKvM"
+        buttonLink="https://boxd.it/RCue"
+        buttonText="Review it on Letterboxd"
       />
       <TextBlockWithImage
         slowImageUrl={

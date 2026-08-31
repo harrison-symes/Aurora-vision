@@ -18,6 +18,8 @@ interface IProps {
   isReverse?: boolean;
   isGrey?: boolean;
   buttonLink?: string;
+  /** Defaults to "Learn more". */
+  buttonText?: string;
   variant?: "splitWithTitle"
 }
 
@@ -66,14 +68,27 @@ const YoutubeBlock = (props: IProps) => {
               </p>
             ))}
           </div>
-          {props.buttonLink && (
-            <Link
-              to={props.buttonLink}
-              className="button button--large youtube-block__button"
-            >
-              LEARN MORE
-            </Link>
-          )}
+          {props.buttonLink &&
+            // Absolute URLs leave the site, so they get a real anchor with
+            // target and rel rather than the router's Link, which builds
+            // client-side navigation for somewhere it cannot navigate.
+            (props.buttonLink.startsWith("http") ? (
+              <a
+                href={props.buttonLink}
+                target="_blank"
+                rel="noreferrer"
+                className="button button--large youtube-block__button"
+              >
+                {props.buttonText ?? "Learn more"}
+              </a>
+            ) : (
+              <Link
+                to={props.buttonLink}
+                className="button button--large youtube-block__button"
+              >
+                {props.buttonText ?? "Learn more"}
+              </Link>
+            ))}
         </div>
       </div>
     </div>
