@@ -1,5 +1,6 @@
 import Button from "../Button/Button";
 import "./ChoraBanner.scss"
+import ProgressBar from "./FundraiseBanner/ProgressBar";
 
 const ChoraBanner = () => {
     const scrollToChoraMap = () => {
@@ -29,8 +30,7 @@ const ChoraBanner = () => {
                 <div className="chora-banner__right">
                     <p className="chora-banner__text">An anthology short film that explores five speculative story worlds all connected by Chōra; the space between universes.</p>
                     <div className="chora-banner__buttons">
-                        <Button colour="pink" externalLink href="https://www.thearts.co.nz/boosted/projects/chora-the-auroravision-anthology/" className="chora-banner__button pink">SUPPORT THE PROJECT</Button>
-                        <Button colour="black" className="chora-banner__button mobile-only" onClick={scrollToChoraMap}>EXPLORE THE WORLDS</Button>
+                        <ProgressBar />
                     </div>
                 </div>
             </div>

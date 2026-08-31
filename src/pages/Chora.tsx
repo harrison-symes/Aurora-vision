@@ -38,7 +38,7 @@ const Chora = () => {
                     <p>This project is about building story worlds. <br />
                         Not just one, but a constellation of them.</p>
                 ]}
-                videoId="csSuSydxKvM"
+                videoId="GWWsemqV6hg"
                 variant="splitWithTitle"
                 title="THE PROJECT"
                 titleIcon={project_icon}
