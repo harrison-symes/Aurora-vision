@@ -1,7 +1,6 @@
 import Router from "./Router";
 import { Provider, useSelector } from "react-redux";
 import { store } from "./configureStore";
-import "animate.css/animate.compat.css";
 import { getAreAllJerrysFound } from "./selectors/jeremy.selectors";
 import cn from "classnames";
 

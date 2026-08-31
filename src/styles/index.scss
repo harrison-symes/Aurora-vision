@@ -53,11 +53,14 @@ body {
     }
 }
 
-// Freeze Chora map typography: its subtitle is the only element in the
-// map that inherits a font from the global rules below. Everything else
-// there (Bauhaus 93 title, Bitcount tooltips and info panel) is explicit.
+// The map's subtitle is the one element in the map that inherits its font
+// from the global rules. It was pinned to League Gothic so the map stayed
+// pixel-identical through the uplift; now that everything else has settled
+// it takes the display face, which drops a whole family from the payload.
+// The title is absolutely positioned, so this changes no geometry.
 .chora-map__title h2 {
-    font-family: "League Gothic", sans-serif;
+    font-family: $font-display;
+    font-weight: 800;
 }
 
 h1, p, div, input, button, textarea, select {
@@ -123,6 +126,19 @@ p {
 }
 
 // For decorative imagery that only earns its space on a wider screen.
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
 .hide-mobile {
     @media only screen and (max-width: 768px) {
         display: none;

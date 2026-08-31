@@ -53,14 +53,18 @@ const Reveal = (props: IRevealProps) => {
   }, [props.animation]);
 
   return (
-    <div
-      ref={ref}
-      className={cn("reveal", props.className, {
-        [`reveal--${props.animation}`]: props.animation && isArmed,
-        "is-visible": isVisible,
-      })}
-    >
-      {props.children}
+    // The transform lives on the inner element so the outer box never moves;
+    // a transform on the wrapper itself pushed it past the viewport, and its
+    // own overflow cannot clip that.
+    <div ref={ref} className={cn("reveal", props.className)}>
+      <div
+        className={cn("reveal__inner", {
+          [`reveal__inner--${props.animation}`]: props.animation && isArmed,
+          "is-visible": isVisible,
+        })}
+      >
+        {props.children}
+      </div>
     </div>
   );
 };

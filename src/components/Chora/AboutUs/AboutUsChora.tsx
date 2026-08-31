@@ -22,7 +22,7 @@ const AboutUsChora = () => {
     
     return (
         <div className="about-us-chora">
-            <h1 className="about-us-chora__title">
+            <h2 className="about-us-chora__title">
                 {
                     areMacleanLettersClicked
                         ? (
@@ -37,7 +37,7 @@ const AboutUsChora = () => {
                             </>
                         )
                 }
-            </h1>
+            </h2>
             <div className="about-us-chora__inner">
                 <AboutUsFrame
                     idx={1}

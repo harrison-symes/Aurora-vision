@@ -69,7 +69,7 @@ const Footer = () => {
       <div className="footer__gradient" />
       <div className="footer__inner">
         <JerryCounter />
-        <img className="footer__logo" src={avLogo} />
+        <img className="footer__logo" src={avLogo} alt="AuroraVision" />
         <div className="footer__credit">Website by Harrison Symes</div>
         <div className="footer__right">
           <div className="footer__socials">

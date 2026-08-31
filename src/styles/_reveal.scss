@@ -1,8 +1,14 @@
 @import "vars";
 
-// Nothing here hides content until Reveal has mounted and added a
-// --{animation} class, so a failure to run leaves the content visible.
+// The outer box never transforms, so it cannot push past the viewport; it
+// only clips the inner element's entry. Nothing here hides content until
+// Reveal has mounted and armed itself, so a failure to run leaves the
+// content visible.
 .reveal {
+    overflow: hidden;
+}
+
+.reveal__inner {
     &--fadeIn,
     &--fadeInRight,
     &--fadeInLeft {

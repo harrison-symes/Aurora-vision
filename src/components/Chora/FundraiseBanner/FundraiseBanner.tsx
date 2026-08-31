@@ -10,7 +10,7 @@ const FundraiseBanner = () => {
             <Suspense fallback={null}>
                 <ProgressBar />
             </Suspense>
-            <h1 className="progress__funded">Thank you to everyone who donated!</h1>
+            <p className="progress__funded">Thank you to everyone who donated!</p>
         </div>
     )
 }

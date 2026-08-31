@@ -9,7 +9,7 @@ const SecondGenesisStoryboard = () => {
     return (
         <div className="sg-storyboard">
             <div className="sg-storyboard__inner">
-                <h1 className="sg-storyboard__title"><span className="chora-pink">Second Genesis</span> storyboard concepts</h1>
+                <h2 className="sg-storyboard__title"><span className="chora-pink">Second Genesis</span> storyboard concepts</h2>
                 <div className="sg-storyboard__grid">
                     <img src={storyboard_1} alt="Second Genesis Storyboard 1" className="sg-storyboard__image" />
                     <img src={storyboard_2} alt="Second Genesis Storyboard 2" className="sg-storyboard__image" />

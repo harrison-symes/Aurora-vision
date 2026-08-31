@@ -42,7 +42,7 @@ const ImmersiveBlock = (props: IProps) => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="immersive-block__container">
-        <img src={imageUrl} className="immersive-block__image" />
+        <img src={imageUrl} alt={props.title} className="immersive-block__image" />
         <div className="immersive-block__text-container">
           <div className="immersive-block__title">{props.title}</div>
           {props.paragraphs.map((p) => (

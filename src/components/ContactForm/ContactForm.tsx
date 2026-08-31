@@ -84,7 +84,11 @@ const ContactForm = () => {
   return (
     <form className="contact-form" onSubmit={onSubmit}>
       <div className="contact-form__input-row">
+        <label className="visually-hidden" htmlFor="contact-name">
+          Your name
+        </label>
         <input
+          id="contact-name"
           className="contact-form__text-input"
           name="name"
           value={name}
@@ -92,7 +96,11 @@ const ContactForm = () => {
           type="text"
           placeholder="NAME..."
         />
+        <label className="visually-hidden" htmlFor="contact-email">
+          Your email address
+        </label>
         <input
+          id="contact-email"
           className="contact-form__text-input"
           name="email"
           value={email}
@@ -101,7 +109,11 @@ const ContactForm = () => {
           placeholder="EMAIL..."
         />
       </div>
+      <label className="visually-hidden" htmlFor="contact-subject">
+        Subject or service
+      </label>
       <select
+        id="contact-subject"
         className="contact-form__select-box"
         name="subject"
         placeholder="SUBJECT/SERVICE..."
@@ -117,7 +129,11 @@ const ContactForm = () => {
           </option>
         ))}
       </select>
+      <label className="visually-hidden" htmlFor="contact-message">
+        Your message
+      </label>
       <textarea
+        id="contact-message"
         className="contact-form__textarea"
         name="message"
         placeholder="YOUR MESSAGE..."

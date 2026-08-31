@@ -47,7 +47,7 @@ const TextBlockWithImage = (props: IProps) => {
               "content-block__title--with-icon": props.titleIcon
             })}>
               {props.titleIcon && <img alt={props.title} src={props.titleIcon} className="content-block__title__icon" />}
-              <h1 className="content-block__title__text">{props.title}</h1>
+              <h2 className="content-block__title__text">{props.title}</h2>
               {props.titleIcon && <div className="content-block__title__spacer" />}
             </div>
           )}

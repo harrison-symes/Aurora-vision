@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 interface IProps {
   videoId?: string;
   titleImageUrl?: string;
+  /** Film name for the wordmark image; it carries the title visually. */
+  titleImageAlt?: string;
   title?: string;
   titleIcon?: string;
   paragraphs: Array<string | React.ReactNode>;
@@ -36,12 +38,18 @@ const YoutubeBlock = (props: IProps) => {
             title={props.title ? `Play ${props.title}` : undefined}
           />
         </div>
-        {props.titleImageUrl && <img src={props.titleImageUrl} className="youtube-block__title-image" />}
+        {props.titleImageUrl && (
+          <img
+            src={props.titleImageUrl}
+            alt={props.titleImageAlt ?? ""}
+            className="youtube-block__title-image"
+          />
+        )}
         <div className="youtube-block__text-container">
           {props.title && (
             <div className="youtube-block__title">
               {props.titleIcon && <img alt={props.title} src={props.titleIcon} className="youtube-block__title__icon" />}
-              <h1 className="youtube-block__title__text">{props.title}</h1>
+              <h2 className="youtube-block__title__text">{props.title}</h2>
               {props.titleIcon && <div className="youtube-block__title__spacer" />}
             </div>
           )}

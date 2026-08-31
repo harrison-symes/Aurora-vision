@@ -1,5 +1,7 @@
 import * as React from "react";
-import AboutUsHero from "../components/Heros/AboutUsHero";
+import Hero from "../components/Heros/Hero";
+import bannerMin from "../assets/images/about-us/banner-min.webp";
+import banner from "../assets/images/about-us/banner.webp";
 import MemberFrame from "../components/MemberFrame/MemberFrame";
 import { useDispatch } from "react-redux";
 import { allJerrysFound } from "../actions/jeremy.actions";
@@ -45,7 +47,12 @@ const JerryMe = () => {
 
   return (
     <div>
-      <AboutUsHero />
+      <Hero
+        imageMin={bannerMin}
+        image={banner}
+        eyebrow="Easter egg"
+        title="About Jerry Me"
+      />
       {Array(6)
         .fill(0)
         .map((_, num) => (

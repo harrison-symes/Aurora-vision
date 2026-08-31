@@ -3,6 +3,7 @@ import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithIm
 import ImmersiveBlock from "../components/ImmsersiveBlock/ImmersiveBlock";
 import YoutubeBlock from "../components/YoutubeBlock/YoutubeBlock";
 import MeetOurCrew from "../components/MeetOurCrew/MeetOurCrew";
+import Hero from "../components/Heros/Hero";
 
 import temporalLogo from "../svg/temporal-logo.svg";
 import jerryMe from "../assets/images/about-us/jerry-me.webp";
@@ -86,8 +87,15 @@ const Temporal = () => {
           />
           <link rel="canonical" href="https://www.auroravision.nz/temporal" />
       </Helmet>
+      <Hero
+        imageMin={bootsBackgroundMin}
+        image={bootsBackground}
+        eyebrow="Short film"
+        title="Temporal"
+      />
       <YoutubeBlock
         titleImageUrl={temporalLogo}
+        titleImageAlt="Temporal"
         paragraphs={[
           `"TEMPORAL" is a sci-fi short film that follows a spaceman struggling to survive on a distant alien world after an ion storm brings down his survey ship.`,
           `Determined to find his missing co-pilot, he pushes forward - but soon discovers that there’s something deeply unsettling about this planet.`,

@@ -100,6 +100,7 @@ const ContactUsGrid = () => {
         <div className="contact-us-grid__tile contact-us-grid__tile--grey">
           <img
             src={isCodeSubmitted ? jeremyMode : charliePhone}
+            alt={isCodeSubmitted ? "Jeremy Brow" : "Charlie Jones on the phone"}
             className="contact-us-grid__image"
           />
         </div>

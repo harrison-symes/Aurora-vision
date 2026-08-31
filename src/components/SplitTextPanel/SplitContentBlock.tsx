@@ -20,7 +20,7 @@ const SplitContentBlock = (props: IProps) => {
                     "split-text-panel__title--with-icon": props.content.titleIcon
                 })}>
                     {props.content.titleIcon && <img alt={props.content.title} src={props.content.titleIcon} className="split-text-panel__title__icon" />}
-                    <h1 className="split-text-panel__title__text">{props.content.title}</h1>
+                    <h2 className="split-text-panel__title__text">{props.content.title}</h2>
                     {props.content.titleIcon && <div className="split-text-panel__title__spacer" />}
                 </div>
                 )}

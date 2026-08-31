@@ -4,6 +4,7 @@ import { ROUTES_INTERNAL } from "../constants/router.constants";
 import thingsLogo from "../svg/things-logo.svg";
 import TextBlockWithImage from "../components/TextBlockWithImage/TextBlockWithImage";
 import ThingsCarousel from "../components/Carousel/ThingsCarousel";
+import Hero from "../components/Heros/Hero";
 import jamesAndJan from "../assets/images/things/james-and-jan.webp";
 import teamMovesCar from "../assets/images/things/team-moves-car.webp";
 import { Helmet } from "react-helmet-async";
@@ -19,8 +20,15 @@ const Things = () => {
           />
           <link rel="canonical" href="https://www.auroravision.nz/things" />
       </Helmet>
+      <Hero
+        imageMin={teamMovesCar}
+        image={teamMovesCar}
+        eyebrow="Short film"
+        title="Things"
+      />
       <YoutubeBlock
         titleImageUrl={thingsLogo}
+        titleImageAlt="Things"
         paragraphs={[
           `A travelling salesman returns to a dark realm - just to forget a lesson he learned long ago.`,
           `Created in just 48 hours, THINGS blends surrealism, horror, and absurdity into a haunting reflection on greed and consequence.`,
